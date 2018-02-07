@@ -10,15 +10,15 @@ cModel Technology
 Z0 dD:/Users/Dean/Documents/ECE 385/lab4_adders/simulation/modelsim
 vcarry_lookahead_adder
 Z1 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
-Z2 !s110 1517967269
+Z2 !s110 1518021826
 !i10b 1
-!s100 NW4KU2<?n?[SDe4D;L;1F2
-ICG2WRcbde@laL@IVCA:o]1
+!s100 o^hI[BbJBdUa4?^iPd^E42
+I4dRH<U;8N06k9`kN:[mWo3
 Z3 V`JN@9S9cnhjKRR_L]QIcM3
 Z4 !s105 carry_lookahead_adder_sv_unit
 S1
 R0
-Z5 w1517967214
+Z5 w1518021683
 Z6 8D:/Users/Dean/Documents/ECE 385/lab4_adders/carry_lookahead_adder.sv
 Z7 FD:/Users/Dean/Documents/ECE 385/lab4_adders/carry_lookahead_adder.sv
 L0 1
@@ -26,7 +26,7 @@ Z8 OV;L;10.3d;59
 r1
 !s85 0
 31
-Z9 !s108 1517967269.890000
+Z9 !s108 1518021826.724000
 Z10 !s107 D:/Users/Dean/Documents/ECE 385/lab4_adders/carry_lookahead_adder.sv|
 Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab4_adders|D:/Users/Dean/Documents/ECE 385/lab4_adders/carry_lookahead_adder.sv|
 !i113 1
@@ -45,14 +45,38 @@ R0
 Z15 w1517894851
 Z16 8D:/Users/Dean/Documents/ECE 385/lab4_adders/ripple_adder.sv
 Z17 FD:/Users/Dean/Documents/ECE 385/lab4_adders/ripple_adder.sv
-L0 24
+Z18 L0 24
 R8
 r1
 !s85 0
 31
-Z18 !s108 1517967269.640000
-Z19 !s107 D:/Users/Dean/Documents/ECE 385/lab4_adders/ripple_adder.sv|
-Z20 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab4_adders|D:/Users/Dean/Documents/ECE 385/lab4_adders/ripple_adder.sv|
+Z19 !s108 1518021826.427000
+Z20 !s107 D:/Users/Dean/Documents/ECE 385/lab4_adders/ripple_adder.sv|
+Z21 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab4_adders|D:/Users/Dean/Documents/ECE 385/lab4_adders/ripple_adder.sv|
+!i113 1
+R12
+R13
+vfour_bit_cla
+R1
+R2
+!i10b 1
+!s100 L[6:T^Tf7z@GEn8=eC>0V2
+I@CTi2QXbPC:<Q^fKMNbzk2
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+R18
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
 !i113 1
 R12
 R13
@@ -74,9 +98,9 @@ R8
 r1
 !s85 0
 31
-R18
 R19
 R20
+R21
 !i113 1
 R12
 R13
@@ -98,7 +122,7 @@ R8
 r1
 !s85 0
 31
-!s108 1517967269.812000
+!s108 1518021826.645000
 !s107 D:/Users/Dean/Documents/ECE 385/lab4_adders/HexDriver.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab4_adders|D:/Users/Dean/Documents/ECE 385/lab4_adders/HexDriver.sv|
 !i113 1
@@ -107,7 +131,7 @@ R13
 n@hex@driver
 vlab4_adders_toplevel
 R1
-Z21 !s110 1517967270
+Z22 !s110 1518021827
 !i10b 1
 !s100 Yj<aA_6UmXE?3ld@Lh1?11
 IjIeRRN[f>Pm;@?:kn;nLk0
@@ -115,7 +139,7 @@ R3
 !s105 lab4_adders_toplevel_sv_unit
 S1
 R0
-w1517964880
+w1518021804
 8D:/Users/Dean/Documents/ECE 385/lab4_adders/lab4_adders_toplevel.sv
 FD:/Users/Dean/Documents/ECE 385/lab4_adders/lab4_adders_toplevel.sv
 L0 17
@@ -123,7 +147,7 @@ R8
 r1
 !s85 0
 31
-!s108 1517967270.000000
+!s108 1518021827.005000
 !s107 D:/Users/Dean/Documents/ECE 385/lab4_adders/lab4_adders_toplevel.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab4_adders|D:/Users/Dean/Documents/ECE 385/lab4_adders/lab4_adders_toplevel.sv|
 !i113 1
@@ -133,8 +157,8 @@ vprop_gen
 R1
 R2
 !i10b 1
-!s100 ;^7;8PaXT6nML4:@2Qgb63
-IHfII6mNfjN]J[3f3^mk9;3
+!s100 =jgMR`2h@=85M`Ta0k3o;3
+I85DgVLjXGhSkhXV8Tj4Q]1
 R3
 R4
 S1
@@ -142,7 +166,7 @@ R0
 R5
 R6
 R7
-L0 59
+L0 40
 R8
 r1
 !s85 0
@@ -171,23 +195,23 @@ R8
 r1
 !s85 0
 31
-R18
 R19
 R20
+R21
 !i113 1
 R12
 R13
 vtestbench
 R1
-R21
+R22
 !i10b 1
-!s100 1h=1Nli:lY]5WHV]n?Nbm1
-IX```n06ZF3`PPZ8b3o:hN0
+!s100 Acd<VQhT819CCK?47YO=V3
+IAl8Ugh>lK5G;_47S039160
 R3
 !s105 testbench_sv_unit
 S1
 R0
-w1517960772
+w1518021765
 8D:/Users/Dean/Documents/ECE 385/lab4_adders/testbench.sv
 FD:/Users/Dean/Documents/ECE 385/lab4_adders/testbench.sv
 L0 1
@@ -195,7 +219,7 @@ R8
 r1
 !s85 0
 31
-!s108 1517967270.312000
+!s108 1518021827.099000
 !s107 D:/Users/Dean/Documents/ECE 385/lab4_adders/testbench.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab4_adders|D:/Users/Dean/Documents/ECE 385/lab4_adders/testbench.sv|
 !i113 1

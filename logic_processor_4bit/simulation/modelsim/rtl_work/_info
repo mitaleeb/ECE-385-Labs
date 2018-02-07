@@ -10,7 +10,7 @@ cModel Technology
 Z0 dD:/Users/Dean/Documents/ECE 385/logic_processor_4bit/simulation/modelsim
 vcompute
 Z1 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
-Z2 !s110 1517969255
+Z2 !s110 1518021024
 !i10b 1
 !s100 aZ0KDKnfTN[lHh;ceiO9Q3
 I5Fc^a8O@fL]CC]=Uhf91n2
@@ -26,7 +26,7 @@ Z4 OV;L;10.3d;59
 r1
 !s85 0
 31
-!s108 1517969255.688000
+!s108 1518021024.843000
 !s107 D:/Users/Dean/Documents/ECE 385/logic_processor_4bit/compute.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/logic_processor_4bit|D:/Users/Dean/Documents/ECE 385/logic_processor_4bit/compute.sv|
 !i113 1
@@ -50,7 +50,7 @@ R4
 r1
 !s85 0
 31
-!s108 1517969255.594000
+!s108 1518021024.749000
 !s107 D:/Users/Dean/Documents/ECE 385/logic_processor_4bit/Control.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/logic_processor_4bit|D:/Users/Dean/Documents/ECE 385/logic_processor_4bit/Control.sv|
 !i113 1
@@ -74,7 +74,7 @@ R4
 r1
 !s85 0
 31
-!s108 1517969255.501000
+!s108 1518021024.655000
 !s107 D:/Users/Dean/Documents/ECE 385/logic_processor_4bit/HexDriver.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/logic_processor_4bit|D:/Users/Dean/Documents/ECE 385/logic_processor_4bit/HexDriver.sv|
 !i113 1
@@ -83,7 +83,7 @@ R6
 n@hex@driver
 vProcessor
 R1
-R2
+Z7 !s110 1518021025
 !i10b 1
 !s100 V>d?Ti8Dc4?RS0;B3ef>M0
 I5^>h2Th4W>^5gfEWV3UhT3
@@ -99,7 +99,7 @@ R4
 r1
 !s85 0
 31
-!s108 1517969255.860000
+!s108 1518021025.030000
 !s107 D:/Users/Dean/Documents/ECE 385/logic_processor_4bit/Processor.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/logic_processor_4bit|D:/Users/Dean/Documents/ECE 385/logic_processor_4bit/Processor.sv|
 !i113 1
@@ -124,7 +124,7 @@ R4
 r1
 !s85 0
 31
-!s108 1517969255.422000
+!s108 1518021024.577000
 !s107 D:/Users/Dean/Documents/ECE 385/logic_processor_4bit/Reg_4.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/logic_processor_4bit|D:/Users/Dean/Documents/ECE 385/logic_processor_4bit/Reg_4.sv|
 !i113 1
@@ -148,7 +148,7 @@ R4
 r1
 !s85 0
 31
-!s108 1517969255.782000
+!s108 1518021024.937000
 !s107 D:/Users/Dean/Documents/ECE 385/logic_processor_4bit/Register_unit.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/logic_processor_4bit|D:/Users/Dean/Documents/ECE 385/logic_processor_4bit/Register_unit.sv|
 !i113 1
@@ -172,7 +172,7 @@ R4
 r1
 !s85 0
 31
-!s108 1517969255.344000
+!s108 1518021024.499000
 !s107 D:/Users/Dean/Documents/ECE 385/logic_processor_4bit/Router.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/logic_processor_4bit|D:/Users/Dean/Documents/ECE 385/logic_processor_4bit/Router.sv|
 !i113 1
@@ -185,20 +185,20 @@ R2
 !s100 FloJaUP>]UNPcBERTmfU13
 I2njW60XRPPj:9mdCVOFam2
 R3
-Z7 !s105 Synchronizers_sv_unit
+Z8 !s105 Synchronizers_sv_unit
 S1
 R0
-Z8 w1473639385
-Z9 8D:/Users/Dean/Documents/ECE 385/logic_processor_4bit/Synchronizers.sv
-Z10 FD:/Users/Dean/Documents/ECE 385/logic_processor_4bit/Synchronizers.sv
+Z9 w1473639385
+Z10 8D:/Users/Dean/Documents/ECE 385/logic_processor_4bit/Synchronizers.sv
+Z11 FD:/Users/Dean/Documents/ECE 385/logic_processor_4bit/Synchronizers.sv
 L0 4
 R4
 r1
 !s85 0
 31
-Z11 !s108 1517969255.188000
-Z12 !s107 D:/Users/Dean/Documents/ECE 385/logic_processor_4bit/Synchronizers.sv|
-Z13 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/logic_processor_4bit|D:/Users/Dean/Documents/ECE 385/logic_processor_4bit/Synchronizers.sv|
+Z12 !s108 1518021024.421000
+Z13 !s107 D:/Users/Dean/Documents/ECE 385/logic_processor_4bit/Synchronizers.sv|
+Z14 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/logic_processor_4bit|D:/Users/Dean/Documents/ECE 385/logic_processor_4bit/Synchronizers.sv|
 !i113 1
 R5
 R6
@@ -209,20 +209,20 @@ R2
 !s100 QY6]=X?VaL]0ijJZ46B:40
 I?KinR9NF4oAE6KbK[>M8k0
 R3
-R7
+R8
 S1
 R0
-R8
 R9
 R10
+R11
 L0 18
 R4
 r1
 !s85 0
 31
-R11
 R12
 R13
+R14
 !i113 1
 R5
 R6
@@ -233,34 +233,34 @@ R2
 !s100 9dOQbTVGG6oj0DT9goc970
 Id;kPK:T4cg:H_ECfI?4P20
 R3
-R7
+R8
 S1
 R0
-R8
 R9
 R10
+R11
 L0 39
 R4
 r1
 !s85 0
 31
-R11
 R12
 R13
+R14
 !i113 1
 R5
 R6
 vtestbench_8
 R1
-R2
+R7
 !i10b 1
-!s100 Nfo6@=LCR<nCAg4?FMb[z2
-IANYli;9DA[S0[M`@jJ=U>2
+!s100 2IMSK0Zj_[Z2gLnWU4JdP1
+I4LQW^<alX7[Nmc]FD:oo93
 R3
 !s105 testbench_8_sv_unit
 S1
 R0
-w1517968872
+w1518020956
 8D:/Users/Dean/Documents/ECE 385/logic_processor_4bit/testbench_8.sv
 FD:/Users/Dean/Documents/ECE 385/logic_processor_4bit/testbench_8.sv
 L0 1
@@ -268,7 +268,7 @@ R4
 r1
 !s85 0
 31
-!s108 1517969255.954000
+!s108 1518021025.121000
 !s107 D:/Users/Dean/Documents/ECE 385/logic_processor_4bit/testbench_8.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/logic_processor_4bit|D:/Users/Dean/Documents/ECE 385/logic_processor_4bit/testbench_8.sv|
 !i113 1

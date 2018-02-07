@@ -15,7 +15,7 @@
 # 
 # vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab4_adders {D:/Users/Dean/Documents/ECE 385/lab4_adders/ripple_adder.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:34:29 on Feb 06,2018
+# Start time: 10:43:46 on Feb 07,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab4_adders" D:/Users/Dean/Documents/ECE 385/lab4_adders/ripple_adder.sv 
 # -- Compiling module ripple_adder
 # -- Compiling module four_bit_adder
@@ -23,64 +23,66 @@
 # 
 # Top level modules:
 # 	ripple_adder
-# End time: 19:34:29 on Feb 06,2018, Elapsed time: 0:00:00
+# End time: 10:43:46 on Feb 07,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab4_adders {D:/Users/Dean/Documents/ECE 385/lab4_adders/HexDriver.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:34:29 on Feb 06,2018
+# Start time: 10:43:46 on Feb 07,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab4_adders" D:/Users/Dean/Documents/ECE 385/lab4_adders/HexDriver.sv 
 # -- Compiling module HexDriver
 # 
 # Top level modules:
 # 	HexDriver
-# End time: 19:34:29 on Feb 06,2018, Elapsed time: 0:00:00
+# End time: 10:43:46 on Feb 07,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab4_adders {D:/Users/Dean/Documents/ECE 385/lab4_adders/carry_lookahead_adder.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:34:29 on Feb 06,2018
+# Start time: 10:43:46 on Feb 07,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab4_adders" D:/Users/Dean/Documents/ECE 385/lab4_adders/carry_lookahead_adder.sv 
 # -- Compiling module carry_lookahead_adder
+# -- Compiling module four_bit_cla
 # -- Compiling module prop_gen
 # 
 # Top level modules:
 # 	carry_lookahead_adder
-# End time: 19:34:29 on Feb 06,2018, Elapsed time: 0:00:00
+# End time: 10:43:46 on Feb 07,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab4_adders {D:/Users/Dean/Documents/ECE 385/lab4_adders/lab4_adders_toplevel.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:34:29 on Feb 06,2018
+# Start time: 10:43:46 on Feb 07,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab4_adders" D:/Users/Dean/Documents/ECE 385/lab4_adders/lab4_adders_toplevel.sv 
 # -- Compiling module lab4_adders_toplevel
 # 
 # Top level modules:
 # 	lab4_adders_toplevel
-# End time: 19:34:30 on Feb 06,2018, Elapsed time: 0:00:01
+# End time: 10:43:47 on Feb 07,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab4_adders {D:/Users/Dean/Documents/ECE 385/lab4_adders/testbench.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 19:34:30 on Feb 06,2018
+# Start time: 10:43:47 on Feb 07,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab4_adders" D:/Users/Dean/Documents/ECE 385/lab4_adders/testbench.sv 
 # -- Compiling module testbench
 # 
 # Top level modules:
 # 	testbench
-# End time: 19:34:30 on Feb 06,2018, Elapsed time: 0:00:00
+# End time: 10:43:47 on Feb 07,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  testbench
 # vsim -gui "+altera" -l msim_transcript -do "lab4_adders_run_msim_rtl_verilog.do" 
-# Start time: 19:34:30 on Feb 06,2018
+# Start time: 10:43:47 on Feb 07,2018
 # Loading sv_std.std
 # Loading work.testbench
 # Loading work.lab4_adders_toplevel
 # Loading work.carry_lookahead_adder
-# Loading work.full_adder
+# Loading work.four_bit_cla
 # Loading work.prop_gen
+# Loading work.full_adder
 # Loading work.HexDriver
-# ** Warning: (vsim-3015) D:/Users/Dean/Documents/ECE 385/lab4_adders/carry_lookahead_adder.sv(21): [PCDPC] - Port size (1) does not match connection size (32) for port 'z'. The port definition is at: D:/Users/Dean/Documents/ECE 385/lab4_adders/ripple_adder.sv(37).
+# ** Warning: (vsim-3015) D:/Users/Dean/Documents/ECE 385/lab4_adders/carry_lookahead_adder.sv(17): [PCDPC] - Port size (1) does not match connection size (32) for port 'cinn'. The port definition is at: D:/Users/Dean/Documents/ECE 385/lab4_adders/carry_lookahead_adder.sv(24).
 # 
-#         Region: /testbench/tp/carry_lookahead_adder_inst/FA0
+#         Region: /testbench/tp/carry_lookahead_adder_inst/FCLA1
 # 
 # add wave *
 # view structure
@@ -90,5 +92,5 @@
 # run -all
 # Break key hit
 # Simulation stop requested.
-# End time: 19:38:47 on Feb 06,2018, Elapsed time: 0:04:17
+# End time: 10:45:31 on Feb 07,2018, Elapsed time: 0:01:44
 # Errors: 0, Warnings: 1

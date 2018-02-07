@@ -50,7 +50,7 @@ module testbench();
 		#4 LoadB = 0;
 			SW = 16'h0022;
 		#2 LoadB = 1;
-			SW = 16'h0003;
+			SW = 16'h0022;
 		#2 Run = 0;
 		#10;
 		

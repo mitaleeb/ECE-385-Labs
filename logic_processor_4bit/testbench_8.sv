@@ -20,7 +20,7 @@ logic [6:0] AhexL,
 		 BhexU; 
 
 // To store expected results
-logic [7:0] ans_1a, ans_2b;
+logic [7:0] ans_1a, ans_2b, ans_3b, ans_4a, ans_5a, ans_6b, ans_7b, ans_8b;
 				
 // A counter to count the instances where simulation results
 // do no match with expected results
@@ -95,6 +95,87 @@ R = 2'b10;
 	 ErrorCnt++;
     if (Bval != ans_1a)
 	 ErrorCnt++;
+
+#10 Execute = 1;
+	 ans_3b = (ans_2b & ans_1a);
+	 F = 3'b000;
+	 R = 2'b01;
+#2 Execute = 0;
+#22 Execute = 1;
+	if (Bval != ans_3b)
+		ErrorCnt++;
+	if (Aval != ans_2b)
+		ErrorCnt++;
+
+// OR test case
+#10 Execute = 1;
+	 ans_4a = (ans_3b | ans_2b);
+	 F = 3'b001;
+	 R = 2'b10;
+#2 Execute = 0;
+#22 Execute = 1;
+	if (Bval != ans_3b)
+		ErrorCnt++;
+	if (Aval != ans_4a)
+		ErrorCnt++;
+
+// NOR
+#10 Execute = 1;
+	 ans_5a = ~(ans_3b | ans_4a);
+	 F = 3'b101;
+	 R = 2'b10;
+#2 Execute = 0;
+#22 Execute = 1;
+	if (Bval != ans_3b)
+		ErrorCnt++;
+	if (Aval != ans_5a)
+		ErrorCnt++;
+// NAND		
+#10 Execute = 1;
+	 ans_6b = ~(ans_3b & ans_5a);
+	 F = 3'b100;
+	 R = 2'b01;
+#2 Execute = 0;
+#22 Execute = 1;
+	if (Bval != ans_6b)
+		ErrorCnt++;
+	if (Aval != ans_5a)
+		ErrorCnt++;
+
+// 0000
+#10 Execute = 1;
+	 ans_7b = 8'b00000000;
+	 F = 3'b111;
+	 R = 2'b01;
+#2 Execute = 0;
+#22 Execute = 1;
+	if (Bval != ans_7b)
+		ErrorCnt++;
+	if (Aval != ans_5a)
+		ErrorCnt++;
+
+// 1111
+#10 Execute = 1;
+	 ans_8b = 8'b11111111;
+	 F = 3'b011;
+	 R = 2'b01;
+#2 Execute = 0;
+#22 Execute = 1;
+	if (Bval != ans_8b)
+		ErrorCnt++;
+	if (Aval != ans_5a)
+		ErrorCnt++;
+		
+// stay same
+#10 Execute = 1;
+	 F = 3'b000;
+	 R = 2'b00;
+#2 Execute = 0;
+#22 Execute = 1;
+	if (Bval != ans_8b)
+		ErrorCnt++;
+	if (Aval != ans_5a)
+		ErrorCnt++;
 
 
 if (ErrorCnt == 0)
