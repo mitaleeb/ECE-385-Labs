@@ -1,0 +1,22 @@
+module testbench();
+
+	timeunit 10ns;
+	timeprecision 1ns;
+	
+  logic           Clk;        // 50MHz clock is only used to get timing estimate data
+  logic           Reset;      // From push-button 0.  Remember the button is active low (0 when pressed)
+  logic           LoadB;      // From push-button 1
+  logic           Run;        // From push-button 3.
+  logic[15:0]     SW;         // From slider switches
+ 
+ // all outputs are registered
+  logic           CO;         // Carry-out.  Goes to the green LED to the left of the hex displays.
+  logic[15:0]     Sum;        // Goes to the red LEDs.  You need to press "Run" before the sum shows up here.
+  logic[6:0]      Ahex0;      // Hex drivers display both inputs to the adder.
+ logic[6:0]      Ahex1;
+  logic[6:0]      Ahex2;
+  logic[6:0]      Ahex3;
+  logic[6:0]      Bhex0;
+  logic[6:0]      Bhex1;
+  logic[6:0]      Bhex2;
+logic[6:0]      Bhex3;
