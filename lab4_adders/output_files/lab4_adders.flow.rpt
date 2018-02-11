@@ -1,5 +1,5 @@
 Flow report for lab4_adders
-Wed Feb 07 10:46:22 2018
+Sun Feb 11 17:26:05 2018
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -41,15 +41,15 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Wed Feb 07 10:46:22 2018      ;
+; Flow Status                        ; Successful - Sun Feb 11 17:26:05 2018      ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                      ; lab4_adders                                ;
 ; Top-level Entity Name              ; lab4_adders_toplevel                       ;
 ; Family                             ; Cyclone IV E                               ;
 ; Device                             ; EP4CE115F29C7                              ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 108 / 114,480 ( < 1 % )                    ;
-;     Total combinational functions  ; 92 / 114,480 ( < 1 % )                     ;
+; Total logic elements               ; 134 / 114,480 ( < 1 % )                    ;
+;     Total combinational functions  ; 129 / 114,480 ( < 1 % )                    ;
 ;     Dedicated logic registers      ; 105 / 114,480 ( < 1 % )                    ;
 ; Total registers                    ; 105                                        ;
 ; Total pins                         ; 93 / 529 ( 18 % )                          ;
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/07/2018 10:45:40 ;
+; Start date & time ; 02/11/2018 17:25:21 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lab4_adders         ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ agreement for further details.
 +--------------------------------------+---------------------------------------+---------------+----------------------+----------------+
 ; Assignment Name                      ; Value                                 ; Default Value ; Entity Name          ; Section Id     ;
 +--------------------------------------+---------------------------------------+---------------+----------------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 141812760169519.151802194007152       ; --            ; --                   ; --             ;
+; COMPILER_SIGNATURE_ID                ; 141812760169519.151839152107592       ; --            ; --                   ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --                   ; testbench      ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; testbench                             ; --            ; --                   ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                     ; --            ; --                   ; eda_simulation ;
@@ -104,12 +104,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:10     ; 1.0                     ; 716 MB              ; 00:00:24                           ;
-; Fitter                    ; 00:00:17     ; 1.0                     ; 1214 MB             ; 00:00:17                           ;
-; Assembler                 ; 00:00:05     ; 1.0                     ; 667 MB              ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 812 MB              ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 634 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:35     ; --                      ; --                  ; 00:00:48                           ;
+; Analysis & Synthesis      ; 00:00:10     ; 1.0                     ; 716 MB              ; 00:00:23                           ;
+; Fitter                    ; 00:00:19     ; 1.0                     ; 1215 MB             ; 00:00:19                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 669 MB              ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 810 MB              ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 635 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:37     ; --                      ; --                  ; 00:00:49                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

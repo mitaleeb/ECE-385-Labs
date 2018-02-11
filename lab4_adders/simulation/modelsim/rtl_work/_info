@@ -10,15 +10,15 @@ cModel Technology
 Z0 dD:/Users/Dean/Documents/ECE 385/lab4_adders/simulation/modelsim
 vcarry_lookahead_adder
 Z1 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
-Z2 !s110 1518021826
+Z2 !s110 1518391248
 !i10b 1
-!s100 o^hI[BbJBdUa4?^iPd^E42
-I4dRH<U;8N06k9`kN:[mWo3
+!s100 hjK3=hC6L9h8`4@^hF<OW2
+I8Rl9LQl8aX_d_UC7fQT790
 Z3 V`JN@9S9cnhjKRR_L]QIcM3
 Z4 !s105 carry_lookahead_adder_sv_unit
 S1
 R0
-Z5 w1518021683
+Z5 w1518391194
 Z6 8D:/Users/Dean/Documents/ECE 385/lab4_adders/carry_lookahead_adder.sv
 Z7 FD:/Users/Dean/Documents/ECE 385/lab4_adders/carry_lookahead_adder.sv
 L0 1
@@ -26,7 +26,7 @@ Z8 OV;L;10.3d;59
 r1
 !s85 0
 31
-Z9 !s108 1518021826.724000
+Z9 !s108 1518391248.056000
 Z10 !s107 D:/Users/Dean/Documents/ECE 385/lab4_adders/carry_lookahead_adder.sv|
 Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab4_adders|D:/Users/Dean/Documents/ECE 385/lab4_adders/carry_lookahead_adder.sv|
 !i113 1
@@ -34,23 +34,23 @@ Z12 o-sv -work work
 Z13 !s92 -sv -work work {+incdir+D:/Users/Dean/Documents/ECE 385/lab4_adders}
 vfour_bit_adder
 R1
-R2
+Z14 !s110 1518391247
 !i10b 1
 !s100 ;l5lN4VIiUBAzCdhInjDh2
 IY1`58n`MMQi?MUFo?@H8E3
 R3
-Z14 !s105 ripple_adder_sv_unit
+Z15 !s105 ripple_adder_sv_unit
 S1
 R0
-Z15 w1517894851
-Z16 8D:/Users/Dean/Documents/ECE 385/lab4_adders/ripple_adder.sv
-Z17 FD:/Users/Dean/Documents/ECE 385/lab4_adders/ripple_adder.sv
-Z18 L0 24
+Z16 w1517894851
+Z17 8D:/Users/Dean/Documents/ECE 385/lab4_adders/ripple_adder.sv
+Z18 FD:/Users/Dean/Documents/ECE 385/lab4_adders/ripple_adder.sv
+L0 24
 R8
 r1
 !s85 0
 31
-Z19 !s108 1518021826.427000
+Z19 !s108 1518391247.196000
 Z20 !s107 D:/Users/Dean/Documents/ECE 385/lab4_adders/ripple_adder.sv|
 Z21 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab4_adders|D:/Users/Dean/Documents/ECE 385/lab4_adders/ripple_adder.sv|
 !i113 1
@@ -60,8 +60,8 @@ vfour_bit_cla
 R1
 R2
 !i10b 1
-!s100 L[6:T^Tf7z@GEn8=eC>0V2
-I@CTi2QXbPC:<Q^fKMNbzk2
+!s100 HH8RKMZV[mL[hVP0D@9Va1
+IF?G7zI`n7mVzjRoDQQB]92
 R3
 R4
 S1
@@ -69,7 +69,7 @@ R0
 R5
 R6
 R7
-R18
+Z22 L0 37
 R8
 r1
 !s85 0
@@ -82,18 +82,18 @@ R12
 R13
 vfull_adder
 R1
-R2
+R14
 !i10b 1
 !s100 PfDi2oj]Oe:IH>?S<>AVE0
 I`JNK1^;;M>8j>W=M2ZlLL0
 R3
-R14
+R15
 S1
 R0
-R15
 R16
 R17
-L0 37
+R18
+R22
 R8
 r1
 !s85 0
@@ -106,7 +106,7 @@ R12
 R13
 vHexDriver
 R1
-R2
+R14
 !i10b 1
 !s100 A89PE:z4001FXEa5_3CF:0
 IK=:D7k1=GMCWW@o;CO5K^0
@@ -122,7 +122,7 @@ R8
 r1
 !s85 0
 31
-!s108 1518021826.645000
+!s108 1518391247.925000
 !s107 D:/Users/Dean/Documents/ECE 385/lab4_adders/HexDriver.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab4_adders|D:/Users/Dean/Documents/ECE 385/lab4_adders/HexDriver.sv|
 !i113 1
@@ -131,7 +131,7 @@ R13
 n@hex@driver
 vlab4_adders_toplevel
 R1
-Z22 !s110 1518021827
+R2
 !i10b 1
 !s100 Yj<aA_6UmXE?3ld@Lh1?11
 IjIeRRN[f>Pm;@?:kn;nLk0
@@ -147,18 +147,18 @@ R8
 r1
 !s85 0
 31
-!s108 1518021827.005000
+!s108 1518391248.157000
 !s107 D:/Users/Dean/Documents/ECE 385/lab4_adders/lab4_adders_toplevel.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab4_adders|D:/Users/Dean/Documents/ECE 385/lab4_adders/lab4_adders_toplevel.sv|
 !i113 1
 R12
 R13
-vprop_gen
+vPG
 R1
 R2
 !i10b 1
-!s100 =jgMR`2h@=85M`Ta0k3o;3
-I85DgVLjXGhSkhXV8Tj4Q]1
+!s100 aQmlXl=BTb2@@8`JbYM]B1
+I<6O6hU`deAV7OPLh6X?^72
 R3
 R4
 S1
@@ -166,7 +166,7 @@ R0
 R5
 R6
 R7
-L0 40
+L0 55
 R8
 r1
 !s85 0
@@ -177,19 +177,20 @@ R11
 !i113 1
 R12
 R13
+n@p@g
 vripple_adder
 R1
-R2
+R14
 !i10b 1
 !s100 1PGPAG]1Yck?ARH8S@<Yb2
 Io1K>`GgP2Y1<n]WL<fRgB1
 R3
-R14
+R15
 S1
 R0
-R15
 R16
 R17
+R18
 L0 1
 R8
 r1
@@ -203,7 +204,7 @@ R12
 R13
 vtestbench
 R1
-R22
+R2
 !i10b 1
 !s100 Acd<VQhT819CCK?47YO=V3
 IAl8Ugh>lK5G;_47S039160
@@ -219,7 +220,7 @@ R8
 r1
 !s85 0
 31
-!s108 1518021827.099000
+!s108 1518391248.256000
 !s107 D:/Users/Dean/Documents/ECE 385/lab4_adders/testbench.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab4_adders|D:/Users/Dean/Documents/ECE 385/lab4_adders/testbench.sv|
 !i113 1
