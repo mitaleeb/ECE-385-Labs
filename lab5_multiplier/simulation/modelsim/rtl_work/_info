@@ -10,7 +10,7 @@ cModel Technology
 Z0 dD:/Users/Dean/Documents/ECE 385/lab5_multiplier/simulation/modelsim
 vADD_SUB9
 Z1 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
-Z2 !s110 1518576694
+Z2 !s110 1518620299
 !i10b 1
 !s100 30jLEz>QDj>N<OXE5mb?G0
 I4m2LhzS3D?i?5aQfdHf@I0
@@ -26,7 +26,7 @@ Z4 OV;L;10.3d;59
 r1
 !s85 0
 31
-!s108 1518576694.401000
+!s108 1518620299.286000
 !s107 D:/Users/Dean/Documents/ECE 385/lab5_multiplier/ADD_SUB9.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier|D:/Users/Dean/Documents/ECE 385/lab5_multiplier/ADD_SUB9.sv|
 !i113 1
@@ -51,7 +51,7 @@ R4
 r1
 !s85 0
 31
-!s108 1518576694.485000
+!s108 1518620299.364000
 !s107 D:/Users/Dean/Documents/ECE 385/lab5_multiplier/control.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier|D:/Users/Dean/Documents/ECE 385/lab5_multiplier/control.sv|
 !i113 1
@@ -75,7 +75,7 @@ R4
 r1
 !s85 0
 31
-Z11 !s108 1518576694.185000
+Z11 !s108 1518620298.442000
 Z12 !s107 D:/Users/Dean/Documents/ECE 385/lab5_multiplier/four_bit_adder.sv|
 Z13 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier|D:/Users/Dean/Documents/ECE 385/lab5_multiplier/four_bit_adder.sv|
 !i113 1
@@ -123,7 +123,7 @@ R4
 r1
 !s85 0
 31
-!s108 1518576694.318000
+!s108 1518620299.130000
 !s107 D:/Users/Dean/Documents/ECE 385/lab5_multiplier/HexDriver.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier|D:/Users/Dean/Documents/ECE 385/lab5_multiplier/HexDriver.sv|
 !i113 1
@@ -148,7 +148,7 @@ R4
 r1
 !s85 0
 31
-!s108 1518576694.794000
+!s108 1518620299.661000
 !s107 D:/Users/Dean/Documents/ECE 385/lab5_multiplier/lab5_multiplier.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier|D:/Users/Dean/Documents/ECE 385/lab5_multiplier/lab5_multiplier.sv|
 !i113 1
@@ -172,7 +172,7 @@ R4
 r1
 !s85 0
 31
-Z18 !s108 1518576694.577000
+Z18 !s108 1518620299.458000
 Z19 !s107 D:/Users/Dean/Documents/ECE 385/lab5_multiplier/reg8.sv|
 Z20 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier|D:/Users/Dean/Documents/ECE 385/lab5_multiplier/reg8.sv|
 !i113 1
@@ -220,7 +220,7 @@ R4
 r1
 !s85 0
 31
-Z25 !s108 1518576694.672000
+Z25 !s108 1518620299.552000
 Z26 !s107 D:/Users/Dean/Documents/ECE 385/lab5_multiplier/Synchronizers.sv|
 Z27 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier|D:/Users/Dean/Documents/ECE 385/lab5_multiplier/Synchronizers.sv|
 !i113 1
@@ -292,7 +292,7 @@ R4
 r1
 !s85 0
 31
-!s108 1518576694.884000
+!s108 1518620299.786000
 !s107 D:/Users/Dean/Documents/ECE 385/lab5_multiplier/testbench.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier|D:/Users/Dean/Documents/ECE 385/lab5_multiplier/testbench.sv|
 !i113 1

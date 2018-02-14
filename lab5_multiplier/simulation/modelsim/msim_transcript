@@ -15,59 +15,59 @@
 # 
 # vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab5_multiplier {D:/Users/Dean/Documents/ECE 385/lab5_multiplier/four_bit_adder.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 20:51:34 on Feb 13,2018
+# Start time: 08:58:18 on Feb 14,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier" D:/Users/Dean/Documents/ECE 385/lab5_multiplier/four_bit_adder.sv 
 # -- Compiling module four_bit_adder
 # -- Compiling module full_adder
 # 
 # Top level modules:
 # 	four_bit_adder
-# End time: 20:51:34 on Feb 13,2018, Elapsed time: 0:00:00
+# End time: 08:58:19 on Feb 14,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab5_multiplier {D:/Users/Dean/Documents/ECE 385/lab5_multiplier/HexDriver.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 20:51:34 on Feb 13,2018
+# Start time: 08:58:19 on Feb 14,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier" D:/Users/Dean/Documents/ECE 385/lab5_multiplier/HexDriver.sv 
 # -- Compiling module HexDriver
 # 
 # Top level modules:
 # 	HexDriver
-# End time: 20:51:34 on Feb 13,2018, Elapsed time: 0:00:00
+# End time: 08:58:19 on Feb 14,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab5_multiplier {D:/Users/Dean/Documents/ECE 385/lab5_multiplier/ADD_SUB9.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 20:51:34 on Feb 13,2018
+# Start time: 08:58:19 on Feb 14,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier" D:/Users/Dean/Documents/ECE 385/lab5_multiplier/ADD_SUB9.sv 
 # -- Compiling module ADD_SUB9
 # 
 # Top level modules:
 # 	ADD_SUB9
-# End time: 20:51:34 on Feb 13,2018, Elapsed time: 0:00:00
+# End time: 08:58:19 on Feb 14,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab5_multiplier {D:/Users/Dean/Documents/ECE 385/lab5_multiplier/control.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 20:51:34 on Feb 13,2018
+# Start time: 08:58:19 on Feb 14,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier" D:/Users/Dean/Documents/ECE 385/lab5_multiplier/control.sv 
 # -- Compiling module control
 # 
 # Top level modules:
 # 	control
-# End time: 20:51:34 on Feb 13,2018, Elapsed time: 0:00:00
+# End time: 08:58:19 on Feb 14,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab5_multiplier {D:/Users/Dean/Documents/ECE 385/lab5_multiplier/reg8.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 20:51:34 on Feb 13,2018
+# Start time: 08:58:19 on Feb 14,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier" D:/Users/Dean/Documents/ECE 385/lab5_multiplier/reg8.sv 
 # -- Compiling module register_unit
 # -- Compiling module reg_8
 # 
 # Top level modules:
 # 	register_unit
-# End time: 20:51:34 on Feb 13,2018, Elapsed time: 0:00:00
+# End time: 08:58:19 on Feb 14,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab5_multiplier {D:/Users/Dean/Documents/ECE 385/lab5_multiplier/Synchronizers.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 20:51:34 on Feb 13,2018
+# Start time: 08:58:19 on Feb 14,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier" D:/Users/Dean/Documents/ECE 385/lab5_multiplier/Synchronizers.sv 
 # -- Compiling module sync
 # -- Compiling module sync_r0
@@ -77,33 +77,33 @@
 # 	sync
 # 	sync_r0
 # 	sync_r1
-# End time: 20:51:34 on Feb 13,2018, Elapsed time: 0:00:00
+# End time: 08:58:19 on Feb 14,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab5_multiplier {D:/Users/Dean/Documents/ECE 385/lab5_multiplier/lab5_multiplier.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 20:51:34 on Feb 13,2018
+# Start time: 08:58:19 on Feb 14,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier" D:/Users/Dean/Documents/ECE 385/lab5_multiplier/lab5_multiplier.sv 
 # -- Compiling module lab5_multiplier
 # 
 # Top level modules:
 # 	lab5_multiplier
-# End time: 20:51:34 on Feb 13,2018, Elapsed time: 0:00:00
+# End time: 08:58:19 on Feb 14,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab5_multiplier {D:/Users/Dean/Documents/ECE 385/lab5_multiplier/testbench.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 20:51:34 on Feb 13,2018
+# Start time: 08:58:19 on Feb 14,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier" D:/Users/Dean/Documents/ECE 385/lab5_multiplier/testbench.sv 
 # -- Compiling module testbench
 # 
 # Top level modules:
 # 	testbench
-# End time: 20:51:34 on Feb 13,2018, Elapsed time: 0:00:00
+# End time: 08:58:19 on Feb 14,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  testbench
 # vsim -gui "+altera" -l msim_transcript -do "lab5_multiplier_run_msim_rtl_verilog.do" 
-# Start time: 20:51:35 on Feb 13,2018
+# Start time: 08:58:20 on Feb 14,2018
 # Loading sv_std.std
 # Loading work.testbench
 # Loading work.lab5_multiplier
@@ -128,6 +128,6 @@
 # 
 # Success!
 # Break key hit
-# Break in NamedBeginStat CLOCK_GEN at D:/Users/Dean/Documents/ECE 385/lab5_multiplier/testbench.sv line 28
-# End time: 20:53:05 on Feb 13,2018, Elapsed time: 0:01:30
+# Break in Module sync at D:/Users/Dean/Documents/ECE 385/lab5_multiplier/Synchronizers.sv line 9
+# End time: 09:00:38 on Feb 14,2018, Elapsed time: 0:02:18
 # Errors: 0, Warnings: 2
