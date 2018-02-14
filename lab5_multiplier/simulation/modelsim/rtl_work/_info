@@ -1,0 +1,300 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Users/Dean/Documents/ECE 385/lab5_multiplier/simulation/modelsim
+vADD_SUB9
+Z1 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
+Z2 !s110 1518576694
+!i10b 1
+!s100 30jLEz>QDj>N<OXE5mb?G0
+I4m2LhzS3D?i?5aQfdHf@I0
+Z3 V`JN@9S9cnhjKRR_L]QIcM3
+!s105 ADD_SUB9_sv_unit
+S1
+R0
+w1518572114
+8D:/Users/Dean/Documents/ECE 385/lab5_multiplier/ADD_SUB9.sv
+FD:/Users/Dean/Documents/ECE 385/lab5_multiplier/ADD_SUB9.sv
+L0 1
+Z4 OV;L;10.3d;59
+r1
+!s85 0
+31
+!s108 1518576694.401000
+!s107 D:/Users/Dean/Documents/ECE 385/lab5_multiplier/ADD_SUB9.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier|D:/Users/Dean/Documents/ECE 385/lab5_multiplier/ADD_SUB9.sv|
+!i113 1
+Z5 o-sv -work work
+Z6 !s92 -sv -work work {+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier}
+n@a@d@d_@s@u@b9
+vcontrol
+R1
+R2
+!i10b 1
+!s100 1P^m[a=L2Pda?@`9aFRPC1
+INe2bA7d[2D6KGdbeIm4dL3
+R3
+!s105 control_sv_unit
+S1
+R0
+w1518573037
+8D:/Users/Dean/Documents/ECE 385/lab5_multiplier/control.sv
+FD:/Users/Dean/Documents/ECE 385/lab5_multiplier/control.sv
+L0 3
+R4
+r1
+!s85 0
+31
+!s108 1518576694.485000
+!s107 D:/Users/Dean/Documents/ECE 385/lab5_multiplier/control.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier|D:/Users/Dean/Documents/ECE 385/lab5_multiplier/control.sv|
+!i113 1
+R5
+R6
+vfour_bit_adder
+R1
+R2
+!i10b 1
+!s100 ?99ghe>JD0eZkg75KAG2Z2
+I?N=f^?WJGQTZZ]l@BBmNC0
+R3
+Z7 !s105 four_bit_adder_sv_unit
+S1
+R0
+Z8 w1518398712
+Z9 8D:/Users/Dean/Documents/ECE 385/lab5_multiplier/four_bit_adder.sv
+Z10 FD:/Users/Dean/Documents/ECE 385/lab5_multiplier/four_bit_adder.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z11 !s108 1518576694.185000
+Z12 !s107 D:/Users/Dean/Documents/ECE 385/lab5_multiplier/four_bit_adder.sv|
+Z13 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier|D:/Users/Dean/Documents/ECE 385/lab5_multiplier/four_bit_adder.sv|
+!i113 1
+R5
+R6
+vfull_adder
+R1
+R2
+!i10b 1
+!s100 Tgd7S0aRa?CoS:G;J:?i43
+ILZdm7U3T_bNBW<G=CHSEo0
+R3
+R7
+S1
+R0
+R8
+R9
+R10
+L0 14
+R4
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 1
+R5
+R6
+vHexDriver
+R1
+R2
+!i10b 1
+!s100 A89PE:z4001FXEa5_3CF:0
+I?mRH@]Tg42i@DKW@aVZIY3
+R3
+!s105 HexDriver_sv_unit
+S1
+R0
+w1518394258
+8D:/Users/Dean/Documents/ECE 385/lab5_multiplier/HexDriver.sv
+FD:/Users/Dean/Documents/ECE 385/lab5_multiplier/HexDriver.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1518576694.318000
+!s107 D:/Users/Dean/Documents/ECE 385/lab5_multiplier/HexDriver.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier|D:/Users/Dean/Documents/ECE 385/lab5_multiplier/HexDriver.sv|
+!i113 1
+R5
+R6
+n@hex@driver
+vlab5_multiplier
+R1
+R2
+!i10b 1
+!s100 <]ggP:N`13Ma>dKB>@PmS2
+I<2mK6[eo6NGVF@STPVJb]2
+R3
+!s105 lab5_multiplier_sv_unit
+S1
+R0
+w1518573455
+8D:/Users/Dean/Documents/ECE 385/lab5_multiplier/lab5_multiplier.sv
+FD:/Users/Dean/Documents/ECE 385/lab5_multiplier/lab5_multiplier.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1518576694.794000
+!s107 D:/Users/Dean/Documents/ECE 385/lab5_multiplier/lab5_multiplier.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier|D:/Users/Dean/Documents/ECE 385/lab5_multiplier/lab5_multiplier.sv|
+!i113 1
+R5
+R6
+vreg_8
+R1
+R2
+!i10b 1
+!s100 =mMFF:J:]1f[W0z7UTd^k0
+ICgW=e8=<A4Mo<=Pz1hiE91
+R3
+Z14 !s105 reg8_sv_unit
+S1
+R0
+Z15 w1518500332
+Z16 8D:/Users/Dean/Documents/ECE 385/lab5_multiplier/reg8.sv
+Z17 FD:/Users/Dean/Documents/ECE 385/lab5_multiplier/reg8.sv
+L0 26
+R4
+r1
+!s85 0
+31
+Z18 !s108 1518576694.577000
+Z19 !s107 D:/Users/Dean/Documents/ECE 385/lab5_multiplier/reg8.sv|
+Z20 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier|D:/Users/Dean/Documents/ECE 385/lab5_multiplier/reg8.sv|
+!i113 1
+R5
+R6
+vregister_unit
+R1
+R2
+!i10b 1
+!s100 ;zI?m]?SRW02:];h8>:][0
+IgEXifmQEk1>c0Y]J^@=>>2
+R3
+R14
+S1
+R0
+R15
+R16
+R17
+L0 1
+R4
+r1
+!s85 0
+31
+R18
+R19
+R20
+!i113 1
+R5
+R6
+vsync
+R1
+R2
+!i10b 1
+!s100 FloJaUP>]UNPcBERTmfU13
+I`jC5I^12baR;TzEFoR_bm3
+R3
+Z21 !s105 Synchronizers_sv_unit
+S1
+R0
+Z22 w1518480143
+Z23 8D:/Users/Dean/Documents/ECE 385/lab5_multiplier/Synchronizers.sv
+Z24 FD:/Users/Dean/Documents/ECE 385/lab5_multiplier/Synchronizers.sv
+L0 4
+R4
+r1
+!s85 0
+31
+Z25 !s108 1518576694.672000
+Z26 !s107 D:/Users/Dean/Documents/ECE 385/lab5_multiplier/Synchronizers.sv|
+Z27 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier|D:/Users/Dean/Documents/ECE 385/lab5_multiplier/Synchronizers.sv|
+!i113 1
+R5
+R6
+vsync_r0
+R1
+R2
+!i10b 1
+!s100 QY6]=X?VaL]0ijJZ46B:40
+I@jocJ@Yd6;iBQWVo<V=Ca3
+R3
+R21
+S1
+R0
+R22
+R23
+R24
+L0 18
+R4
+r1
+!s85 0
+31
+R25
+R26
+R27
+!i113 1
+R5
+R6
+vsync_r1
+R1
+R2
+!i10b 1
+!s100 9dOQbTVGG6oj0DT9goc970
+IJ7lbZ99U_m;FVoFQ1INT<2
+R3
+R21
+S1
+R0
+R22
+R23
+R24
+L0 39
+R4
+r1
+!s85 0
+31
+R25
+R26
+R27
+!i113 1
+R5
+R6
+vtestbench
+R1
+R2
+!i10b 1
+!s100 5WoPjABJUZn[606Ke;fFf0
+I8e@F@F`f^BTc6>^2@^:An2
+R3
+!s105 testbench_sv_unit
+S1
+R0
+w1518576638
+8D:/Users/Dean/Documents/ECE 385/lab5_multiplier/testbench.sv
+FD:/Users/Dean/Documents/ECE 385/lab5_multiplier/testbench.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1518576694.884000
+!s107 D:/Users/Dean/Documents/ECE 385/lab5_multiplier/testbench.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Users/Dean/Documents/ECE 385/lab5_multiplier|D:/Users/Dean/Documents/ECE 385/lab5_multiplier/testbench.sv|
+!i113 1
+R5
+R6

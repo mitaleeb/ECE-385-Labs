@@ -1,0 +1,8 @@
+
+State Machine - |lab5_multiplier|control:control_unit|curr_state
+Name curr_state.halt_state curr_state.decision_state curr_state.shift_state curr_state.add_state curr_state.idle_state 
+curr_state.idle_state 0 0 0 0 0 
+curr_state.add_state 0 0 0 1 1 
+curr_state.shift_state 0 0 1 0 1 
+curr_state.decision_state 0 1 0 0 1 
+curr_state.halt_state 1 0 0 0 1 

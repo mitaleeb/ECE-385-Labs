@@ -1,0 +1,5 @@
+module control
+(
+	input logic Clk, Reset, ClearA_LoadB, Run, 
+	output logic Shift, Add, Subtract,
+);
