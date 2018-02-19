@@ -1,0 +1,113 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'slc3:my_slc|ISDU:state_controller|State.S_18'
+Slack : -19.930
+TNS   : -183.454
+
+Type  : Slow 1200mV 85C Model Setup 'slc3:my_slc|ISDU:state_controller|State.S_35'
+Slack : -5.440
+TNS   : -69.271
+
+Type  : Slow 1200mV 85C Model Setup 'Clk'
+Slack : -4.427
+TNS   : -69.706
+
+Type  : Slow 1200mV 85C Model Hold 'Clk'
+Slack : 0.386
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'slc3:my_slc|ISDU:state_controller|State.S_35'
+Slack : 0.467
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'slc3:my_slc|ISDU:state_controller|State.S_18'
+Slack : 0.733
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Clk'
+Slack : -3.000
+TNS   : -53.115
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'slc3:my_slc|ISDU:state_controller|State.S_35'
+Slack : 0.422
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'slc3:my_slc|ISDU:state_controller|State.S_18'
+Slack : 0.460
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'slc3:my_slc|ISDU:state_controller|State.S_18'
+Slack : -17.998
+TNS   : -167.425
+
+Type  : Slow 1200mV 0C Model Setup 'slc3:my_slc|ISDU:state_controller|State.S_35'
+Slack : -4.870
+TNS   : -61.192
+
+Type  : Slow 1200mV 0C Model Setup 'Clk'
+Slack : -3.912
+TNS   : -60.607
+
+Type  : Slow 1200mV 0C Model Hold 'Clk'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'slc3:my_slc|ISDU:state_controller|State.S_35'
+Slack : 0.528
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'slc3:my_slc|ISDU:state_controller|State.S_18'
+Slack : 0.666
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Clk'
+Slack : -3.000
+TNS   : -53.115
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'slc3:my_slc|ISDU:state_controller|State.S_18'
+Slack : 0.389
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'slc3:my_slc|ISDU:state_controller|State.S_35'
+Slack : 0.457
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'slc3:my_slc|ISDU:state_controller|State.S_18'
+Slack : -9.029
+TNS   : -82.765
+
+Type  : Fast 1200mV 0C Model Setup 'slc3:my_slc|ISDU:state_controller|State.S_35'
+Slack : -2.230
+TNS   : -26.309
+
+Type  : Fast 1200mV 0C Model Setup 'Clk'
+Slack : -2.031
+TNS   : -30.573
+
+Type  : Fast 1200mV 0C Model Hold 'Clk'
+Slack : 0.130
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'slc3:my_slc|ISDU:state_controller|State.S_18'
+Slack : 0.148
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'slc3:my_slc|ISDU:state_controller|State.S_35'
+Slack : 0.356
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Clk'
+Slack : -3.000
+TNS   : -44.528
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'slc3:my_slc|ISDU:state_controller|State.S_18'
+Slack : 0.322
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'slc3:my_slc|ISDU:state_controller|State.S_35'
+Slack : 0.346
+TNS   : 0.000
+
+------------------------------------------------------------
