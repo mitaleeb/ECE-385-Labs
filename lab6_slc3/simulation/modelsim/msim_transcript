@@ -15,87 +15,87 @@
 # 
 # vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/HexDriver.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 20:18:17 on Feb 18,2018
+# Start time: 19:39:28 on Feb 19,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab6_slc3" D:/Users/Dean/Documents/ECE 385/lab6_slc3/HexDriver.sv 
 # -- Compiling module HexDriver
 # 
 # Top level modules:
 # 	HexDriver
-# End time: 20:18:18 on Feb 18,2018, Elapsed time: 0:00:01
+# End time: 19:39:28 on Feb 19,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/tristate.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 20:18:18 on Feb 18,2018
+# Start time: 19:39:28 on Feb 19,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab6_slc3" D:/Users/Dean/Documents/ECE 385/lab6_slc3/tristate.sv 
 # -- Compiling module tristate
 # 
 # Top level modules:
 # 	tristate
-# End time: 20:18:18 on Feb 18,2018, Elapsed time: 0:00:00
+# End time: 19:39:28 on Feb 19,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/test_memory.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 20:18:18 on Feb 18,2018
+# Start time: 19:39:28 on Feb 19,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab6_slc3" D:/Users/Dean/Documents/ECE 385/lab6_slc3/test_memory.sv 
 # -- Compiling module test_memory
 # 
 # Top level modules:
 # 	test_memory
-# End time: 20:18:18 on Feb 18,2018, Elapsed time: 0:00:00
+# End time: 19:39:28 on Feb 19,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/SLC3_2.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 20:18:18 on Feb 18,2018
+# Start time: 19:39:28 on Feb 19,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab6_slc3" D:/Users/Dean/Documents/ECE 385/lab6_slc3/SLC3_2.sv 
 # -- Compiling package SLC3_2
 # 
 # Top level modules:
 # 	--none--
-# End time: 20:18:18 on Feb 18,2018, Elapsed time: 0:00:00
+# End time: 19:39:28 on Feb 19,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/Mem2IO.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 20:18:18 on Feb 18,2018
+# Start time: 19:39:28 on Feb 19,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab6_slc3" D:/Users/Dean/Documents/ECE 385/lab6_slc3/Mem2IO.sv 
 # -- Compiling module Mem2IO
 # 
 # Top level modules:
 # 	Mem2IO
-# End time: 20:18:18 on Feb 18,2018, Elapsed time: 0:00:00
+# End time: 19:39:28 on Feb 19,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/ISDU.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 20:18:18 on Feb 18,2018
+# Start time: 19:39:28 on Feb 19,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab6_slc3" D:/Users/Dean/Documents/ECE 385/lab6_slc3/ISDU.sv 
 # -- Compiling module ISDU
 # 
 # Top level modules:
 # 	ISDU
-# End time: 20:18:18 on Feb 18,2018, Elapsed time: 0:00:00
+# End time: 19:39:28 on Feb 19,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/datapath.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 20:18:18 on Feb 18,2018
+# Start time: 19:39:29 on Feb 19,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab6_slc3" D:/Users/Dean/Documents/ECE 385/lab6_slc3/datapath.sv 
 # -- Compiling module datapath
 # 
 # Top level modules:
 # 	datapath
-# End time: 20:18:19 on Feb 18,2018, Elapsed time: 0:00:01
+# End time: 19:39:29 on Feb 19,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/slc3.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 20:18:19 on Feb 18,2018
+# Start time: 19:39:29 on Feb 19,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab6_slc3" D:/Users/Dean/Documents/ECE 385/lab6_slc3/slc3.sv 
 # -- Compiling module slc3
 # 
 # Top level modules:
 # 	slc3
-# End time: 20:18:19 on Feb 18,2018, Elapsed time: 0:00:00
+# End time: 19:39:29 on Feb 19,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/memory_contents.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 20:18:19 on Feb 18,2018
+# Start time: 19:39:29 on Feb 19,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab6_slc3" D:/Users/Dean/Documents/ECE 385/lab6_slc3/memory_contents.sv 
 # -- Compiling package memory_contents_sv_unit
 # -- Importing package SLC3_2
@@ -103,34 +103,42 @@
 # 
 # Top level modules:
 # 	memory_parser
-# End time: 20:18:19 on Feb 18,2018, Elapsed time: 0:00:00
+# End time: 19:39:29 on Feb 19,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/lab6_toplevel.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 20:18:19 on Feb 18,2018
+# Start time: 19:39:29 on Feb 19,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab6_slc3" D:/Users/Dean/Documents/ECE 385/lab6_slc3/lab6_toplevel.sv 
 # -- Compiling module lab6_toplevel
 # 
 # Top level modules:
 # 	lab6_toplevel
-# End time: 20:18:19 on Feb 18,2018, Elapsed time: 0:00:00
+# End time: 19:39:29 on Feb 19,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/test_memory.sv}
+# vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/testbench.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 20:18:19 on Feb 18,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab6_slc3" D:/Users/Dean/Documents/ECE 385/lab6_slc3/test_memory.sv 
-# -- Compiling module test_memory
+# Start time: 19:39:29 on Feb 19,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Users/Dean/Documents/ECE 385/lab6_slc3" D:/Users/Dean/Documents/ECE 385/lab6_slc3/testbench.sv 
+# -- Compiling module testbench
 # 
 # Top level modules:
-# 	test_memory
-# End time: 20:18:19 on Feb 18,2018, Elapsed time: 0:00:00
+# 	testbench
+# End time: 19:39:29 on Feb 19,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  test_memory
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  testbench
 # vsim -gui "+altera" -l msim_transcript -do "lab6_slc3_run_msim_rtl_verilog.do" 
-# Start time: 20:18:19 on Feb 18,2018
+# Start time: 19:39:30 on Feb 19,2018
 # Loading sv_std.std
+# Loading work.testbench
+# Loading work.lab6_toplevel
+# Loading work.slc3
+# Loading work.HexDriver
+# Loading work.datapath
+# Loading work.Mem2IO
+# Loading work.tristate
+# Loading work.ISDU
 # Loading work.test_memory
 # Loading work.SLC3_2
 # Loading work.memory_contents_sv_unit
@@ -142,5 +150,8 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# End time: 20:19:21 on Feb 18,2018, Elapsed time: 0:01:02
+# Success!
+# Break key hit
+# Simulation stop requested.
+# End time: 19:46:04 on Feb 19,2018, Elapsed time: 0:06:34
 # Errors: 0, Warnings: 0

@@ -1,6 +1,6 @@
 module datapath(
 	// Do we need reset?
-	input logic Reset_ah, 
+	input logic Reset_ah, Clk, 
 	
 	// Tristate Buffers
 	input logic GatePC, GateMDR, GateALU, GateMARMUX, 
@@ -23,6 +23,15 @@ module datapath(
 	
 	logic[15:0] d_bus;
 	
+	logic[15:0] IR_next, MAR_next, MDR_next, PC_next;
+	
+	always_ff @ (posedge Clk) begin
+		IR_out <= IR_next;
+		MAR_out <= MAR_next;
+		MDR_out <= MDR_next;
+		PC_out <= PC_next;
+	end
+	
 	// Loading onto d_bus
 	always_comb
 	begin
@@ -37,29 +46,29 @@ module datapath(
 	// Loading into our values
 	always_comb
 	begin
-		PC_out = PC;
-		MAR_out = MAR;
-		IR_out = IR;
-		MDR_out = MDR;
+		PC_next = PC;
+		MAR_next = MAR;
+		IR_next = IR;
+		MDR_next = MDR;
 	
 	
 		if (LD_MAR)
-			MAR_out = d_bus;
+			MAR_next = d_bus;
 			
 		if (LD_IR)
-			IR_out = d_bus;
+			IR_next = d_bus;
 		
 		if (LD_PC)
 			if (PCMUX == 0)
-				PC_out = PC + 1;
+				PC_next = PC + 1;
 			else if (PC == 2) 
-				PC_out = d_bus;
+				PC_next = d_bus;
 		
 		if (LD_MDR)
 			if (MIO_EN)
-				MDR_out = MDR_In;
+				MDR_next = MDR_In;
 			else
-				MDR_out = d_bus;
+				MDR_next = d_bus;
 		
 		
 	end

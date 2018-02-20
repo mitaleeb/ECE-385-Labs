@@ -16,9 +16,9 @@ vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users
 vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/memory_contents.sv}
 vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/lab6_toplevel.sv}
 
-vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/testbench.sv}
+vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/test_memory.sv}
 
-vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  testbench
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  test_memory
 
 add wave *
 view structure
