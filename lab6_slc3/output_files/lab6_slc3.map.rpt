@@ -1,6 +1,6 @@
 Analysis & Synthesis report for lab6_slc3
-Mon Feb 19 19:38:12 2018
-Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
+Tue Feb 20 18:30:59 2018
+Quartus II 64-Bit Version 15.0.2 Build 153 07/15/2015 SJ Full Version
 
 
 ---------------------
@@ -48,24 +48,24 @@ agreement for further details.
 
 
 
-+---------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                    ;
-+------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Feb 19 19:38:12 2018      ;
-; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
-; Revision Name                      ; lab6_slc3                                  ;
-; Top-level Entity Name              ; lab6_toplevel                              ;
-; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 165                                        ;
-;     Total combinational functions  ; 102                                        ;
-;     Dedicated logic registers      ; 102                                        ;
-; Total registers                    ; 102                                        ;
-; Total pins                         ; 129                                        ;
-; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 0                                          ;
-; Embedded Multiplier 9-bit elements ; 0                                          ;
-; Total PLLs                         ; 0                                          ;
-+------------------------------------+--------------------------------------------+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Feb 20 18:30:59 2018       ;
+; Quartus II 64-Bit Version          ; 15.0.2 Build 153 07/15/2015 SJ Full Version ;
+; Revision Name                      ; lab6_slc3                                   ;
+; Top-level Entity Name              ; lab6_toplevel                               ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 169                                         ;
+;     Total combinational functions  ; 137                                         ;
+;     Dedicated logic registers      ; 103                                         ;
+; Total registers                    ; 103                                         ;
+; Total pins                         ; 129                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -155,33 +155,39 @@ agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 8      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;   0.0%      ;
++----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                     ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                 ; Library ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------+---------+
-; HexDriver.sv                     ; yes             ; User SystemVerilog HDL File  ; D:/Users/Dean/Documents/ECE 385/lab6_slc3/HexDriver.sv       ;         ;
-; tristate.sv                      ; yes             ; User SystemVerilog HDL File  ; D:/Users/Dean/Documents/ECE 385/lab6_slc3/tristate.sv        ;         ;
-; test_memory.sv                   ; yes             ; User SystemVerilog HDL File  ; D:/Users/Dean/Documents/ECE 385/lab6_slc3/test_memory.sv     ;         ;
-; SLC3_2.sv                        ; yes             ; User SystemVerilog HDL File  ; D:/Users/Dean/Documents/ECE 385/lab6_slc3/SLC3_2.sv          ;         ;
-; slc3.sv                          ; yes             ; User SystemVerilog HDL File  ; D:/Users/Dean/Documents/ECE 385/lab6_slc3/slc3.sv            ;         ;
-; memory_contents.sv               ; yes             ; User SystemVerilog HDL File  ; D:/Users/Dean/Documents/ECE 385/lab6_slc3/memory_contents.sv ;         ;
-; Mem2IO.sv                        ; yes             ; User SystemVerilog HDL File  ; D:/Users/Dean/Documents/ECE 385/lab6_slc3/Mem2IO.sv          ;         ;
-; lab6_toplevel.sv                 ; yes             ; User SystemVerilog HDL File  ; D:/Users/Dean/Documents/ECE 385/lab6_slc3/lab6_toplevel.sv   ;         ;
-; ISDU.sv                          ; yes             ; User SystemVerilog HDL File  ; D:/Users/Dean/Documents/ECE 385/lab6_slc3/ISDU.sv            ;         ;
-; datapath.sv                      ; yes             ; User SystemVerilog HDL File  ; D:/Users/Dean/Documents/ECE 385/lab6_slc3/datapath.sv        ;         ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                        ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------+---------+
+; HexDriver.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/dbiskup2/Documents/ece385/lab6_slc3/HexDriver.sv       ;         ;
+; tristate.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/dbiskup2/Documents/ece385/lab6_slc3/tristate.sv        ;         ;
+; test_memory.sv                   ; yes             ; User SystemVerilog HDL File  ; C:/Users/dbiskup2/Documents/ece385/lab6_slc3/test_memory.sv     ;         ;
+; SLC3_2.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/dbiskup2/Documents/ece385/lab6_slc3/SLC3_2.sv          ;         ;
+; slc3.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/dbiskup2/Documents/ece385/lab6_slc3/slc3.sv            ;         ;
+; memory_contents.sv               ; yes             ; User SystemVerilog HDL File  ; C:/Users/dbiskup2/Documents/ece385/lab6_slc3/memory_contents.sv ;         ;
+; Mem2IO.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/dbiskup2/Documents/ece385/lab6_slc3/Mem2IO.sv          ;         ;
+; lab6_toplevel.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/dbiskup2/Documents/ece385/lab6_slc3/lab6_toplevel.sv   ;         ;
+; ISDU.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/dbiskup2/Documents/ece385/lab6_slc3/ISDU.sv            ;         ;
+; datapath.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/dbiskup2/Documents/ece385/lab6_slc3/datapath.sv        ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -189,20 +195,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 165       ;
+; Estimated Total logic elements              ; 169       ;
 ;                                             ;           ;
-; Total combinational functions               ; 102       ;
+; Total combinational functions               ; 137       ;
 ; Logic element usage by number of LUT inputs ;           ;
 ;     -- 4 input functions                    ; 64        ;
 ;     -- 3 input functions                    ; 17        ;
-;     -- <=2 input functions                  ; 21        ;
+;     -- <=2 input functions                  ; 56        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 87        ;
+;     -- normal mode                          ; 122       ;
 ;     -- arithmetic mode                      ; 15        ;
 ;                                             ;           ;
-; Total registers                             ; 102       ;
-;     -- Dedicated logic registers            ; 102       ;
+; Total registers                             ; 103       ;
+;     -- Dedicated logic registers            ; 103       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 129       ;
@@ -210,9 +216,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; Clk~input ;
-; Maximum fan-out                             ; 102       ;
-; Total fan-out                               ; 849       ;
-; Average fan-out                             ; 1.78      ;
+; Maximum fan-out                             ; 103       ;
+; Total fan-out                               ; 954       ;
+; Average fan-out                             ; 1.86      ;
 +---------------------------------------------+-----------+
 
 
@@ -221,8 +227,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
 ; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                ; Library Name ;
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
-; |lab6_toplevel                  ; 102 (0)           ; 102 (0)      ; 0           ; 0            ; 0       ; 0         ; 129  ; 0            ; |lab6_toplevel                                     ; work         ;
-;    |slc3:my_slc|                ; 102 (0)           ; 102 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc                         ; work         ;
+; |lab6_toplevel                  ; 137 (0)           ; 103 (0)      ; 0           ; 0            ; 0       ; 0         ; 129  ; 0            ; |lab6_toplevel                                     ; work         ;
+;    |slc3:my_slc|                ; 137 (0)           ; 103 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc                         ; work         ;
 ;       |HexDriver:hex_driver0|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|HexDriver:hex_driver0   ; work         ;
 ;       |HexDriver:hex_driver1|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|HexDriver:hex_driver1   ; work         ;
 ;       |HexDriver:hex_driver2|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|HexDriver:hex_driver2   ; work         ;
@@ -233,7 +239,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;       |HexDriver:hex_driver7|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|HexDriver:hex_driver7   ; work         ;
 ;       |ISDU:state_controller|   ; 9 (9)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|ISDU:state_controller   ; work         ;
 ;       |Mem2IO:memory_subsystem| ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|Mem2IO:memory_subsystem ; work         ;
-;       |datapath:d0|             ; 32 (32)           ; 63 (63)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|datapath:d0             ; work         ;
+;       |datapath:d0|             ; 67 (67)           ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|datapath:d0             ; work         ;
 ;       |tristate:tr0|            ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|tristate:tr0            ; work         ;
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -257,19 +263,18 @@ Encoding Type:  One-Hot
 +----------------+------------+------------+--------------+--------------+------------+----------------+----------------+--------------+------------+
 
 
-+----------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                           ;
-+----------------------------------------------+-----------------------------------------------+
-; Register name                                ; Reason for Removal                            ;
-+----------------------------------------------+-----------------------------------------------+
-; slc3:my_slc|datapath:d0|MAR_out[0]           ; Merged with slc3:my_slc|datapath:d0|PC_out[0] ;
-; slc3:my_slc|ISDU:state_controller|State.S_32 ; Lost fanout                                   ;
-; slc3:my_slc|ISDU:state_controller|State.S_01 ; Lost fanout                                   ;
-; slc3:my_slc|ISDU:state_controller|State~2    ; Lost fanout                                   ;
-; slc3:my_slc|ISDU:state_controller|State~3    ; Lost fanout                                   ;
-; slc3:my_slc|ISDU:state_controller|State~4    ; Lost fanout                                   ;
-; Total Number of Removed Registers = 6        ;                                               ;
-+----------------------------------------------+-----------------------------------------------+
++-------------------------------------------------------------------+
+; Registers Removed During Synthesis                                ;
++----------------------------------------------+--------------------+
+; Register name                                ; Reason for Removal ;
++----------------------------------------------+--------------------+
+; slc3:my_slc|ISDU:state_controller|State.S_32 ; Lost fanout        ;
+; slc3:my_slc|ISDU:state_controller|State.S_01 ; Lost fanout        ;
+; slc3:my_slc|ISDU:state_controller|State~2    ; Lost fanout        ;
+; slc3:my_slc|ISDU:state_controller|State~3    ; Lost fanout        ;
+; slc3:my_slc|ISDU:state_controller|State~4    ; Lost fanout        ;
+; Total Number of Removed Registers = 5        ;                    ;
++----------------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -277,12 +282,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 102   ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 103   ;
+; Number of registers using Synchronous Clear  ; 32    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 63    ;
+; Number of registers using Clock Enable       ; 64    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -292,8 +297,10 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |lab6_toplevel|slc3:my_slc|datapath:d0|MDR_out[14]     ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |lab6_toplevel|slc3:my_slc|datapath:d0|d_bus[9]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|datapath:d0|MAR_out[0]      ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|datapath:d0|IR_out[10]      ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|datapath:d0|MDR_out[3]      ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |lab6_toplevel|slc3:my_slc|datapath:d0|d_bus[3]        ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |lab6_toplevel|slc3:my_slc|ISDU:state_controller|State ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
 
@@ -357,22 +364,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 129                         ;
-; cycloneiii_ff         ; 102                         ;
-;     ENA               ; 63                          ;
+; cycloneiii_ff         ; 103                         ;
+;     ENA               ; 32                          ;
+;     ENA SCLR          ; 32                          ;
 ;     plain             ; 39                          ;
 ; cycloneiii_io_obuf    ; 16                          ;
-; cycloneiii_lcell_comb ; 114                         ;
+; cycloneiii_lcell_comb ; 148                         ;
 ;     arith             ; 15                          ;
 ;         2 data inputs ; 15                          ;
-;     normal            ; 99                          ;
+;     normal            ; 133                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 11                          ;
-;         2 data inputs ; 5                           ;
+;         1 data inputs ; 10                          ;
+;         2 data inputs ; 40                          ;
 ;         3 data inputs ; 17                          ;
 ;         4 data inputs ; 64                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.35                        ;
+; Average LUT depth     ; 1.37                        ;
 +-----------------------+-----------------------------+
 
 
@@ -390,10 +398,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
-    Info: Processing started: Mon Feb 19 19:38:01 2018
+    Info: Version 15.0.2 Build 153 07/15/2015 SJ Full Version
+    Info: Processing started: Tue Feb 20 18:30:50 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab6_slc3 -c lab6_slc3
-Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 3 design units, including 3 entities, in source file synchronizers.sv
+    Info (12023): Found entity 1: sync
+    Info (12023): Found entity 2: sync_r0
+    Info (12023): Found entity 3: sync_r1
 Info (12021): Found 1 design units, including 1 entities, in source file hexdriver.sv
     Info (12023): Found entity 1: HexDriver
 Info (12021): Found 1 design units, including 1 entities, in source file tristate.sv
@@ -418,11 +430,11 @@ Info (12021): Found 1 design units, including 1 entities, in source file testben
     Info (12023): Found entity 1: testbench
 Info (12127): Elaborating entity "lab6_toplevel" for the top level hierarchy
 Info (12128): Elaborating entity "slc3" for hierarchy "slc3:my_slc"
-Warning (10030): Net "BEN" at slc3.sv(37) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "BEN" at slc3.sv(40) has no driver or initial value, using a default initial value '0'
 Warning (10034): Output port "LED" at slc3.sv(22) has no driver
 Info (12128): Elaborating entity "HexDriver" for hierarchy "slc3:my_slc|HexDriver:hex_driver3"
 Info (12128): Elaborating entity "datapath" for hierarchy "slc3:my_slc|datapath:d0"
-Warning (10230): Verilog HDL assignment warning at datapath.sv(63): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at datapath.sv(69): truncated value with size 32 to match size of target (16)
 Info (12128): Elaborating entity "Mem2IO" for hierarchy "slc3:my_slc|Mem2IO:memory_subsystem"
 Info (12128): Elaborating entity "tristate" for hierarchy "slc3:my_slc|tristate:tr0"
 Info (12128): Elaborating entity "ISDU" for hierarchy "slc3:my_slc|ISDU:state_controller"
@@ -471,15 +483,15 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 5 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 294 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 298 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 20 input pins
     Info (21059): Implemented 93 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 165 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 43 warnings
-    Info: Peak virtual memory: 736 megabytes
-    Info: Processing ended: Mon Feb 19 19:38:12 2018
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:25
+    Info (21061): Implemented 169 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 42 warnings
+    Info: Peak virtual memory: 693 megabytes
+    Info: Processing ended: Tue Feb 20 18:30:59 2018
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:22
 
 

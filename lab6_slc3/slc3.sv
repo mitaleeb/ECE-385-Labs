@@ -24,6 +24,9 @@ module slc3(
     output logic CE, UB, LB, OE, WE,
     output logic [19:0] ADDR,
     inout wire [15:0] Data //tristate buffers need to be of type wire
+	 
+	 // some shit
+	 //output logic[15:0] MAR, MDR, PC, IR
 );
 
 // Declaration of push button active high signals
@@ -43,6 +46,7 @@ logic MIO_EN;
 
 logic [15:0] MDR_In;
 logic [15:0] MAR, MDR, IR, PC;
+
 logic [15:0] Data_from_SRAM, Data_to_SRAM;
 
 // Signals being displayed on hex display

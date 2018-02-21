@@ -50,7 +50,13 @@ module datapath(
 		MAR_next = MAR;
 		IR_next = IR;
 		MDR_next = MDR;
-	
+		
+		if (Reset_ah) begin
+			PC_next = 0;
+			MAR_next = 0;
+			IR_next = 0;
+			MDR_next = 0;
+		end
 	
 		if (LD_MAR)
 			MAR_next = d_bus;

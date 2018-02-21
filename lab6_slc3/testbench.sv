@@ -50,7 +50,17 @@ module testbench ();
 		// Test case 1
 		#2 Reset = 1;
 		#2 Run = 0;
-		#50 Run = 1;
+		#50 Run = 0;
+			if (IR != 16'h5020)
+				ErrorCnt++;
+			
+		// Test case 2
+		#2 S = 16'b0;
+		#2 Continue = 0;
+		#2 Continue = 1;
+		#50 
+			if (IR != 16'h623F)
+				ErrorCnt++;
 		
 		
 		
