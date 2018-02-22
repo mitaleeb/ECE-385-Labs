@@ -18,8 +18,8 @@ module testbench ();
 	
 	
 	// Some variables to store the expected results
-	logic[7:0] ansA1, ansB1, ansA2, ansA3, ansB2, ansB3;
-	logic ansX1, ansX2, ansX3;
+	logic[7:0] ansA1, ansB1, ansA2, ansA3, ansA4, ansB2, ansB3, ansB4;
+	logic ansX1, ansX2, ansX3, ansX4;
 	
 	// to store the error count
 	integer ErrorCnt = 0;
@@ -89,6 +89,22 @@ module testbench ();
 			if (Bval != ansB3)
 				ErrorCnt++;
 			if (X != ansX3)
+				ErrorCnt++;
+			Run = 1;
+			
+		
+		// Test case 4
+		#2 S = 8'h7F; // 16
+		#2 Run = 0;
+		
+		#60 ansA4 = 8'h00;
+			ansB4 = 8'hFE;
+			ansX4 = 0;
+			if (Aval != ansA4)
+				ErrorCnt++;
+			if (Bval != ansB4)
+				ErrorCnt++;
+			if (X != ansX4)
 				ErrorCnt++;
 			Run = 1;
 			

@@ -62,6 +62,23 @@ module testbench ();
 			if (IR != 16'h623F)
 				ErrorCnt++;
 		
+		// test case 3
+		#2 Continue = 0;
+		#2 Continue = 1;
+		
+		#50 Continue = 0;
+		#2 Continue = 1;
+		
+		#50 Continue = 0;
+		#2 Continue = 1;
+		
+		#50 Continue = 0;
+		#2 Continue = 1;
+		
+		#50 Continue = 0;
+		#2 Continue = 1;
+		
+		
 		
 		
 		// Check the number of errors and print
