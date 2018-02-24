@@ -24,9 +24,6 @@ module slc3(
     output logic CE, UB, LB, OE, WE,
     output logic [19:0] ADDR,
     inout wire [15:0] Data //tristate buffers need to be of type wire
-	 
-	 // some shit
-	 //output logic[15:0] MAR, MDR, PC, IR
 );
 
 // Declaration of push button active high signals
@@ -79,6 +76,7 @@ assign MIO_EN = ~OE;
 // You need to make your own datapath module and connect everything to the datapath
 // Be careful about whether Reset is active high or low
 datapath d0 (.*, .IR_out(IR), .MAR_out(MAR), .MDR_out(MDR), .PC_out(PC));
+
 
 // Our SRAM and I/O controller
 Mem2IO memory_subsystem(

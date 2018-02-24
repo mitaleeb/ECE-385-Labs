@@ -14,9 +14,6 @@ module lab6_toplevel( input logic [15:0] S,
                       output logic CE, UB, LB, OE, WE,
                       output logic [19:0] ADDR,
                       inout wire [15:0] Data 
-							 
-							 // some shit pt2
-							 //output logic[15:0] MAR, MDR, IR, PC
 							 );
 
 slc3 my_slc(.*);

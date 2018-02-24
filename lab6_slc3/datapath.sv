@@ -18,7 +18,9 @@ module datapath(
 	
 	// input registers
 	input logic[15:0] IR, MAR, MDR, MDR_In, PC, 
-	output logic [15:0] IR_out, MAR_out, MDR_out, PC_out
+	input logic n, z, p, 
+	output logic [15:0] IR_out, MAR_out, MDR_out, PC_out, 
+	output logic n_out, z_out, p_out
 );
 	
 	logic[15:0] d_bus;
