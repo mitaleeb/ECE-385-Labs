@@ -17,21 +17,29 @@ module datapath(
 	input logic MIO_EN, 
 	
 	// input registers
-	input logic[15:0] IR, MAR, MDR, MDR_In, PC, 
-	input logic n, z, p, 
+	input logic[15:0] IR, MAR, MDR, MDR_In, PC, d_bus, 
+	input logic n, z, p, BEN, 
 	output logic [15:0] IR_out, MAR_out, MDR_out, PC_out, 
-	output logic n_out, z_out, p_out
+	output logic n_out, z_out, p_out, BEN_out, 
+	output logic [2:0] SR1_MUX_out, DR_MUX_out
 );
 	
-	logic[15:0] d_bus;
+	//logic[15:0] d_bus;
 	
 	logic[15:0] IR_next, MAR_next, MDR_next, PC_next;
+	logic n_next, z_next, p_next, BEN_next;
+	
+	// Assignments for the mux
 	
 	always_ff @ (posedge Clk) begin
 		IR_out <= IR_next;
 		MAR_out <= MAR_next;
 		MDR_out <= MDR_next;
 		PC_out <= PC_next;
+		n_out <= n_next;
+		z_out <= z_next;
+		p_out <= p_next;
+		BEN_out = BEN_next;
 	end
 	
 	// Loading onto d_bus
@@ -52,6 +60,10 @@ module datapath(
 		MAR_next = MAR;
 		IR_next = IR;
 		MDR_next = MDR;
+		n_next = n;
+		z_next = z;
+		p_next = p;
+		BEN_next = BEN;
 		
 		if (Reset_ah) begin
 			PC_next = 0;
@@ -71,6 +83,9 @@ module datapath(
 				PC_next = PC + 1;
 			else if (PC == 2) 
 				PC_next = d_bus;
+		
+		if (LD_BEN)
+			BEN_next = (IR[11] & n) | (IR[10] & z) | (IR[9] & p);
 		
 		if (LD_MDR)
 			if (MIO_EN)
