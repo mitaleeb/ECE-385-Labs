@@ -30,6 +30,18 @@ module datapath(
 	logic n_next, z_next, p_next, BEN_next;
 	
 	// Assignments for the mux
+	always_comb
+	begin
+		if (DRMUX == 1)
+			DR_MUX_out = 3'b111;
+		else
+			DR_MUX_out = IR[11:9];
+		
+		if (SR1MUX == 1)
+			SR1_MUX_out = IR[11:9];
+		else
+			SR1_MUX_out = IR[8:6];
+	end
 	
 	always_ff @ (posedge Clk) begin
 		IR_out <= IR_next;

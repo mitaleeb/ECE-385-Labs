@@ -222,16 +222,111 @@ module ISDU (   input logic         Clk,
 			PauseIR2: ;
 			S_32 : 
 				LD_BEN = 1'b1;
-			S_01 : 
+			S_01 : // ADD, setcc
 				begin 
 					SR2MUX = IR_5;
 					ALUK = 2'b00;
 					GateALU = 1'b1;
 					LD_REG = 1'b1;
-					// incomplete...
+					SR1MUX = 1'b0; // IR[8:6]
+					DRMUX = 1'b0; // IR[11:9]
+					LD_CC = 1'b1;
+					end
+			S_05 : //AND, setcc
+				begin
+					SR2MUX = IR_5;
+					ALUK = 2'b01;
+					GateALU = 1'b1;
+					LD_REG = 1'b1;
+					SR1MUX = 1'b0; // IR[8:6]
+					DRMUX = 1'b0;
+					LD_CC = 1'b1;
+				end 
+			S_09 : // NOT, setcc
+				begin
+					SR1MUX = 1'b0; // IR[8:6]
+					ALUK = 2'b10;
+					GateALU = 1'b1;
+					LD_REG = 1'b1;
+					DRMUX = 1'b0;
+					LD_CC = 1'b1;
+				end 
+			S_06 : // LDR: MAR <- B+off6
+				begin
+					SR1MUX = 1'b0; // IR[8:6]
+					ADDR1MUX = 1'b1; // From SR1_out
+					ADDR2MUX = 3'b001; // offset6
+					GateMARMUX = 1'b1;
+					LD_MAR = 1'b1; // Load into MAR
 				end
-
-			// You need to finish the rest of states.....
+			S_25_1 : // LDR: MDR <- M[MAR]
+				begin
+					Mem_OE = 1'b0; // Output enable, remember active low
+				end
+			S_25_2 : 
+				begin
+					Mem_OE = 1'b0;
+					LD_MDR = 1'b1;
+				end
+			S_27 : // LDR: DR <- MDR, setcc 
+				begin
+					GateMDR = 1'b1;
+					DRMUX = 1'b0; // IR[11:9]
+					LD_REG = 1'b1;
+					LD_CC = 1'b1;
+				end
+			S_07 : // STR: MAR<-B+off6
+				begin
+					SR1MUX = 1'b0; // IR[8:6]
+					ADDR1MUX = 1'b1; // From SR1_out
+					ADDR2MUX = 3'b001; // offset6
+					GateMARMUX = 1'b1;
+					LD_MAR = 1'b1; // Load into MAR
+				end
+			S_23 : // STR: MDR <- SR
+				begin
+					SR1MUX = 1'b1; // IR[11:9]
+					ALUK = 2'b11; // PASS_A
+					GateALU = 1'b1;
+					LD_MDR = 1'b1;
+				end
+			S_16_1 : // STR: M[MAR] <- MDR
+				begin
+					Mem_WE = 1'b0; // Active Low
+				end
+			S_16_2 : 
+				begin
+					Mem_WE = 1'b0;
+				end
+			S_04 : // JSR: R7 <- PC
+				begin
+					DRMUX = 1'b1; // Chooses R7
+					GatePC = 1'b1;
+					LD_REG = 1'b1;
+				end
+			S_21 : // JSR: PC <- PC + off11
+				begin
+					ADDR2MUX = 2'b11; // offset11
+					ADDR1MUX = 1'b0; // chooses PC
+					PCMUX = 2'b01; // From Adder
+					LD_PC = 1'b1;
+				end
+			S_12 : // JMP: PC <- BaseR
+				begin
+					SR1MUX = 1'b0; // IR[8:6]
+					ADDR1MUX = 1'b1; // Choose S1_out
+					ADDR2MUX = 2'b00;
+					PCMUX = 2'b01; // Chooses adder
+					LD_PC = 1'b1;
+				end
+			S_00 : // BR: [BEN]
+			S_22 : // BR: PC <- PC + off9
+				begin
+					ADDR1MUX = 1'b0; // From PC
+					ADDR2MUX = 2'b10; // From off9
+					PCMUX = 2'b01; // From adder
+					LD_PC = 1'b1;
+				end
 
 			default : ;
 		endcase
