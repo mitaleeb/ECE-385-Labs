@@ -58,7 +58,8 @@ module ISDU (   input logic         Clk,
 	enum logic [5:0] {  Halted, PauseIR1, PauseIR2, 
 			S_18, S_33_1, S_33_2, S_35, S_32, 
 			S_01, S_05, S_06, S_09, S_07, S_04, S_00, S_12, 
-			S_16_1, S_16_2, S_25_1, S_25_2, S_27, S_23, S_21, S_22}
+			S_16_1, S_16_2, S_25_1, S_25_2, S_27, S_23, S_21, S_22, 
+			S_PAUSE_1, S_PAUSE_2}
 			State, Next_state;   // Internal state logic
 		
 	always_ff @ (posedge Clk)
@@ -146,6 +147,8 @@ module ISDU (   input logic         Clk,
 						Next_state = S_06;
 					4'b0111 : // STR
 						Next_state = S_07;
+					4'b1101 : // PAUSE
+						Next_state = S_PAUSE_1;
 
 					default : 
 						Next_state = S_18;
@@ -183,6 +186,16 @@ module ISDU (   input logic         Clk,
 			S_00 : 
 				if (BEN == 1'b1)
 					Next_state = S_22;
+				else
+					Next_state = S_18;
+			S_PAUSE_1 : 
+				if (~Continue)
+					Next_state = S_PAUSE_1;
+				else
+					Next_state = S_PAUSE_2;
+			S_PAUSE_2 : 
+				if (Continue)
+					Next_state = S_PAUSE_2;
 				else
 					Next_state = S_18;
 						
@@ -321,6 +334,11 @@ module ISDU (   input logic         Clk,
 					PCMUX = 2'b01; // From adder
 					LD_PC = 1'b1;
 				end
+			S_PAUSE_1 : // LED <- ledVect12; Wait on continue
+				begin
+					LD_LED = 1'b1;
+				end
+			S_PAUSE_2 : ; // Wait for continue to be unpressed
 
 			default : ;
 		endcase

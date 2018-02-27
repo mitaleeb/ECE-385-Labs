@@ -18,17 +18,22 @@ module datapath(
 	
 	// input registers
 	input logic[15:0] IR, MAR, MDR, MDR_In, PC, marmux, ALU_out, 
+	input logic[11:0] LED, 
 	input logic BEN, 
 	output logic [15:0] IR_out, MAR_out, MDR_out, PC_out, d_bus, 
-	output logic n_out, z_out, p_out, BEN_out, 
+	output logic[11:0] LED_out, 
+	output logic BEN_out, 
 	output logic [2:0] SR1_MUX_out, DR_MUX_out
 );
 	
 	//logic[15:0] d_bus;
 	
 	logic[15:0] IR_next, MAR_next, MDR_next, PC_next;
+	logic[11:0] LED_next;
 	logic n_next, z_next, p_next, BEN_next;
 	logic n, z, p;
+	logic[11:0] ledVect;
+	assign ledVect = IR[11:0];
 	
 	// Assignments for the mux
 	always_comb
@@ -50,19 +55,21 @@ module datapath(
 			MAR_out <= 0;
 			MDR_out <= 0;
 			PC_out <= 0;
-			n_out <= 0;
-			z_out <= 0;
-			p_out <= 0;
-			BEN_out = 0;
+			n <= 0;
+			z <= 0;
+			p <= 0;
+			BEN_out <= 0;
+			LED_out <= 0;
 		end else begin
 			IR_out <= IR_next;
 			MAR_out <= MAR_next;
 			MDR_out <= MDR_next;
 			PC_out <= PC_next;
-			n_out <= n_next;
-			z_out <= z_next;
-			p_out <= p_next;
-			BEN_out = BEN_next;
+			n <= n_next;
+			z <= z_next;
+			p <= p_next;
+			BEN_out <= BEN_next;
+			LED_out <= LED_next;
 		end
 	end
 	
@@ -92,6 +99,7 @@ module datapath(
 		z_next = z;
 		p_next = p;
 		BEN_next = BEN;
+		LED_next = LED;
 		
 		if (LD_MAR)
 			MAR_next = d_bus;
@@ -103,11 +111,13 @@ module datapath(
 			n_next = d_bus[15];
 			if (d_bus > 0)
 				p_next = 1'b1;
+			else if (d_bus == 0)
+				z_next = 1'b1;
 		end
 		
 		if (LD_PC) begin
 			if (PCMUX == 0)
-				PC_next = PC + 1;
+				PC_next = PC + 16'h0001;
 			else if (PCMUX == 1)
 				PC_next = marmux;
 			else if (PCMUX == 2) 
@@ -122,6 +132,10 @@ module datapath(
 				MDR_next = MDR_In;
 			else
 				MDR_next = d_bus;
+		end
+		
+		if (LD_LED) begin
+			LED_next = ledVect;
 		end
 		
 	end

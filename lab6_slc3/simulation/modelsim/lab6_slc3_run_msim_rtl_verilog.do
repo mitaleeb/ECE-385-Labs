@@ -12,6 +12,9 @@ vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users
 vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/Mem2IO.sv}
 vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/ISDU.sv}
 vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/datapath.sv}
+vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/reg_unit.sv}
+vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/'a.sv}
+vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/sext.sv}
 vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/slc3.sv}
 vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/memory_contents.sv}
 vlog -sv -work work +incdir+D:/Users/Dean/Documents/ECE\ 385/lab6_slc3 {D:/Users/Dean/Documents/ECE 385/lab6_slc3/lab6_toplevel.sv}
