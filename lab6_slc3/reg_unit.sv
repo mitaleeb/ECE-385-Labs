@@ -11,14 +11,14 @@ module reg_file(
 	always_ff @ (posedge Clk)
 	begin
 		if (Reset_ah) begin
-			R0 = 16'h0000;
-			R1 = 16'h0000;
-			R2 = 16'h0000;
-			R3 = 16'h0000;
-			R4 = 16'h0000;
-			R5 = 16'h0000;
-			R6 = 16'h0000;
-			R7 = 16'h0000;
+			R0 <= 16'h0000;
+			R1 <= 16'h0000;
+			R2 <= 16'h0000;
+			R3 <= 16'h0000;
+			R4 <= 16'h0000;
+			R5 <= 16'h0000;
+			R6 <= 16'h0000;
+			R7 <= 16'h0000;
 		end else if (LD_REG) begin
 			if (DR_MUX_out == 3'b000)
 				R0 <= d_bus;

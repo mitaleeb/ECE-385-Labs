@@ -74,7 +74,7 @@ assign ADDR = { 4'b00, MAR }; //Note, our external SRAM chip is 1Mx16, but addre
 assign MIO_EN = ~OE;
 
 // Some local variables
-logic[15:0] SR2_out, SR1_out, d_bus;
+logic[15:0] SR2_out, SR1_out, d_bus, marmux, ALU_out;
 
 // You need to make your own datapath module and connect everything to the datapath
 // Be careful about whether Reset is active high or low
@@ -84,6 +84,12 @@ datapath d0 (.*, .IR_out(IR), .MAR_out(MAR), .MDR_out(MDR), .PC_out(PC), .BEN_ou
 
 // Initialize the register unit
 reg_file reg_unit(.*, .SR2(IR[2:0]));
+
+// Initialize the sext unit
+sext sext_addr_adder(.*);
+
+// Initialize the ALU
+ALU arithlu(.*, .IR_40(IR[4:0]));
 
 
 // Our SRAM and I/O controller

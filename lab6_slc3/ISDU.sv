@@ -55,17 +55,11 @@ module ISDU (   input logic         Clk,
 									Mem_WE
 				);
 
-	enum logic [4:0] {  Halted, 
-						PauseIR1, 
-						PauseIR2, 
-						S_18, 
-						S_33_1, 
-						S_33_2, 
-						S_35, 
-						S_32, 
-						S_01, S_05, S_06, S_09, S_07, S_04, S_00, 
-						S_12, S_22, S_16_1, S_16_2, S_25_1, S_25_2, S_27, S_23, 
-						S_21}   State, Next_state;   // Internal state logic
+	enum logic [5:0] {  Halted, PauseIR1, PauseIR2, 
+			S_18, S_33_1, S_33_2, S_35, S_32, 
+			S_01, S_05, S_06, S_09, S_07, S_04, S_00, S_12, 
+			S_16_1, S_16_2, S_25_1, S_25_2, S_27, S_23, S_21, S_22}
+			State, Next_state;   // Internal state logic
 		
 	always_ff @ (posedge Clk)
 	begin
@@ -191,7 +185,7 @@ module ISDU (   input logic         Clk,
 					Next_state = S_22;
 				else
 					Next_state = S_18;
-			
+						
 			default : ;
 
 		endcase
@@ -255,7 +249,7 @@ module ISDU (   input logic         Clk,
 				begin
 					SR1MUX = 1'b0; // IR[8:6]
 					ADDR1MUX = 1'b1; // From SR1_out
-					ADDR2MUX = 3'b001; // offset6
+					ADDR2MUX = 2'b01; // offset6
 					GateMARMUX = 1'b1;
 					LD_MAR = 1'b1; // Load into MAR
 				end
@@ -279,7 +273,7 @@ module ISDU (   input logic         Clk,
 				begin
 					SR1MUX = 1'b0; // IR[8:6]
 					ADDR1MUX = 1'b1; // From SR1_out
-					ADDR2MUX = 3'b001; // offset6
+					ADDR2MUX = 2'b01; // offset6
 					GateMARMUX = 1'b1;
 					LD_MAR = 1'b1; // Load into MAR
 				end
@@ -319,7 +313,7 @@ module ISDU (   input logic         Clk,
 					PCMUX = 2'b01; // Chooses adder
 					LD_PC = 1'b1;
 				end
-			S_00 : // BR: [BEN]
+			S_00 : ;// BR: [BEN]
 			S_22 : // BR: PC <- PC + off9
 				begin
 					ADDR1MUX = 1'b0; // From PC
