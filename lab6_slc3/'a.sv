@@ -20,7 +20,7 @@ module ALU (
 		if (SR2MUX) // Note that SR2MUX is equivalent to IR[5]
 			SR2_MUX_out = sext;
 		else
-			SR2_MUX_out = SR1_out;
+			SR2_MUX_out = SR2_out;
 	end 
 	
 	// Arithmetic Logic Unit Logic

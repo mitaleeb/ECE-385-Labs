@@ -28,12 +28,13 @@ module datapath(
 	
 	//logic[15:0] d_bus;
 	
-	logic[15:0] IR_next, MAR_next, MDR_next, PC_next;
+	logic[15:0] IR_next, MAR_next, MDR_next, PC_next, d_bus_next;
 	logic[11:0] LED_next;
 	logic n_next, z_next, p_next, BEN_next;
 	logic n, z, p;
 	logic[11:0] ledVect;
 	assign ledVect = IR[11:0];
+	assign d_bus_next = d_bus;
 	
 	// Assignments for the mux
 	always_comb
@@ -76,6 +77,7 @@ module datapath(
 	// Loading onto d_bus
 	always_comb
 	begin
+		d_bus = d_bus_next;
 		if (GatePC)
 			d_bus = PC;
 		else if (GateMDR)
@@ -84,8 +86,6 @@ module datapath(
 			d_bus = marmux;
 		else if (GateALU)
 			d_bus = ALU_out;
-		else
-			d_bus = 0;
 	end 
 	
 	// Loading into our values
@@ -108,11 +108,19 @@ module datapath(
 			IR_next = d_bus;
 		
 		if (LD_CC) begin
-			n_next = d_bus[15];
-			if (d_bus > 0)
-				p_next = 1'b1;
-			else if (d_bus == 0)
+			if (d_bus == 0) begin
 				z_next = 1'b1;
+				n_next = 1'b0;
+				p_next = 1'b0;
+			end else if (d_bus[15] == 1'b1) begin
+				n_next = 1'b1;
+				p_next = 1'b0;
+				z_next = 1'b0;
+			end else begin
+				p_next = 1'b1;
+				z_next = 1'b0;
+				n_next = 1'b0;
+			end
 		end
 		
 		if (LD_PC) begin
@@ -124,8 +132,12 @@ module datapath(
 				PC_next = d_bus;
 		end 
 		
-		if (LD_BEN)
-			BEN_next = (IR[11] & n) | (IR[10] & z) | (IR[9] & p);
+		if (LD_BEN) begin
+			if ((IR[11] & n) | (IR[10] & z) | (IR[9] & p))
+				BEN_next = 1'b1;
+			else
+				BEN_next = 1'b0;
+		end
 		
 		if (LD_MDR) begin
 			if (MIO_EN)

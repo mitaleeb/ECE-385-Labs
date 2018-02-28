@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab6_slc3
-Tue Feb 27 17:39:46 2018
+Wed Feb 28 00:56:28 2018
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -14,16 +14,18 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |lab6_toplevel|slc3:my_slc|ISDU:state_controller|State
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: slc3:my_slc|tristate:tr0
- 13. Parameter Settings for User Entity Instance: test_memory:my_test_memory
- 14. Parameter Settings for User Entity Instance: test_memory:my_test_memory|memory_parser:parser
- 15. Port Connectivity Checks: "slc3:my_slc|Mem2IO:memory_subsystem"
- 16. Post-Synthesis Netlist Statistics for Top Partition
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
+  9. Logic Cells Representing Combinational Loops
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: slc3:my_slc|tristate:tr0
+ 14. Parameter Settings for User Entity Instance: test_memory:my_test_memory
+ 15. Parameter Settings for User Entity Instance: test_memory:my_test_memory|memory_parser:parser
+ 16. Port Connectivity Checks: "slc3:my_slc|Mem2IO:memory_subsystem"
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+ 20. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -50,15 +52,15 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Feb 27 17:39:46 2018      ;
+; Analysis & Synthesis Status        ; Successful - Wed Feb 28 00:56:28 2018      ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                      ; lab6_slc3                                  ;
 ; Top-level Entity Name              ; lab6_toplevel                              ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 678                                        ;
-;     Total combinational functions  ; 502                                        ;
-;     Dedicated logic registers      ; 298                                        ;
-; Total registers                    ; 298                                        ;
+; Total logic elements               ; 750                                        ;
+;     Total combinational functions  ; 573                                        ;
+;     Dedicated logic registers      ; 284                                        ;
+; Total registers                    ; 284                                        ;
 ; Total pins                         ; 129                                        ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
@@ -170,6 +172,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                 ; Library ;
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------+---------+
+; Synchronizers.sv                 ; yes             ; User SystemVerilog HDL File  ; D:/Users/Dean/Documents/ECE 385/lab6_slc3/Synchronizers.sv   ;         ;
 ; HexDriver.sv                     ; yes             ; User SystemVerilog HDL File  ; D:/Users/Dean/Documents/ECE 385/lab6_slc3/HexDriver.sv       ;         ;
 ; tristate.sv                      ; yes             ; User SystemVerilog HDL File  ; D:/Users/Dean/Documents/ECE 385/lab6_slc3/tristate.sv        ;         ;
 ; test_memory.sv                   ; yes             ; User SystemVerilog HDL File  ; D:/Users/Dean/Documents/ECE 385/lab6_slc3/test_memory.sv     ;         ;
@@ -191,20 +194,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 678       ;
+; Estimated Total logic elements              ; 750       ;
 ;                                             ;           ;
-; Total combinational functions               ; 502       ;
+; Total combinational functions               ; 573       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 292       ;
-;     -- 3 input functions                    ; 128       ;
-;     -- <=2 input functions                  ; 82        ;
+;     -- 4 input functions                    ; 391       ;
+;     -- 3 input functions                    ; 95        ;
+;     -- <=2 input functions                  ; 87        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 457       ;
+;     -- normal mode                          ; 528       ;
 ;     -- arithmetic mode                      ; 45        ;
 ;                                             ;           ;
-; Total registers                             ; 298       ;
-;     -- Dedicated logic registers            ; 298       ;
+; Total registers                             ; 284       ;
+;     -- Dedicated logic registers            ; 284       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 129       ;
@@ -212,71 +215,99 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; Clk~input ;
-; Maximum fan-out                             ; 298       ;
-; Total fan-out                               ; 2849      ;
-; Average fan-out                             ; 2.65      ;
+; Maximum fan-out                             ; 284       ;
+; Total fan-out                               ; 3124      ;
+; Average fan-out                             ; 2.76      ;
 +---------------------------------------------+-----------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                             ;
-+---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
-; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                ; Library Name ;
-+---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
-; |lab6_toplevel                  ; 502 (0)           ; 298 (0)      ; 0           ; 0            ; 0       ; 0         ; 129  ; 0            ; |lab6_toplevel                                     ; work         ;
-;    |slc3:my_slc|                ; 502 (0)           ; 298 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc                         ; work         ;
-;       |ALU:arithlu|             ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|ALU:arithlu             ; work         ;
-;       |HexDriver:hex_driver0|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|HexDriver:hex_driver0   ; work         ;
-;       |HexDriver:hex_driver1|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|HexDriver:hex_driver1   ; work         ;
-;       |HexDriver:hex_driver2|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|HexDriver:hex_driver2   ; work         ;
-;       |HexDriver:hex_driver3|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|HexDriver:hex_driver3   ; work         ;
-;       |HexDriver:hex_driver4|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|HexDriver:hex_driver4   ; work         ;
-;       |HexDriver:hex_driver5|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|HexDriver:hex_driver5   ; work         ;
-;       |HexDriver:hex_driver6|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|HexDriver:hex_driver6   ; work         ;
-;       |HexDriver:hex_driver7|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|HexDriver:hex_driver7   ; work         ;
-;       |ISDU:state_controller|   ; 48 (48)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|ISDU:state_controller   ; work         ;
-;       |Mem2IO:memory_subsystem| ; 22 (22)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|Mem2IO:memory_subsystem ; work         ;
-;       |datapath:d0|             ; 209 (209)         ; 80 (80)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|datapath:d0             ; work         ;
-;       |reg_file:reg_unit|       ; 90 (90)           ; 144 (144)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|reg_file:reg_unit       ; work         ;
-;       |sext:sext_addr_adder|    ; 45 (45)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|sext:sext_addr_adder    ; work         ;
-;       |tristate:tr0|            ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|tristate:tr0            ; work         ;
-+---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                        ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                           ; Library Name ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------+--------------+
+; |lab6_toplevel                  ; 573 (0)           ; 284 (0)      ; 0           ; 0            ; 0       ; 0         ; 129  ; 0            ; |lab6_toplevel                                                ; work         ;
+;    |slc3:my_slc|                ; 573 (0)           ; 284 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc                                    ; work         ;
+;       |ALU:arithlu|             ; 109 (109)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|ALU:arithlu                        ; work         ;
+;       |HexDriver:hex_driver0|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|HexDriver:hex_driver0              ; work         ;
+;       |HexDriver:hex_driver1|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|HexDriver:hex_driver1              ; work         ;
+;       |HexDriver:hex_driver2|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|HexDriver:hex_driver2              ; work         ;
+;       |HexDriver:hex_driver3|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|HexDriver:hex_driver3              ; work         ;
+;       |HexDriver:hex_driver4|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|HexDriver:hex_driver4              ; work         ;
+;       |HexDriver:hex_driver5|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|HexDriver:hex_driver5              ; work         ;
+;       |HexDriver:hex_driver6|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|HexDriver:hex_driver6              ; work         ;
+;       |HexDriver:hex_driver7|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|HexDriver:hex_driver7              ; work         ;
+;       |ISDU:state_controller|   ; 45 (45)           ; 25 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|ISDU:state_controller              ; work         ;
+;          |sync:WE_sync|         ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|ISDU:state_controller|sync:WE_sync ; work         ;
+;       |Mem2IO:memory_subsystem| ; 22 (22)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|Mem2IO:memory_subsystem            ; work         ;
+;       |datapath:d0|             ; 199 (199)         ; 80 (80)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|datapath:d0                        ; work         ;
+;       |reg_file:reg_unit|       ; 94 (94)           ; 128 (128)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|reg_file:reg_unit                  ; work         ;
+;       |sext:sext_addr_adder|    ; 45 (45)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|sext:sext_addr_adder               ; work         ;
+;       |sync:button_sync[0]|     ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|sync:button_sync[0]                ; work         ;
+;       |sync:button_sync[1]|     ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|sync:button_sync[1]                ; work         ;
+;       |sync:button_sync[2]|     ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|sync:button_sync[2]                ; work         ;
+;       |tristate:tr0|            ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|slc3:my_slc|tristate:tr0                       ; work         ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |lab6_toplevel|slc3:my_slc|ISDU:state_controller|State                                                                                                                                                                                                                                                                                                                            ;
-+-----------------+-----------------+-----------------+------------+------------+------------+------------+--------------+--------------+--------------+--------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+--------------+--------------+------------+----------------+----------------+--------------+
-; Name            ; State.S_PAUSE_2 ; State.S_PAUSE_1 ; State.S_22 ; State.S_21 ; State.S_23 ; State.S_27 ; State.S_25_2 ; State.S_25_1 ; State.S_16_2 ; State.S_16_1 ; State.S_12 ; State.S_00 ; State.S_04 ; State.S_07 ; State.S_09 ; State.S_06 ; State.S_05 ; State.S_01 ; State.S_32 ; State.S_35 ; State.S_33_2 ; State.S_33_1 ; State.S_18 ; State.PauseIR2 ; State.PauseIR1 ; State.Halted ;
-+-----------------+-----------------+-----------------+------------+------------+------------+------------+--------------+--------------+--------------+--------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+--------------+--------------+------------+----------------+----------------+--------------+
-; State.Halted    ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 0            ;
-; State.PauseIR1  ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 1              ; 1            ;
-; State.PauseIR2  ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 1              ; 0              ; 1            ;
-; State.S_18      ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 1          ; 0              ; 0              ; 1            ;
-; State.S_33_1    ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 1            ; 0          ; 0              ; 0              ; 1            ;
-; State.S_33_2    ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1            ; 0            ; 0          ; 0              ; 0              ; 1            ;
-; State.S_35      ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
-; State.S_32      ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
-; State.S_01      ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
-; State.S_05      ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
-; State.S_06      ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
-; State.S_09      ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
-; State.S_07      ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
-; State.S_04      ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
-; State.S_00      ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
-; State.S_12      ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
-; State.S_16_1    ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 1            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
-; State.S_16_2    ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 1            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
-; State.S_25_1    ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 1            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
-; State.S_25_2    ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 1            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
-; State.S_27      ; 0               ; 0               ; 0          ; 0          ; 0          ; 1          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
-; State.S_23      ; 0               ; 0               ; 0          ; 0          ; 1          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
-; State.S_21      ; 0               ; 0               ; 0          ; 1          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
-; State.S_22      ; 0               ; 0               ; 1          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
-; State.S_PAUSE_1 ; 0               ; 1               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
-; State.S_PAUSE_2 ; 1               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
-+-----------------+-----------------+-----------------+------------+------------+------------+------------+--------------+--------------+--------------+--------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+--------------+--------------+------------+----------------+----------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |lab6_toplevel|slc3:my_slc|ISDU:state_controller|State                                                                                                                                                                                                                                                                                          ;
++-----------------+-----------------+-----------------+------------+------------+------------+------------+--------------+--------------+--------------+--------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+--------------+--------------+------------+--------------+
+; Name            ; State.S_PAUSE_2 ; State.S_PAUSE_1 ; State.S_22 ; State.S_21 ; State.S_23 ; State.S_27 ; State.S_25_2 ; State.S_25_1 ; State.S_16_2 ; State.S_16_1 ; State.S_12 ; State.S_00 ; State.S_04 ; State.S_07 ; State.S_09 ; State.S_06 ; State.S_05 ; State.S_01 ; State.S_32 ; State.S_35 ; State.S_33_2 ; State.S_33_1 ; State.S_18 ; State.Halted ;
++-----------------+-----------------+-----------------+------------+------------+------------+------------+--------------+--------------+--------------+--------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+--------------+--------------+------------+--------------+
+; State.Halted    ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0            ;
+; State.S_18      ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 1          ; 1            ;
+; State.S_33_1    ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 1            ; 0          ; 1            ;
+; State.S_33_2    ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1            ; 0            ; 0          ; 1            ;
+; State.S_35      ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0            ; 0            ; 0          ; 1            ;
+; State.S_32      ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0            ; 0            ; 0          ; 1            ;
+; State.S_01      ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0            ; 0            ; 0          ; 1            ;
+; State.S_05      ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 1            ;
+; State.S_06      ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 1            ;
+; State.S_09      ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 1            ;
+; State.S_07      ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 1            ;
+; State.S_04      ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 1            ;
+; State.S_00      ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 1            ;
+; State.S_12      ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 1            ;
+; State.S_16_1    ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 1            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 1            ;
+; State.S_16_2    ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 1            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 1            ;
+; State.S_25_1    ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 1            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 1            ;
+; State.S_25_2    ; 0               ; 0               ; 0          ; 0          ; 0          ; 0          ; 1            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 1            ;
+; State.S_27      ; 0               ; 0               ; 0          ; 0          ; 0          ; 1          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 1            ;
+; State.S_23      ; 0               ; 0               ; 0          ; 0          ; 1          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 1            ;
+; State.S_21      ; 0               ; 0               ; 0          ; 1          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 1            ;
+; State.S_22      ; 0               ; 0               ; 1          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 1            ;
+; State.S_PAUSE_1 ; 0               ; 1               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 1            ;
+; State.S_PAUSE_2 ; 1               ; 0               ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 1            ;
++-----------------+-----------------+-----------------+------------+------------+------------+------------+--------------+--------------+--------------+--------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+--------------+--------------+------------+--------------+
+
+
++-------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                ;
++--------------------------------------------------------+----+
+; Logic Cell Name                                        ;    ;
++--------------------------------------------------------+----+
+; slc3:my_slc|datapath:d0|d_bus[0]                       ;    ;
+; slc3:my_slc|datapath:d0|d_bus[1]                       ;    ;
+; slc3:my_slc|datapath:d0|d_bus[2]                       ;    ;
+; slc3:my_slc|datapath:d0|d_bus[3]                       ;    ;
+; slc3:my_slc|datapath:d0|d_bus[4]                       ;    ;
+; slc3:my_slc|datapath:d0|d_bus[5]                       ;    ;
+; slc3:my_slc|datapath:d0|d_bus[6]                       ;    ;
+; slc3:my_slc|datapath:d0|d_bus[7]                       ;    ;
+; slc3:my_slc|datapath:d0|d_bus[8]                       ;    ;
+; slc3:my_slc|datapath:d0|d_bus[9]                       ;    ;
+; slc3:my_slc|datapath:d0|d_bus[10]                      ;    ;
+; slc3:my_slc|datapath:d0|d_bus[11]                      ;    ;
+; slc3:my_slc|datapath:d0|d_bus[12]                      ;    ;
+; slc3:my_slc|datapath:d0|d_bus[13]                      ;    ;
+; slc3:my_slc|datapath:d0|d_bus[14]                      ;    ;
+; slc3:my_slc|datapath:d0|d_bus[15]                      ;    ;
+; Number of logic cells representing combinational loops ; 16 ;
++--------------------------------------------------------+----+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +----------------------------------------------------------------+
@@ -299,40 +330,42 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 298   ;
-; Number of registers using Synchronous Clear  ; 23    ;
+; Total registers                              ; 284   ;
+; Number of registers using Synchronous Clear  ; 20    ;
 ; Number of registers using Synchronous Load   ; 16    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 220   ;
+; Number of registers using Clock Enable       ; 222   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|datapath:d0|IR_out[2]               ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|datapath:d0|LED_out[10]             ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|Mem2IO:memory_subsystem|hex_data[0] ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|datapath:d0|MAR_out[0]              ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; Yes        ; |lab6_toplevel|slc3:my_slc|reg_file:reg_unit|SR1_out[3]        ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|reg_file:reg_unit|R0[9]             ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|reg_file:reg_unit|R2[7]             ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|reg_file:reg_unit|R3[8]             ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|reg_file:reg_unit|R4[11]            ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|reg_file:reg_unit|R5[10]            ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|reg_file:reg_unit|R6[12]            ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|reg_file:reg_unit|R7[1]             ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |lab6_toplevel|slc3:my_slc|datapath:d0|PC_out[2]               ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|reg_file:reg_unit|R1[11]            ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|datapath:d0|MDR_out[9]              ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |lab6_toplevel|slc3:my_slc|sext:sext_addr_adder|ADDR2_out[6]   ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |lab6_toplevel|slc3:my_slc|sext:sext_addr_adder|ADDR2_out[9]   ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 64 LEs               ; 16 LEs                 ; No         ; |lab6_toplevel|slc3:my_slc|datapath:d0|d_bus[0]                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|datapath:d0|IR_out[10]               ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|datapath:d0|LED_out[5]               ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|Mem2IO:memory_subsystem|hex_data[15] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|datapath:d0|MAR_out[0]               ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|reg_file:reg_unit|R0[14]             ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|reg_file:reg_unit|R2[8]              ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|reg_file:reg_unit|R3[12]             ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|reg_file:reg_unit|R4[14]             ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|reg_file:reg_unit|R5[11]             ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|reg_file:reg_unit|R6[11]             ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|reg_file:reg_unit|R7[15]             ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |lab6_toplevel|slc3:my_slc|datapath:d0|p                        ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |lab6_toplevel|slc3:my_slc|datapath:d0|PC_out[13]               ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|reg_file:reg_unit|R1[6]              ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |lab6_toplevel|slc3:my_slc|datapath:d0|MDR_out[13]              ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |lab6_toplevel|slc3:my_slc|sext:sext_addr_adder|ADDR2_out[8]    ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |lab6_toplevel|slc3:my_slc|sext:sext_addr_adder|ADDR2_out[15]   ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |lab6_toplevel|slc3:my_slc|reg_file:reg_unit|SR1_out[15]        ;
+; 9:1                ; 16 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |lab6_toplevel|slc3:my_slc|ALU:arithlu|SR2_MUX_out[2]           ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |lab6_toplevel|slc3:my_slc|datapath:d0|d_bus_next[2]            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------+
@@ -381,25 +414,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 129                         ;
-; cycloneiii_ff         ; 298                         ;
-;     ENA               ; 204                         ;
+; cycloneiii_ff         ; 284                         ;
+;     ENA               ; 206                         ;
 ;     ENA SCLR SLD      ; 16                          ;
-;     SCLR              ; 7                           ;
-;     plain             ; 71                          ;
+;     SCLR              ; 4                           ;
+;     plain             ; 58                          ;
 ; cycloneiii_io_obuf    ; 16                          ;
-; cycloneiii_lcell_comb ; 513                         ;
+; cycloneiii_lcell_comb ; 583                         ;
 ;     arith             ; 45                          ;
 ;         2 data inputs ; 15                          ;
 ;         3 data inputs ; 30                          ;
-;     normal            ; 468                         ;
+;     normal            ; 538                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 11                          ;
-;         2 data inputs ; 66                          ;
-;         3 data inputs ; 98                          ;
-;         4 data inputs ; 292                         ;
+;         1 data inputs ; 13                          ;
+;         2 data inputs ; 68                          ;
+;         3 data inputs ; 65                          ;
+;         4 data inputs ; 391                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 9.30                        ;
-; Average LUT depth     ; 4.19                        ;
+; Max LUT depth         ; 10.30                       ;
+; Average LUT depth     ; 5.88                        ;
 +-----------------------+-----------------------------+
 
 
@@ -408,7 +441,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -418,7 +451,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
-    Info: Processing started: Tue Feb 27 17:39:27 2018
+    Info: Processing started: Wed Feb 28 00:56:17 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab6_slc3 -c lab6_slc3
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 3 design units, including 3 entities, in source file synchronizers.sv
@@ -463,6 +496,7 @@ Info (12128): Elaborating entity "ALU" for hierarchy "slc3:my_slc|ALU:arithlu"
 Info (12128): Elaborating entity "Mem2IO" for hierarchy "slc3:my_slc|Mem2IO:memory_subsystem"
 Info (12128): Elaborating entity "tristate" for hierarchy "slc3:my_slc|tristate:tr0"
 Info (12128): Elaborating entity "ISDU" for hierarchy "slc3:my_slc|ISDU:state_controller"
+Info (12128): Elaborating entity "sync" for hierarchy "slc3:my_slc|ISDU:state_controller|sync:WE_sync"
 Info (12128): Elaborating entity "test_memory" for hierarchy "test_memory:my_test_memory"
 Warning (10036): Verilog HDL or VHDL warning at test_memory.sv(42): object "actual_address" assigned a value but never read
 Info (12128): Elaborating entity "memory_parser" for hierarchy "test_memory:my_test_memory|memory_parser:parser"
@@ -476,17 +510,24 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ADDR[19]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 6 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file D:/Users/Dean/Documents/ECE 385/lab6_slc3/output_files/lab6_slc3.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 823 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 895 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 20 input pins
     Info (21059): Implemented 93 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 694 logic cells
+    Info (21061): Implemented 766 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 10 warnings
     Info: Peak virtual memory: 739 megabytes
-    Info: Processing ended: Tue Feb 27 17:39:46 2018
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:40
+    Info: Processing ended: Wed Feb 28 00:56:28 2018
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:26
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/Users/Dean/Documents/ECE 385/lab6_slc3/output_files/lab6_slc3.map.smsg.
 
 

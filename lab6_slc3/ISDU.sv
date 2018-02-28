@@ -55,12 +55,14 @@ module ISDU (   input logic         Clk,
 									Mem_WE
 				);
 
-	enum logic [5:0] {  Halted, PauseIR1, PauseIR2, 
+	enum logic [5:0] {  Halted, //PauseIR1, PauseIR2, 
 			S_18, S_33_1, S_33_2, S_35, S_32, 
 			S_01, S_05, S_06, S_09, S_07, S_04, S_00, S_12, 
 			S_16_1, S_16_2, S_25_1, S_25_2, S_27, S_23, S_21, S_22, 
 			S_PAUSE_1, S_PAUSE_2}
 			State, Next_state;   // Internal state logic
+	
+	logic Mem_WE_sync;
 		
 	always_ff @ (posedge Clk)
 	begin
@@ -100,7 +102,7 @@ module ISDU (   input logic         Clk,
 		ADDR2MUX = 2'b00;
 		 
 		Mem_OE = 1'b1;
-		Mem_WE = 1'b1;
+		Mem_WE_sync = 1'b1;
 	
 		// Assign next state
 		unique case (State)
@@ -116,19 +118,19 @@ module ISDU (   input logic         Clk,
 			S_33_2 : 
 				Next_state = S_35;
 			S_35 : 
-				Next_state = PauseIR1;
+				Next_state = S_32;
 			// PauseIR1 and PauseIR2 are only for Week 1 such that TAs can see 
 			// the values in IR.
-			PauseIR1 : 
-				if (~Continue) 
-					Next_state = PauseIR1;
-				else 
-					Next_state = PauseIR2;
-			PauseIR2 : 
-				if (Continue) 
-					Next_state = PauseIR2;
-				else 
-					Next_state = S_32;
+			//PauseIR1 : 
+				//if (~Continue) 
+					//Next_state = PauseIR1;
+				//else 
+					//Next_state = PauseIR2;
+			//PauseIR2 : 
+				//if (Continue) 
+					//Next_state = PauseIR2;
+				//else 
+					//Next_state = S_32;
 			S_32 : 
 				case (Opcode)
 					4'b0001 : // ADD
@@ -225,8 +227,8 @@ module ISDU (   input logic         Clk,
 					GateMDR = 1'b1;
 					LD_IR = 1'b1;
 				end
-			PauseIR1: ;
-			PauseIR2: ;
+			//PauseIR1: ;
+			//PauseIR2: ;
 			S_32 : 
 				LD_BEN = 1'b1;
 			S_01 : // ADD, setcc
@@ -299,11 +301,11 @@ module ISDU (   input logic         Clk,
 				end
 			S_16_1 : // STR: M[MAR] <- MDR
 				begin
-					Mem_WE = 1'b0; // Active Low
+					Mem_WE_sync = 1'b0; // Active Low
 				end
 			S_16_2 : 
 				begin
-					Mem_WE = 1'b0;
+					Mem_WE_sync = 1'b0;
 				end
 			S_04 : // JSR: R7 <- PC
 				begin
@@ -348,5 +350,7 @@ module ISDU (   input logic         Clk,
 	assign Mem_CE = 1'b0;
 	assign Mem_UB = 1'b0;
 	assign Mem_LB = 1'b0;
+	
+	sync WE_sync (.*, .d(Mem_WE_sync), .q(Mem_WE));
 	
 endmodule

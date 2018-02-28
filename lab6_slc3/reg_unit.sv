@@ -37,40 +37,44 @@ module reg_file(
 			else if (DR_MUX_out == 3'b111)
 				R7 <= d_bus;
 		end
-		
+	end
+	always_comb
+	begin
+		//SR2_out = R0;
+		//SR1_out = R1;
 		// Check SR1 and SR2 to set output
 		if (SR2 == 3'b000)
-			SR2_out <= R0;
+			SR2_out = R0;
 		else if (SR2 == 3'b001)
-			SR2_out <= R1;
+			SR2_out = R1;
 		else if (SR2 == 3'b010)
-			SR2_out <= R2;
+			SR2_out = R2;
 		else if (SR2 == 3'b011)
-			SR2_out <= R3;
+			SR2_out = R3;
 		else if (SR2 == 3'b100)
-			SR2_out <= R4;
+			SR2_out = R4;
 		else if (SR2 == 3'b101)
-			SR2_out <= R5;
+			SR2_out = R5;
 		else if (SR2 == 3'b110)
-			SR2_out <= R6;
-		else if (SR2 == 3'b111)
-			SR2_out <= R7;
+			SR2_out = R6;
+		else //if (SR2 == 3'b111)
+			SR2_out = R7;
 			
 		if (SR1_MUX_out == 3'b000)
-			SR1_out <= R0;
+			SR1_out = R0;
 		else if (SR1_MUX_out == 3'b001)
-			SR1_out <= R1;
+			SR1_out = R1;
 		else if (SR1_MUX_out == 3'b010)
-			SR1_out <= R2;
+			SR1_out = R2;
 		else if (SR1_MUX_out == 3'b011)
-			SR1_out <= R3;
+			SR1_out = R3;
 		else if (SR1_MUX_out == 3'b100)
-			SR1_out <= R4;
+			SR1_out = R4;
 		else if (SR1_MUX_out == 3'b101)
-			SR1_out <= R5;
+			SR1_out = R5;
 		else if (SR1_MUX_out == 3'b110)
-			SR1_out <= R6;
-		else if (SR1_MUX_out == 3'b111)
-			SR1_out <= R7;
+			SR1_out = R6;
+		else //if (SR1_MUX_out == 3'b111)
+			SR1_out = R7;
 	end
 endmodule  

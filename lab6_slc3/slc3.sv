@@ -29,9 +29,9 @@ module slc3(
 // Declaration of push button active high signals
 logic Reset_ah, Continue_ah, Run_ah;
 
-assign Reset_ah = ~Reset;
-assign Continue_ah = ~Continue;
-assign Run_ah = ~Run;
+//assign Reset_ah = ~Reset;
+//assign Continue_ah = ~Continue;
+//assign Run_ah = ~Run;
 
 // Internal connections
 logic BEN;
@@ -111,5 +111,7 @@ ISDU state_controller(
     .Opcode(IR[15:12]), .IR_5(IR[5]), .IR_11(IR[11]),
     .Mem_CE(CE), .Mem_UB(UB), .Mem_LB(LB), .Mem_OE(OE), .Mem_WE(WE)
 );
+
+sync button_sync[2:0] (Clk, {~Reset, ~Continue, ~Run}, {Reset_ah, Continue_ah, Run_ah});
 
 endmodule
