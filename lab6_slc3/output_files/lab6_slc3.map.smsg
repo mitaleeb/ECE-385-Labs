@@ -2,3 +2,7 @@ Info (10281): Verilog HDL Declaration information at testbench.sv(13): object "H
 Info (10281): Verilog HDL Declaration information at testbench.sv(13): object "HEX1" differs only in case from object "hex1" in the same scope
 Info (10281): Verilog HDL Declaration information at testbench.sv(13): object "HEX2" differs only in case from object "hex2" in the same scope
 Info (10281): Verilog HDL Declaration information at testbench.sv(13): object "HEX3" differs only in case from object "hex3" in the same scope
+Info (10281): Verilog HDL Declaration information at testbench_2.sv(13): object "HEX0" differs only in case from object "hex0" in the same scope
+Info (10281): Verilog HDL Declaration information at testbench_2.sv(13): object "HEX1" differs only in case from object "hex1" in the same scope
+Info (10281): Verilog HDL Declaration information at testbench_2.sv(13): object "HEX2" differs only in case from object "hex2" in the same scope
+Info (10281): Verilog HDL Declaration information at testbench_2.sv(13): object "HEX3" differs only in case from object "hex3" in the same scope

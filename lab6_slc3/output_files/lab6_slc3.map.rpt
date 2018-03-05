@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab6_slc3
-Wed Feb 28 00:56:28 2018
+Sun Mar 04 21:05:17 2018
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -52,7 +52,7 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Feb 28 00:56:28 2018      ;
+; Analysis & Synthesis Status        ; Successful - Sun Mar 04 21:05:17 2018      ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                      ; lab6_slc3                                  ;
 ; Top-level Entity Name              ; lab6_toplevel                              ;
@@ -384,7 +384,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                           ;
 +----------------+-------+------------------------------------------------+
 ; size           ; 256   ; Signed Integer                                 ;
-; init_external  ; 0     ; Signed Integer                                 ;
+; init_external  ; 1     ; Signed Integer                                 ;
 +----------------+-------+------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -451,7 +451,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
-    Info: Processing started: Wed Feb 28 00:56:17 2018
+    Info: Processing started: Sun Mar 04 21:05:05 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab6_slc3 -c lab6_slc3
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 3 design units, including 3 entities, in source file synchronizers.sv
@@ -486,6 +486,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file 'a.sv
     Info (12023): Found entity 1: ALU
 Info (12021): Found 1 design units, including 1 entities, in source file sext.sv
     Info (12023): Found entity 1: sext
+Info (12021): Found 1 design units, including 1 entities, in source file testbench_2.sv
+    Info (12023): Found entity 1: testbench_2
 Info (12127): Elaborating entity "lab6_toplevel" for the top level hierarchy
 Info (12128): Elaborating entity "slc3" for hierarchy "slc3:my_slc"
 Info (12128): Elaborating entity "HexDriver" for hierarchy "slc3:my_slc|HexDriver:hex_driver3"
@@ -500,6 +502,7 @@ Info (12128): Elaborating entity "sync" for hierarchy "slc3:my_slc|ISDU:state_co
 Info (12128): Elaborating entity "test_memory" for hierarchy "test_memory:my_test_memory"
 Warning (10036): Verilog HDL or VHDL warning at test_memory.sv(42): object "actual_address" assigned a value but never read
 Info (12128): Elaborating entity "memory_parser" for hierarchy "test_memory:my_test_memory|memory_parser:parser"
+Warning (12158): Entity "memory_parser" contains only dangling pins
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "CE" is stuck at GND
     Warning (13410): Pin "UB" is stuck at GND
@@ -518,11 +521,11 @@ Info (21057): Implemented 895 device resources after synthesis - the final resou
     Info (21059): Implemented 93 output pins
     Info (21060): Implemented 16 bidirectional pins
     Info (21061): Implemented 766 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 739 megabytes
-    Info: Processing ended: Wed Feb 28 00:56:28 2018
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:26
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 740 megabytes
+    Info: Processing ended: Sun Mar 04 21:05:17 2018
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:25
 
 
 +------------------------------------------+

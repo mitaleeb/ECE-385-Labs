@@ -31,7 +31,7 @@ module test_memory ( input          Clk,
 );
 
     parameter size          = 256; // expand memory as needed (currently it is 256 words)
-    parameter init_external = 0;   // If init external is 0, it means you want to parse the memory_contents.sv file, otherwise you are providing a parsed .dat file
+    parameter init_external = 1;   // If init external is 0, it means you want to parse the memory_contents.sv file, otherwise you are providing a parsed .dat file
 
     integer ptr;
     integer x;
