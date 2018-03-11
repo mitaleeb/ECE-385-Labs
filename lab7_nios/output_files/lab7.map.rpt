@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab7
-Tue Mar 06 18:33:06 2018
+Wed Mar 07 10:01:42 2018
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -277,7 +277,7 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Mar 06 18:33:06 2018      ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar 07 10:01:42 2018      ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                      ; lab7                                       ;
 ; Top-level Entity Name              ; lab7                                       ;
@@ -6725,7 +6725,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:10     ;
+; Top            ; 00:00:09     ;
 +----------------+--------------+
 
 
@@ -6735,7 +6735,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
-    Info: Processing started: Tue Mar 06 18:32:09 2018
+    Info: Processing started: Wed Mar 07 10:00:55 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab7 -c lab7
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file lab7_soc/synthesis/lab7_soc.v
@@ -7085,7 +7085,7 @@ Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "lab7
 Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "lab7_soc:m_lab7_soc|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1"
 Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "lab7_soc:m_lab7_soc|altera_reset_controller:rst_controller_001"
 Info (11170): Start IP generation for the debug fabric within sld_hub.
-Info (11172): 2018.03.06.18:32:41 Progress: Loading sld2dead247/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2018.03.07.10:01:21 Progress: Loading sld2dead247/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -7149,10 +7149,10 @@ Info (21057): Implemented 3220 device resources after synthesis - the final reso
     Info (21064): Implemented 128 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 37 warnings
-    Info: Peak virtual memory: 899 megabytes
-    Info: Processing ended: Tue Mar 06 18:33:06 2018
-    Info: Elapsed time: 00:00:57
-    Info: Total CPU time (on all processors): 00:01:35
+    Info: Peak virtual memory: 901 megabytes
+    Info: Processing ended: Wed Mar 07 10:01:42 2018
+    Info: Elapsed time: 00:00:47
+    Info: Total CPU time (on all processors): 00:01:01
 
 
 +------------------------------------------+
