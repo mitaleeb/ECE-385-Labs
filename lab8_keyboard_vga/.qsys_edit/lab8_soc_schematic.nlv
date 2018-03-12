@@ -1,0 +1,27 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst lab8_soc -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst lab8_soc.accumulator -pg 1 -lvl 3 -y 130
+preplace inst lab8_soc.sdram_pll -pg 1 -lvl 3 -y 330
+preplace inst lab8_soc.nios2_qsys_0 -pg 1 -lvl 2 -y 650
+preplace inst lab8_soc.sw -pg 1 -lvl 3 -y 750
+preplace inst lab8_soc.accum_reset -pg 1 -lvl 3 -y 30
+preplace inst lab8_soc.sdram -pg 1 -lvl 3 -y 470
+preplace inst lab8_soc.onchip_memory2_0 -pg 1 -lvl 3 -y 230
+preplace inst lab8_soc.sysid_qsys_0 -pg 1 -lvl 3 -y 670
+preplace inst lab8_soc.led -pg 1 -lvl 3 -y 570
+preplace inst lab8_soc.clk_0 -pg 1 -lvl 1 -y 690
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)sw.external_connection,(SLAVE)lab8_soc.sw) 1 0 3 NJ 780 NJ 780 NJ
+preplace netloc FAN_OUT<net_container>lab8_soc</net_container>(SLAVE)sysid_qsys_0.reset,(MASTER)clk_0.clk_reset,(SLAVE)sdram_pll.inclk_interface_reset,(SLAVE)accumulator.reset,(SLAVE)accum_reset.reset,(SLAVE)led.reset,(SLAVE)sdram.reset,(SLAVE)onchip_memory2_0.reset1,(SLAVE)sw.reset,(SLAVE)nios2_qsys_0.reset_n) 1 1 2 290 800 600
+preplace netloc POINT_TO_POINT<net_container>lab8_soc</net_container>(SLAVE)sdram.clk,(MASTER)sdram_pll.c0) 1 2 2 620 320 860
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)lab8_soc.led_wire,(SLAVE)led.external_connection) 1 0 3 NJ 600 NJ 600 NJ
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)lab8_soc.accum_reset,(SLAVE)accum_reset.external_connection) 1 0 3 NJ 60 NJ 60 NJ
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)lab8_soc.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)accumulator.external_connection,(SLAVE)lab8_soc.accumulator) 1 0 3 NJ 160 NJ 160 NJ
+preplace netloc FAN_OUT<net_container>lab8_soc</net_container>(SLAVE)nios2_qsys_0.clk,(SLAVE)led.clk,(SLAVE)accum_reset.clk,(SLAVE)sysid_qsys_0.clk,(MASTER)clk_0.clk,(SLAVE)sw.clk,(SLAVE)accumulator.clk,(SLAVE)sdram_pll.inclk_interface,(SLAVE)onchip_memory2_0.clk1) 1 1 2 290 640 560
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(MASTER)lab8_soc.sdram_clk,(MASTER)sdram_pll.c1) 1 3 1 N
+preplace netloc INTERCONNECT<net_container>lab8_soc</net_container>(SLAVE)accumulator.s1,(SLAVE)led.s1,(SLAVE)sdram.s1,(SLAVE)sw.s1,(MASTER)nios2_qsys_0.data_master,(MASTER)nios2_qsys_0.instruction_master,(SLAVE)accum_reset.s1,(SLAVE)nios2_qsys_0.jtag_debug_module,(SLAVE)sdram_pll.pll_slave,(SLAVE)onchip_memory2_0.s1,(SLAVE)sysid_qsys_0.control_slave) 1 1 2 310 820 580
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)lab8_soc.sdram_wire,(SLAVE)sdram.wire) 1 0 3 NJ 540 NJ 540 NJ
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)clk_0.clk_in,(SLAVE)lab8_soc.clk) 1 0 1 NJ
+levelinfo -pg 1 0 80 970
+levelinfo -hier lab8_soc 90 120 340 670 880
