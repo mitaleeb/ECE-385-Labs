@@ -37,7 +37,7 @@
    {
       datum baseAddress
       {
-         value = "168";
+         value = "176";
          type = "String";
       }
    }
@@ -234,7 +234,7 @@
    {
       datum baseAddress
       {
-         value = "176";
+         value = "168";
          type = "String";
       }
    }
@@ -351,7 +351,7 @@
   <parameter name="cpuReset" value="false" />
   <parameter name="customInstSlavesSystemInfo" value="&lt;info/&gt;" />
   <parameter name="dataAddrWidth" value="28" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x10' /><slave name='keycode.s1' start='0x20' end='0x30' /><slave name='otg_hpi_address.s1' start='0x30' end='0x40' /><slave name='otg_hpi_data.s1' start='0x40' end='0x50' /><slave name='otg_hpi_r.s1' start='0x50' end='0x60' /><slave name='otg_hpi_cs.s1' start='0x60' end='0x70' /><slave name='otg_hpi_w.s1' start='0x70' end='0x80' /><slave name='otg_hpi_reset.s1' start='0x80' end='0x90' /><slave name='sdram_pll.pll_slave' start='0x90' end='0xA0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0xA8' end='0xB0' /><slave name='sysid_qsys_0.control_slave' start='0xB0' end='0xB8' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x1000' end='0x1800' /><slave name='sdram.s1' start='0x8000000' end='0xC000000' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x10' /><slave name='keycode.s1' start='0x20' end='0x30' /><slave name='otg_hpi_address.s1' start='0x30' end='0x40' /><slave name='otg_hpi_data.s1' start='0x40' end='0x50' /><slave name='otg_hpi_r.s1' start='0x50' end='0x60' /><slave name='otg_hpi_cs.s1' start='0x60' end='0x70' /><slave name='otg_hpi_w.s1' start='0x70' end='0x80' /><slave name='otg_hpi_reset.s1' start='0x80' end='0x90' /><slave name='sdram_pll.pll_slave' start='0x90' end='0xA0' /><slave name='sysid_qsys_0.control_slave' start='0xA8' end='0xB0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0xB0' end='0xB8' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x1000' end='0x1800' /><slave name='sdram.s1' start='0x8000000' end='0xC000000' /></address-map>]]></parameter>
   <parameter name="dcache_bursts" value="false" />
   <parameter name="dcache_lineSize" value="32" />
   <parameter name="dcache_numTCDM" value="0" />
@@ -378,7 +378,7 @@
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="impl" value="Tiny" />
   <parameter name="instAddrWidth" value="28" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x10' /><slave name='sdram_pll.pll_slave' start='0x90' end='0xA0' /><slave name='sysid_qsys_0.control_slave' start='0xB0' end='0xB8' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x1000' end='0x1800' /><slave name='sdram.s1' start='0x8000000' end='0xC000000' /></address-map>]]></parameter>
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x10' /><slave name='sdram_pll.pll_slave' start='0x90' end='0xA0' /><slave name='sysid_qsys_0.control_slave' start='0xA8' end='0xB0' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x1000' end='0x1800' /><slave name='sdram.s1' start='0x8000000' end='0xC000000' /></address-map>]]></parameter>
   <parameter name="internalIrqMaskSystemInfo" value="32" />
   <parameter name="manuallyAssignCpuID" value="true" />
   <parameter name="mmu_TLBMissExcOffset" value="0" />
@@ -803,7 +803,7 @@
    start="nios2_qsys_0.data_master"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00a8" />
+  <parameter name="baseAddress" value="0x00b0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -812,7 +812,7 @@
    start="nios2_qsys_0.data_master"
    end="sysid_qsys_0.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00b0" />
+  <parameter name="baseAddress" value="0x00a8" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -920,7 +920,7 @@
    start="nios2_qsys_0.instruction_master"
    end="sysid_qsys_0.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00b0" />
+  <parameter name="baseAddress" value="0x00a8" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection

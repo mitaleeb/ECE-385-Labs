@@ -1,5 +1,5 @@
 Info: Starting: Create block symbol file (.bsf)
-Info: qsys-generate C:\Users\mitalee2\Documents\ece385\lab8_keyboard_vga\lab8_soc.qsys --block-symbol-file --output-directory=C:\Users\mitalee2\Documents\ece385\lab8_keyboard_vga\lab8_soc --family="Cyclone IV E" --part=EP4CE115F29C7
+Info: qsys-generate D:\Users\Dean\Documents\ECE385\lab8_keyboard_vga\lab8_soc.qsys --block-symbol-file --output-directory=D:\Users\Dean\Documents\ECE385\lab8_keyboard_vga\lab8_soc --family="Cyclone IV E" --part=EP4CE115F29C7
 Progress: Loading lab8_keyboard_vga/lab8_soc.qsys
 Progress: Reading input file
 Progress: Adding clk_0 [clock_source 15.0]
@@ -38,13 +38,6 @@ Warning: lab8_soc.nios2_qsys_0: Nios II Classic cores are now superseded by impr
 Info: lab8_soc.otg_hpi_data: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: lab8_soc.sysid_qsys_0: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
 Info: lab8_soc.sysid_qsys_0: Time stamp will be automatically updated when this component is generated.
-Warning: lab8_soc.keycode: keycode.external_connection must be exported, or connected to a matching conduit.
-Warning: lab8_soc.otg_hpi_address: otg_hpi_address.external_connection must be exported, or connected to a matching conduit.
-Warning: lab8_soc.otg_hpi_cs: otg_hpi_cs.external_connection must be exported, or connected to a matching conduit.
-Warning: lab8_soc.otg_hpi_data: otg_hpi_data.external_connection must be exported, or connected to a matching conduit.
-Warning: lab8_soc.otg_hpi_r: otg_hpi_r.external_connection must be exported, or connected to a matching conduit.
-Warning: lab8_soc.otg_hpi_reset: otg_hpi_reset.external_connection must be exported, or connected to a matching conduit.
-Warning: lab8_soc.otg_hpi_w: otg_hpi_w.external_connection must be exported, or connected to a matching conduit.
 Warning: lab8_soc.sdram_pll: sdram_pll.areset_conduit must be exported, or connected to a matching conduit.
 Warning: lab8_soc.sdram_pll: sdram_pll.locked_conduit must be exported, or connected to a matching conduit.
 Warning: lab8_soc.sdram_pll: sdram_pll.phasedone_conduit must be exported, or connected to a matching conduit.
@@ -52,7 +45,7 @@ Info: ip-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate C:\Users\mitalee2\Documents\ece385\lab8_keyboard_vga\lab8_soc.qsys --synthesis=VERILOG --output-directory=C:\Users\mitalee2\Documents\ece385\lab8_keyboard_vga\lab8_soc\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Info: qsys-generate D:\Users\Dean\Documents\ECE385\lab8_keyboard_vga\lab8_soc.qsys --synthesis=VERILOG --output-directory=D:\Users\Dean\Documents\ECE385\lab8_keyboard_vga\lab8_soc\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
 Progress: Loading lab8_keyboard_vga/lab8_soc.qsys
 Progress: Reading input file
 Progress: Adding clk_0 [clock_source 15.0]
@@ -91,13 +84,6 @@ Warning: lab8_soc.nios2_qsys_0: Nios II Classic cores are now superseded by impr
 Info: lab8_soc.otg_hpi_data: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: lab8_soc.sysid_qsys_0: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
 Info: lab8_soc.sysid_qsys_0: Time stamp will be automatically updated when this component is generated.
-Warning: lab8_soc.keycode: keycode.external_connection must be exported, or connected to a matching conduit.
-Warning: lab8_soc.otg_hpi_address: otg_hpi_address.external_connection must be exported, or connected to a matching conduit.
-Warning: lab8_soc.otg_hpi_cs: otg_hpi_cs.external_connection must be exported, or connected to a matching conduit.
-Warning: lab8_soc.otg_hpi_data: otg_hpi_data.external_connection must be exported, or connected to a matching conduit.
-Warning: lab8_soc.otg_hpi_r: otg_hpi_r.external_connection must be exported, or connected to a matching conduit.
-Warning: lab8_soc.otg_hpi_reset: otg_hpi_reset.external_connection must be exported, or connected to a matching conduit.
-Warning: lab8_soc.otg_hpi_w: otg_hpi_w.external_connection must be exported, or connected to a matching conduit.
 Warning: lab8_soc.sdram_pll: sdram_pll.areset_conduit must be exported, or connected to a matching conduit.
 Warning: lab8_soc.sdram_pll: sdram_pll.locked_conduit must be exported, or connected to a matching conduit.
 Warning: lab8_soc.sdram_pll: sdram_pll.phasedone_conduit must be exported, or connected to a matching conduit.
@@ -107,46 +93,47 @@ Info: Inserting clock-crossing logic between cmd_demux_001.src4 and cmd_mux_005.
 Info: Inserting clock-crossing logic between rsp_demux_005.src0 and rsp_mux.sink5
 Info: Inserting clock-crossing logic between rsp_demux_005.src1 and rsp_mux_001.sink4
 Info: jtag_uart_0: Starting RTL generation for module 'lab8_soc_jtag_uart_0'
-Info: jtag_uart_0:   Generation command is [exec C:/altera/15.0/quartus/bin64/perl/bin/perl.exe -I C:/altera/15.0/quartus/bin64/perl/lib -I C:/altera/15.0/quartus/sopc_builder/bin/europa -I C:/altera/15.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/15.0/quartus/sopc_builder/bin -I C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=lab8_soc_jtag_uart_0 --dir=C:/Users/mitalee2/AppData/Local/Temp/alt7602_2962765271074423074.dir/0001_jtag_uart_0_gen/ --quartus_dir=C:/altera/15.0/quartus --verilog --config=C:/Users/mitalee2/AppData/Local/Temp/alt7602_2962765271074423074.dir/0001_jtag_uart_0_gen//lab8_soc_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart_0:   Generation command is [exec D:/altera/15.0/quartus/bin64/perl/bin/perl.exe -I D:/altera/15.0/quartus/bin64/perl/lib -I D:/altera/15.0/quartus/sopc_builder/bin/europa -I D:/altera/15.0/quartus/sopc_builder/bin/perl_lib -I D:/altera/15.0/quartus/sopc_builder/bin -I D:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I D:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- D:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=lab8_soc_jtag_uart_0 --dir=C:/Users/Dean/AppData/Local/Temp/alt7603_7985969042505714623.dir/0036_jtag_uart_0_gen/ --quartus_dir=D:/altera/15.0/quartus --verilog --config=C:/Users/Dean/AppData/Local/Temp/alt7603_7985969042505714623.dir/0036_jtag_uart_0_gen//lab8_soc_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
 Info: jtag_uart_0: Done RTL generation for module 'lab8_soc_jtag_uart_0'
 Info: jtag_uart_0: "lab8_soc" instantiated altera_avalon_jtag_uart "jtag_uart_0"
 Info: keycode: Starting RTL generation for module 'lab8_soc_keycode'
-Info: keycode:   Generation command is [exec C:/altera/15.0/quartus/bin64/perl/bin/perl.exe -I C:/altera/15.0/quartus/bin64/perl/lib -I C:/altera/15.0/quartus/sopc_builder/bin/europa -I C:/altera/15.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/15.0/quartus/sopc_builder/bin -I C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=lab8_soc_keycode --dir=C:/Users/mitalee2/AppData/Local/Temp/alt7602_2962765271074423074.dir/0002_keycode_gen/ --quartus_dir=C:/altera/15.0/quartus --verilog --config=C:/Users/mitalee2/AppData/Local/Temp/alt7602_2962765271074423074.dir/0002_keycode_gen//lab8_soc_keycode_component_configuration.pl  --do_build_sim=0  ]
+Info: keycode:   Generation command is [exec D:/altera/15.0/quartus/bin64/perl/bin/perl.exe -I D:/altera/15.0/quartus/bin64/perl/lib -I D:/altera/15.0/quartus/sopc_builder/bin/europa -I D:/altera/15.0/quartus/sopc_builder/bin/perl_lib -I D:/altera/15.0/quartus/sopc_builder/bin -I D:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I D:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=lab8_soc_keycode --dir=C:/Users/Dean/AppData/Local/Temp/alt7603_7985969042505714623.dir/0037_keycode_gen/ --quartus_dir=D:/altera/15.0/quartus --verilog --config=C:/Users/Dean/AppData/Local/Temp/alt7603_7985969042505714623.dir/0037_keycode_gen//lab8_soc_keycode_component_configuration.pl  --do_build_sim=0  ]
 Info: keycode: Done RTL generation for module 'lab8_soc_keycode'
 Info: keycode: "lab8_soc" instantiated altera_avalon_pio "keycode"
 Info: nios2_qsys_0: Starting RTL generation for module 'lab8_soc_nios2_qsys_0'
-Info: nios2_qsys_0:   Generation command is [exec C:/altera/15.0/quartus/bin64/eperlcmd.exe -I C:/altera/15.0/quartus/bin64/perl/lib -I C:/altera/15.0/quartus/sopc_builder/bin/europa -I C:/altera/15.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/15.0/quartus/sopc_builder/bin -I C:/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I C:/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I C:/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2 -I C:/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2 -- C:/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=lab8_soc_nios2_qsys_0 --dir=C:/Users/mitalee2/AppData/Local/Temp/alt7602_2962765271074423074.dir/0003_nios2_qsys_0_gen/ --quartus_bindir=C:/altera/15.0/quartus/bin64 --verilog --config=C:/Users/mitalee2/AppData/Local/Temp/alt7602_2962765271074423074.dir/0003_nios2_qsys_0_gen//lab8_soc_nios2_qsys_0_processor_configuration.pl  --do_build_sim=0  ]
-Info: nios2_qsys_0: # 2018.03.11 20:21:58 (*) Starting Nios II generation
-Info: nios2_qsys_0: # 2018.03.11 20:21:58 (*)   Checking for plaintext license.
-Info: nios2_qsys_0: # 2018.03.11 20:22:00 (*)   Couldn't query license setup in Quartus directory C:/altera/15.0/quartus/bin64
-Info: nios2_qsys_0: # 2018.03.11 20:22:00 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: nios2_qsys_0: # 2018.03.11 20:22:00 (*)   Plaintext license not found.
-Info: nios2_qsys_0: # 2018.03.11 20:22:00 (*)   No license required to generate encrypted Nios II/e.
-Info: nios2_qsys_0: # 2018.03.11 20:22:00 (*)   Elaborating CPU configuration settings
-Info: nios2_qsys_0: # 2018.03.11 20:22:00 (*)   Creating all objects for CPU
-Info: nios2_qsys_0: # 2018.03.11 20:22:01 (*)   Generating RTL from CPU objects
-Info: nios2_qsys_0: # 2018.03.11 20:22:01 (*)   Creating plain-text RTL
-Info: nios2_qsys_0: # 2018.03.11 20:22:02 (*) Done Nios II generation
+Info: nios2_qsys_0:   Generation command is [exec D:/altera/15.0/quartus/bin64/eperlcmd.exe -I D:/altera/15.0/quartus/bin64/perl/lib -I D:/altera/15.0/quartus/sopc_builder/bin/europa -I D:/altera/15.0/quartus/sopc_builder/bin/perl_lib -I D:/altera/15.0/quartus/sopc_builder/bin -I D:/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I D:/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I D:/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2 -I D:/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2 -- D:/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=lab8_soc_nios2_qsys_0 --dir=C:/Users/Dean/AppData/Local/Temp/alt7603_7985969042505714623.dir/0038_nios2_qsys_0_gen/ --quartus_bindir=D:/altera/15.0/quartus/bin64 --verilog --config=C:/Users/Dean/AppData/Local/Temp/alt7603_7985969042505714623.dir/0038_nios2_qsys_0_gen//lab8_soc_nios2_qsys_0_processor_configuration.pl  --do_build_sim=0  ]
+Info: nios2_qsys_0: # 2018.03.13 00:39:41 (*) Starting Nios II generation
+Info: nios2_qsys_0: # 2018.03.13 00:39:41 (*)   Checking for plaintext license.
+Info: nios2_qsys_0: # 2018.03.13 00:39:43 (*)   Couldn't query license setup in Quartus directory D:/altera/15.0/quartus/bin64
+Info: nios2_qsys_0: # 2018.03.13 00:39:43 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: nios2_qsys_0: # 2018.03.13 00:39:43 (*)   LM_LICENSE_FILE environment variable is empty
+Info: nios2_qsys_0: # 2018.03.13 00:39:43 (*)   Plaintext license not found.
+Info: nios2_qsys_0: # 2018.03.13 00:39:43 (*)   No license required to generate encrypted Nios II/e.
+Info: nios2_qsys_0: # 2018.03.13 00:39:43 (*)   Elaborating CPU configuration settings
+Info: nios2_qsys_0: # 2018.03.13 00:39:43 (*)   Creating all objects for CPU
+Info: nios2_qsys_0: # 2018.03.13 00:39:44 (*)   Generating RTL from CPU objects
+Info: nios2_qsys_0: # 2018.03.13 00:39:44 (*)   Creating plain-text RTL
+Info: nios2_qsys_0: # 2018.03.13 00:39:45 (*) Done Nios II generation
 Info: nios2_qsys_0: Done RTL generation for module 'lab8_soc_nios2_qsys_0'
 Info: nios2_qsys_0: "lab8_soc" instantiated altera_nios2_qsys "nios2_qsys_0"
 Info: onchip_memory2_0: Starting RTL generation for module 'lab8_soc_onchip_memory2_0'
-Info: onchip_memory2_0:   Generation command is [exec C:/altera/15.0/quartus/bin64/perl/bin/perl.exe -I C:/altera/15.0/quartus/bin64/perl/lib -I C:/altera/15.0/quartus/sopc_builder/bin/europa -I C:/altera/15.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/15.0/quartus/sopc_builder/bin -I C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=lab8_soc_onchip_memory2_0 --dir=C:/Users/mitalee2/AppData/Local/Temp/alt7602_2962765271074423074.dir/0004_onchip_memory2_0_gen/ --quartus_dir=C:/altera/15.0/quartus --verilog --config=C:/Users/mitalee2/AppData/Local/Temp/alt7602_2962765271074423074.dir/0004_onchip_memory2_0_gen//lab8_soc_onchip_memory2_0_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_memory2_0:   Generation command is [exec D:/altera/15.0/quartus/bin64/perl/bin/perl.exe -I D:/altera/15.0/quartus/bin64/perl/lib -I D:/altera/15.0/quartus/sopc_builder/bin/europa -I D:/altera/15.0/quartus/sopc_builder/bin/perl_lib -I D:/altera/15.0/quartus/sopc_builder/bin -I D:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I D:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- D:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=lab8_soc_onchip_memory2_0 --dir=C:/Users/Dean/AppData/Local/Temp/alt7603_7985969042505714623.dir/0039_onchip_memory2_0_gen/ --quartus_dir=D:/altera/15.0/quartus --verilog --config=C:/Users/Dean/AppData/Local/Temp/alt7603_7985969042505714623.dir/0039_onchip_memory2_0_gen//lab8_soc_onchip_memory2_0_component_configuration.pl  --do_build_sim=0  ]
 Info: onchip_memory2_0: Done RTL generation for module 'lab8_soc_onchip_memory2_0'
 Info: onchip_memory2_0: "lab8_soc" instantiated altera_avalon_onchip_memory2 "onchip_memory2_0"
 Info: otg_hpi_address: Starting RTL generation for module 'lab8_soc_otg_hpi_address'
-Info: otg_hpi_address:   Generation command is [exec C:/altera/15.0/quartus/bin64/perl/bin/perl.exe -I C:/altera/15.0/quartus/bin64/perl/lib -I C:/altera/15.0/quartus/sopc_builder/bin/europa -I C:/altera/15.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/15.0/quartus/sopc_builder/bin -I C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=lab8_soc_otg_hpi_address --dir=C:/Users/mitalee2/AppData/Local/Temp/alt7602_2962765271074423074.dir/0005_otg_hpi_address_gen/ --quartus_dir=C:/altera/15.0/quartus --verilog --config=C:/Users/mitalee2/AppData/Local/Temp/alt7602_2962765271074423074.dir/0005_otg_hpi_address_gen//lab8_soc_otg_hpi_address_component_configuration.pl  --do_build_sim=0  ]
+Info: otg_hpi_address:   Generation command is [exec D:/altera/15.0/quartus/bin64/perl/bin/perl.exe -I D:/altera/15.0/quartus/bin64/perl/lib -I D:/altera/15.0/quartus/sopc_builder/bin/europa -I D:/altera/15.0/quartus/sopc_builder/bin/perl_lib -I D:/altera/15.0/quartus/sopc_builder/bin -I D:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I D:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=lab8_soc_otg_hpi_address --dir=C:/Users/Dean/AppData/Local/Temp/alt7603_7985969042505714623.dir/0040_otg_hpi_address_gen/ --quartus_dir=D:/altera/15.0/quartus --verilog --config=C:/Users/Dean/AppData/Local/Temp/alt7603_7985969042505714623.dir/0040_otg_hpi_address_gen//lab8_soc_otg_hpi_address_component_configuration.pl  --do_build_sim=0  ]
 Info: otg_hpi_address: Done RTL generation for module 'lab8_soc_otg_hpi_address'
 Info: otg_hpi_address: "lab8_soc" instantiated altera_avalon_pio "otg_hpi_address"
 Info: otg_hpi_cs: Starting RTL generation for module 'lab8_soc_otg_hpi_cs'
-Info: otg_hpi_cs:   Generation command is [exec C:/altera/15.0/quartus/bin64/perl/bin/perl.exe -I C:/altera/15.0/quartus/bin64/perl/lib -I C:/altera/15.0/quartus/sopc_builder/bin/europa -I C:/altera/15.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/15.0/quartus/sopc_builder/bin -I C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=lab8_soc_otg_hpi_cs --dir=C:/Users/mitalee2/AppData/Local/Temp/alt7602_2962765271074423074.dir/0006_otg_hpi_cs_gen/ --quartus_dir=C:/altera/15.0/quartus --verilog --config=C:/Users/mitalee2/AppData/Local/Temp/alt7602_2962765271074423074.dir/0006_otg_hpi_cs_gen//lab8_soc_otg_hpi_cs_component_configuration.pl  --do_build_sim=0  ]
+Info: otg_hpi_cs:   Generation command is [exec D:/altera/15.0/quartus/bin64/perl/bin/perl.exe -I D:/altera/15.0/quartus/bin64/perl/lib -I D:/altera/15.0/quartus/sopc_builder/bin/europa -I D:/altera/15.0/quartus/sopc_builder/bin/perl_lib -I D:/altera/15.0/quartus/sopc_builder/bin -I D:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I D:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=lab8_soc_otg_hpi_cs --dir=C:/Users/Dean/AppData/Local/Temp/alt7603_7985969042505714623.dir/0041_otg_hpi_cs_gen/ --quartus_dir=D:/altera/15.0/quartus --verilog --config=C:/Users/Dean/AppData/Local/Temp/alt7603_7985969042505714623.dir/0041_otg_hpi_cs_gen//lab8_soc_otg_hpi_cs_component_configuration.pl  --do_build_sim=0  ]
 Info: otg_hpi_cs: Done RTL generation for module 'lab8_soc_otg_hpi_cs'
 Info: otg_hpi_cs: "lab8_soc" instantiated altera_avalon_pio "otg_hpi_cs"
 Info: otg_hpi_data: Starting RTL generation for module 'lab8_soc_otg_hpi_data'
-Info: otg_hpi_data:   Generation command is [exec C:/altera/15.0/quartus/bin64/perl/bin/perl.exe -I C:/altera/15.0/quartus/bin64/perl/lib -I C:/altera/15.0/quartus/sopc_builder/bin/europa -I C:/altera/15.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/15.0/quartus/sopc_builder/bin -I C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=lab8_soc_otg_hpi_data --dir=C:/Users/mitalee2/AppData/Local/Temp/alt7602_2962765271074423074.dir/0007_otg_hpi_data_gen/ --quartus_dir=C:/altera/15.0/quartus --verilog --config=C:/Users/mitalee2/AppData/Local/Temp/alt7602_2962765271074423074.dir/0007_otg_hpi_data_gen//lab8_soc_otg_hpi_data_component_configuration.pl  --do_build_sim=0  ]
+Info: otg_hpi_data:   Generation command is [exec D:/altera/15.0/quartus/bin64/perl/bin/perl.exe -I D:/altera/15.0/quartus/bin64/perl/lib -I D:/altera/15.0/quartus/sopc_builder/bin/europa -I D:/altera/15.0/quartus/sopc_builder/bin/perl_lib -I D:/altera/15.0/quartus/sopc_builder/bin -I D:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I D:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=lab8_soc_otg_hpi_data --dir=C:/Users/Dean/AppData/Local/Temp/alt7603_7985969042505714623.dir/0042_otg_hpi_data_gen/ --quartus_dir=D:/altera/15.0/quartus --verilog --config=C:/Users/Dean/AppData/Local/Temp/alt7603_7985969042505714623.dir/0042_otg_hpi_data_gen//lab8_soc_otg_hpi_data_component_configuration.pl  --do_build_sim=0  ]
 Info: otg_hpi_data: Done RTL generation for module 'lab8_soc_otg_hpi_data'
 Info: otg_hpi_data: "lab8_soc" instantiated altera_avalon_pio "otg_hpi_data"
 Info: sdram: Starting RTL generation for module 'lab8_soc_sdram'
-Info: sdram:   Generation command is [exec C:/altera/15.0/quartus/bin64/perl/bin/perl.exe -I C:/altera/15.0/quartus/bin64/perl/lib -I C:/altera/15.0/quartus/sopc_builder/bin/europa -I C:/altera/15.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/15.0/quartus/sopc_builder/bin -I C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=lab8_soc_sdram --dir=C:/Users/mitalee2/AppData/Local/Temp/alt7602_2962765271074423074.dir/0008_sdram_gen/ --quartus_dir=C:/altera/15.0/quartus --verilog --config=C:/Users/mitalee2/AppData/Local/Temp/alt7602_2962765271074423074.dir/0008_sdram_gen//lab8_soc_sdram_component_configuration.pl  --do_build_sim=0  ]
+Info: sdram:   Generation command is [exec D:/altera/15.0/quartus/bin64/perl/bin/perl.exe -I D:/altera/15.0/quartus/bin64/perl/lib -I D:/altera/15.0/quartus/sopc_builder/bin/europa -I D:/altera/15.0/quartus/sopc_builder/bin/perl_lib -I D:/altera/15.0/quartus/sopc_builder/bin -I D:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I D:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- D:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=lab8_soc_sdram --dir=C:/Users/Dean/AppData/Local/Temp/alt7603_7985969042505714623.dir/0043_sdram_gen/ --quartus_dir=D:/altera/15.0/quartus --verilog --config=C:/Users/Dean/AppData/Local/Temp/alt7603_7985969042505714623.dir/0043_sdram_gen//lab8_soc_sdram_component_configuration.pl  --do_build_sim=0  ]
 Info: sdram: Done RTL generation for module 'lab8_soc_sdram'
 Info: sdram: "lab8_soc" instantiated altera_avalon_new_sdram_controller "sdram"
 Info: sdram_pll: "lab8_soc" instantiated altpll "sdram_pll"
@@ -182,18 +169,18 @@ Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "c
 Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
-Info: Reusing file C:/Users/mitalee2/Documents/ece385/lab8_keyboard_vga/lab8_soc/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file D:/Users/Dean/Documents/ECE385/lab8_keyboard_vga/lab8_soc/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_001"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file C:/Users/mitalee2/Documents/ece385/lab8_keyboard_vga/lab8_soc/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file D:/Users/Dean/Documents/ECE385/lab8_keyboard_vga/lab8_soc/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
-Info: Reusing file C:/Users/mitalee2/Documents/ece385/lab8_keyboard_vga/lab8_soc/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file D:/Users/Dean/Documents/ECE385/lab8_keyboard_vga/lab8_soc/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: sdram_s1_rsp_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "sdram_s1_rsp_width_adapter"
-Info: Reusing file C:/Users/mitalee2/Documents/ece385/lab8_keyboard_vga/lab8_soc/synthesis/submodules/altera_merlin_address_alignment.sv
-Info: Reusing file C:/Users/mitalee2/Documents/ece385/lab8_keyboard_vga/lab8_soc/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: Reusing file D:/Users/Dean/Documents/ECE385/lab8_keyboard_vga/lab8_soc/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file D:/Users/Dean/Documents/ECE385/lab8_keyboard_vga/lab8_soc/synthesis/submodules/altera_merlin_burst_uncompressor.sv
 Info: crosser: "mm_interconnect_0" instantiated altera_avalon_st_handshake_clock_crosser "crosser"
-Info: Reusing file C:/Users/mitalee2/Documents/ece385/lab8_keyboard_vga/lab8_soc/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: Reusing file D:/Users/Dean/Documents/ECE385/lab8_keyboard_vga/lab8_soc/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: avalon_st_adapter_005: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_005"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"

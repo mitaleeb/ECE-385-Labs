@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("C:/Users/phuang17/Documents/Lab8_provided/") File("lab8.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE115F29) Path("D:/Users/Dean/Documents/ECE385/lab8_keyboard_vga/") File("lab8.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

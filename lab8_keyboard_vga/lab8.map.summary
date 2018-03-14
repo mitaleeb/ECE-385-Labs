@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Sun Mar 11 20:35:56 2018
-Quartus II 64-Bit Version : 15.0.2 Build 153 07/15/2015 SJ Full Version
+Analysis & Synthesis Status : Successful - Tue Mar 13 19:40:30 2018
+Quartus II 64-Bit Version : 15.0.0 Build 145 04/22/2015 SJ Web Edition
 Revision Name : lab8
 Top-level Entity Name : lab8
 Family : Cyclone IV E
-Total logic elements : 3,078
-    Total combinational functions : 2,349
-    Dedicated logic registers : 1,905
-Total registers : 1905
+Total logic elements : 3,186
+    Total combinational functions : 2,425
+    Dedicated logic registers : 1,992
+Total registers : 1992
 Total pins : 128
 Total virtual pins : 0
 Total memory bits : 11,392
