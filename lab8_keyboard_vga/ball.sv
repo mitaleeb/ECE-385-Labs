@@ -74,6 +74,24 @@ module  ball ( input         Clk,                // 50 MHz clock
         // Update position and motion only at rising edge of frame clock
         if (frame_clk_rising_edge)
         begin
+				// Handle keypresses
+				if (keycode == 8'h1A) begin // W
+					Ball_Y_Motion_in = (~(Ball_Y_Step) + 1'b1); // Up
+					Ball_X_Motion_in = 0;
+				end
+				else if (keycode == 8'h04) begin // A
+					Ball_X_Motion_in = (~(Ball_X_Step) + 1'b1); // Left
+					Ball_Y_Motion_in = 0;
+				end
+				else if (keycode == 8'h16) begin// S
+					Ball_Y_Motion_in = Ball_Y_Step; // Down
+					Ball_X_Motion_in = 0;
+				end
+				else if (keycode == 8'h07) begin // D
+					Ball_X_Motion_in = Ball_X_Step; // Right
+					Ball_Y_Motion_in = 0;
+				end
+		  
             // Be careful when using comparators with "logic" datatype because compiler treats 
             //   both sides of the operator as UNSIGNED numbers.
             // e.g. Ball_Y_Pos - Ball_Size <= Ball_Y_Min 
@@ -87,15 +105,6 @@ module  ball ( input         Clk,                // 50 MHz clock
 				else if (Ball_X_Pos <= Ball_X_Min + Ball_Size) // Ball at left edge
 					Ball_X_Motion_in = Ball_X_Step;
             // TODO: Add other boundary detections and handle keypress here.
-				// Handle keypresses
-				if (keycode == 26) // W
-					Ball_Y_Motion_in = (~(Ball_Y_Step) + 1'b1); // Up
-				else if (keycode == 4) // A
-					Ball_X_Motion_in = (~(Ball_X_Step) + 1'b1); // Left
-				else if (keycode == 22) // S
-					Ball_Y_Motion_in = Ball_Y_Step; // Down
-				else if (keycode == 7) // D
-					Ball_X_Motion_in = Ball_X_Step; // Right
         
             // Update the ball's position with its motion
             Ball_X_Pos_in = Ball_X_Pos + Ball_X_Motion;

@@ -48,11 +48,14 @@ module lab8( input               CLOCK_50,
     
     logic Reset_h, Clk;
     logic [7:0] keycode;
+	 //logic CLK_60;
+	 //logic [19:0] counter;
     
     assign Clk = CLOCK_50;
     always_ff @ (posedge Clk) begin
         Reset_h <= ~(KEY[0]);        // The push buttons are active low
     end
+		  
     
     logic [1:0] hpi_addr;
     logic [15:0] hpi_data_in, hpi_data_out;
@@ -103,17 +106,20 @@ module lab8( input               CLOCK_50,
                              .otg_hpi_reset_export(hpi_reset)
     );
     
+	 // Some local variables
+	 logic is_ball;
+	 logic [9:0] DrawX, DrawY;
     // Use PLL to generate the 25MHZ VGA_CLK.
     // You will have to generate it on your own in simulation.
     vga_clk vga_clk_instance(.inclk0(Clk), .c0(VGA_CLK));
     
     // TODO: Fill in the connections for the rest of the modules 
-    //VGA_controller vga_controller_instance();
+    VGA_controller vga_controller_instance(.*, .Reset(Reset_h));
     
     // Which signal should be frame_clk?
-    ball ball_instance(.*, .frame_clk(VGA_CLK));
+    ball ball_instance(.*, .frame_clk(VGA_VS), .Reset(Reset_h));
     
-    //color_mapper color_instance();
+    color_mapper color_instance(.*);
     
     // Display keycode on hex display
     HexDriver hex_inst_0 (keycode[3:0], HEX0);

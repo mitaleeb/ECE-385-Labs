@@ -196,7 +196,7 @@ agreement for further details.
 		(text "dqm" (rect 165 539 348 1088)(font "Arial" (color 0 0 0)))
 		(text "ras_n" (rect 165 555 360 1120)(font "Arial" (color 0 0 0)))
 		(text "we_n" (rect 165 571 354 1152)(font "Arial" (color 0 0 0)))
-		(text " lab8_soc " (rect 343 592 746 1194)(font "Arial" ))
+		(text " system " (rect 349 592 746 1194)(font "Arial" ))
 		(line (pt 160 32)(pt 224 32)(line_width 1))
 		(line (pt 224 32)(pt 224 592)(line_width 1))
 		(line (pt 160 592)(pt 224 592)(line_width 1))

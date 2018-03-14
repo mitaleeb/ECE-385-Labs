@@ -15,21 +15,21 @@ preplace inst lab8_soc.otg_hpi_reset -pg 1 -lvl 3 -y 990
 preplace inst lab8_soc.onchip_memory2_0 -pg 1 -lvl 3 -y 30
 preplace inst lab8_soc.sysid_qsys_0 -pg 1 -lvl 3 -y 670
 preplace inst lab8_soc.clk_0 -pg 1 -lvl 1 -y 490
-preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)sdram.wire,(SLAVE)lab8_soc.sdram_wire) 1 0 3 NJ 340 NJ 340 NJ
-preplace netloc FAN_OUT<net_container>lab8_soc</net_container>(SLAVE)otg_hpi_reset.clk,(SLAVE)sysid_qsys_0.clk,(SLAVE)sdram_pll.inclk_interface,(SLAVE)keycode.clk,(SLAVE)onchip_memory2_0.clk1,(SLAVE)jtag_uart_0.clk,(SLAVE)otg_hpi_cs.clk,(SLAVE)otg_hpi_data.clk,(SLAVE)otg_hpi_address.clk,(SLAVE)nios2_qsys_0.clk,(MASTER)clk_0.clk,(SLAVE)otg_hpi_r.clk,(SLAVE)otg_hpi_w.clk) 1 1 2 360 1140 670
 preplace netloc POINT_TO_POINT<net_container>lab8_soc</net_container>(MASTER)sdram_pll.c0,(SLAVE)sdram.clk) 1 2 2 710 260 950
-preplace netloc INTERCONNECT<net_container>lab8_soc</net_container>(MASTER)nios2_qsys_0.data_master,(SLAVE)otg_hpi_reset.s1,(SLAVE)onchip_memory2_0.s1,(SLAVE)jtag_uart_0.avalon_jtag_slave,(MASTER)nios2_qsys_0.instruction_master,(SLAVE)sysid_qsys_0.control_slave,(SLAVE)otg_hpi_w.s1,(SLAVE)otg_hpi_data.s1,(SLAVE)sdram_pll.pll_slave,(SLAVE)otg_hpi_r.s1,(SLAVE)otg_hpi_cs.s1,(SLAVE)nios2_qsys_0.jtag_debug_module,(SLAVE)sdram.s1,(SLAVE)otg_hpi_address.s1,(SLAVE)keycode.s1) 1 1 2 380 1260 630
-preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)lab8_soc.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)lab8_soc.otg_hpi_w,(SLAVE)otg_hpi_w.external_connection) 1 0 3 NJ 1120 NJ 1120 NJ
 preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)lab8_soc.reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)lab8_soc.otg_hpi_reset,(SLAVE)otg_hpi_reset.external_connection) 1 0 3 NJ 1020 NJ 1020 NJ
 preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)otg_hpi_data.external_connection,(SLAVE)lab8_soc.otg_hpi_data) 1 0 3 NJ 820 NJ 820 NJ
-preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)otg_hpi_reset.external_connection,(SLAVE)lab8_soc.otg_hpi_reset) 1 0 3 NJ 1020 NJ 1020 NJ
-preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)keycode.external_connection,(SLAVE)lab8_soc.keycode) 1 0 3 NJ 1220 NJ 1220 NJ
-preplace netloc FAN_OUT<net_container>lab8_soc</net_container>(SLAVE)nios2_qsys_0.reset_n,(SLAVE)otg_hpi_r.reset,(MASTER)clk_0.clk_reset,(SLAVE)sdram_pll.inclk_interface_reset,(SLAVE)sdram.reset,(SLAVE)jtag_uart_0.reset,(SLAVE)sysid_qsys_0.reset,(SLAVE)otg_hpi_cs.reset,(SLAVE)onchip_memory2_0.reset1,(SLAVE)otg_hpi_address.reset,(SLAVE)keycode.reset,(SLAVE)otg_hpi_reset.reset,(SLAVE)otg_hpi_data.reset,(SLAVE)otg_hpi_w.reset) 1 1 2 320 1240 690
-preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)lab8_soc.otg_hpi_r,(SLAVE)otg_hpi_r.external_connection) 1 0 3 NJ 920 NJ 920 NJ
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)otg_hpi_cs.external_connection,(SLAVE)lab8_soc.otg_hpi_cs) 1 0 3 NJ 600 NJ 600 NJ
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)otg_hpi_r.external_connection,(SLAVE)lab8_soc.otg_hpi_r) 1 0 3 NJ 920 NJ 920 NJ
+preplace netloc FAN_OUT<net_container>lab8_soc</net_container>(SLAVE)otg_hpi_w.clk,(SLAVE)otg_hpi_address.clk,(SLAVE)onchip_memory2_0.clk1,(SLAVE)otg_hpi_data.clk,(SLAVE)jtag_uart_0.clk,(SLAVE)nios2_qsys_0.clk,(MASTER)clk_0.clk,(SLAVE)sysid_qsys_0.clk,(SLAVE)otg_hpi_cs.clk,(SLAVE)sdram_pll.inclk_interface,(SLAVE)otg_hpi_reset.clk,(SLAVE)keycode.clk,(SLAVE)otg_hpi_r.clk) 1 1 2 360 1140 670
+preplace netloc FAN_OUT<net_container>lab8_soc</net_container>(SLAVE)sdram_pll.inclk_interface_reset,(SLAVE)jtag_uart_0.reset,(SLAVE)onchip_memory2_0.reset1,(SLAVE)otg_hpi_cs.reset,(SLAVE)otg_hpi_address.reset,(SLAVE)sdram.reset,(SLAVE)otg_hpi_w.reset,(SLAVE)sysid_qsys_0.reset,(SLAVE)otg_hpi_data.reset,(SLAVE)keycode.reset,(SLAVE)otg_hpi_r.reset,(SLAVE)nios2_qsys_0.reset_n,(SLAVE)otg_hpi_reset.reset,(MASTER)clk_0.clk_reset) 1 1 2 320 1240 690
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)lab8_soc.keycode,(SLAVE)keycode.external_connection) 1 0 3 NJ 1220 NJ 1220 NJ
 preplace netloc EXPORT<net_container>lab8_soc</net_container>(MASTER)lab8_soc.sdram_clk,(MASTER)sdram_pll.c1) 1 3 1 N
 preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)otg_hpi_address.external_connection,(SLAVE)lab8_soc.otg_hpi_address) 1 0 3 NJ 480 NJ 580 NJ
 preplace netloc POINT_TO_POINT<net_container>lab8_soc</net_container>(MASTER)nios2_qsys_0.d_irq,(SLAVE)jtag_uart_0.irq) 1 2 1 650
-preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)otg_hpi_w.external_connection,(SLAVE)lab8_soc.otg_hpi_w) 1 0 3 NJ 1120 NJ 1120 NJ
-preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)lab8_soc.otg_hpi_cs,(SLAVE)otg_hpi_cs.external_connection) 1 0 3 NJ 600 NJ 600 NJ
+preplace netloc INTERCONNECT<net_container>lab8_soc</net_container>(SLAVE)jtag_uart_0.avalon_jtag_slave,(SLAVE)otg_hpi_r.s1,(SLAVE)otg_hpi_address.s1,(SLAVE)keycode.s1,(SLAVE)nios2_qsys_0.jtag_debug_module,(SLAVE)otg_hpi_data.s1,(SLAVE)sdram.s1,(SLAVE)onchip_memory2_0.s1,(SLAVE)otg_hpi_w.s1,(SLAVE)sdram_pll.pll_slave,(SLAVE)otg_hpi_cs.s1,(SLAVE)sysid_qsys_0.control_slave,(SLAVE)otg_hpi_reset.s1,(MASTER)nios2_qsys_0.data_master,(MASTER)nios2_qsys_0.instruction_master) 1 1 2 380 1260 630
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)lab8_soc.sdram_wire,(SLAVE)sdram.wire) 1 0 3 NJ 340 NJ 340 NJ
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)clk_0.clk_in,(SLAVE)lab8_soc.clk) 1 0 1 NJ
 levelinfo -pg 1 0 110 1060
 levelinfo -hier lab8_soc 120 150 410 760 970
