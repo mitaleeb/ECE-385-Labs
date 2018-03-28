@@ -19,6 +19,16 @@ volatile unsigned int * AES_PTR = (unsigned int *) 0x00000040;
 // Execution mode: 0 for testing, 1 for benchmarking
 int run_mode = 0;
 
+// Declarations
+uint* keyExpansion (unsigned char key[40]);
+void addRoundKey(unsigned char* state, uint* w, int round);
+void rotWord(uint* input);
+void subBytes(unsigned char* state);
+void subWord(uint* word);
+void shiftRows(uchar* state);
+void mixColumns(uchar* state);
+uchar xtime(uchar a);
+
 /** charToHex
  *  Convert a single character to the 4-bit value it represents.
  *  
@@ -69,7 +79,129 @@ char charsToHex(char c1, char c2)
 void encrypt(unsigned char * msg_ascii, unsigned char * key_ascii, unsigned int * msg_enc, unsigned int * key)
 {
 	// Implement this function
+	uchar state[16];
 
+	// Change to hex
+	uchar hexmsg[16];
+	int i;
+	int count = 0;
+	uchar lastChar = msg_ascii[0];
+	for (i = 0; i < 32; i++) {
+		if (i % 2 == 1) {
+			hexmsg[count] = charsToHex(lastChar, msg_ascii[i]);
+			count++;
+		}
+		lastChar = msg_ascii[i];
+	}
+
+	uchar hexkey[16];
+	count = 0;
+	lastChar = key_ascii[i];
+	for (i = 0; i < 32; i++) {
+		if (i % 2 == 1) {
+			hexkey[count] = charsToHex(lastChar, key_ascii[i]);
+			count++;
+		}
+		lastChar = key_ascii[i];
+	}
+
+	// Turn into 4x32 int
+	int j;
+	count = 0;
+	for (i = 0; i < 4; i++) {
+		key[i] = 0;
+		for (j = 0; j < 4; j++) {
+			key[i] <<= 8;
+			key[i] |= hexkey[count];
+			count++;
+		}
+	}
+
+	/*printf("Key in HEX\n");
+	for (i = 0; i < 4; i++) {
+		printf("%08X", key[i]);
+	}
+	printf("\n");*/
+
+	// Generate the key schedule
+	uint* w = keyExpansion(hexkey);
+
+	// print key schedule for debugging
+	/*int q = 0;
+	printf("key schedule:\n");
+	for(q=0; q<44; q++) {
+		printf("%08X ", w[q]);
+		if((q+1)%4 == 0) printf("\n");
+	}*/
+
+	printf("\nkey expansion final val:\n");
+	printf("%08x%08x%08x%08x \n\n", w[40], w[41], w[42], w[43]);
+
+	for (i = 0; i < 16; i++) {
+		state[i] = hexmsg[i];
+	}
+
+	addRoundKey(state, w, 0);
+
+	for (i = 1; i < 10; i++) {
+		// Print current state for debugging
+		printf("\nState at start of round %d\n", i);
+		int j;
+		for (j = 0; j < 16; j++) {
+			printf("%02x ", state[j]);
+			if ((j+1) % 4 == 0)
+				printf("\n");
+		}
+
+		subBytes(state);
+		printf("\nsubBytes: \n");
+		for (j = 0; j < 16; j++) {
+			printf("%02x ", state[j]);
+			if ((j+1) % 4 == 0)
+				printf("\n");
+		}
+
+		shiftRows(state);
+		printf("\nshiftRows: \n");
+		for (j = 0; j < 16; j++) {
+			printf("%02x ", state[j]);
+			if ((j+1) % 4 == 0)
+				printf("\n");
+		}
+
+		mixColumns(state);
+		printf("\nmixColumns: \n");
+		for (j = 0; j < 16; j++) {
+			printf("%02x ", state[j]);
+			if ((j+1) % 4 == 0)
+				printf("\n");
+		}
+
+		addRoundKey(state, w, i);
+	}
+
+	subBytes(state);
+	shiftRows(state);
+	addRoundKey(state, w, 10);
+
+	uchar msg_enc_hex[16];
+	for (i = 0; i < 16; i++) {
+		msg_enc_hex[i] = state[i];
+	}
+	// Turn into 4x32 int
+	count = 0;
+	for (i = 0; i < 4; i++) {
+		msg_enc[i] = 0;
+		for (j = 0; j < 4; j++) {
+			msg_enc[i] <<= 8;
+			msg_enc[i] |= msg_enc_hex[count];
+			count++;
+		}
+	}
+
+
+	// don't forget to free any allocated memory
+	free(w);
 }
 
 /**
@@ -78,33 +210,42 @@ void encrypt(unsigned char * msg_ascii, unsigned char * key_ascii, unsigned int 
  * Takes the Cipher Key and performs a Key Expansion to generate a
  * series of Round Keys (4-Word matrix) and store them into Key Schedule
  *
- * Input: key[40] - length 40 byte array holding the encryption key
+ * Input: key[16] - length 4*Nk byte array holding the encryption key
  * Returns: pointer to the beginning of the key schedule array
  */
-int* keyExpansion (unsigned char key[40]) {
+uint* keyExpansion (uchar key[16]) {
 	int Nk = 4;
 	int Nb = 4;
 	int Nr = 10;
 
-	int* w = (int*) malloc(sizeof(int) * Nr * (Nk+1));
+	uint* w = (uint*) malloc(sizeof(uint) * Nr * (Nk+1));
 
 	// Words are same size as integers = 32 bits
-	int temp;
+	uint temp;
 	int i;
 	for (i = 0; i < Nk; i++) {
-		int first4 = key[4*i] << 24;
-		int second4 = key[4*i+1] << 16;
-		int third4 = key[4*i+2] << 8;
-		int fourth4 = key[4*i+3];
+		uint first4 = key[4*i] << 24;
+		uint second4 = key[4*i+1] << 16;
+		uint third4 = key[4*i+2] << 8;
+		uint fourth4 = key[4*i+3];
 
 		// "or" all together to create a 32 bit word
 		w[i] = first4 | second4 | third4 | fourth4;
 	}
 
+	// Printing for debugging
+	/*printf("\nw(1:4):\n");
+	for (i = 0; i < 4; i++) {
+		printf("%08X \n", w[i]);
+	}
+	printf("\n");*/
+
 	for (i = Nk; i < Nb*(Nr+1); i++) {
 		temp = w[i-1];
 		if (i % Nk == 0) {
-			temp = subWord(rotWord(temp)) ^ Rcon[i/Nk];
+			rotWord(&temp);
+			subWord(&temp);
+			temp ^= Rcon[i/Nk];
 		}
 		w[i] = w[i-Nk] ^ temp;
 	}
@@ -116,16 +257,117 @@ int* keyExpansion (unsigned char key[40]) {
  * Helper function for AES encryption
  * Takes the Cipher Key and
  */
-int* addRoundKey(unsigned char* state, int* w, int round) {
+void addRoundKey(unsigned char* state, uint* w, int round) {
 	// Note w has length 44
-	int start = round*4;
-	int wIndex = start;
+	uint start = round*4;
+	uint wIndex = start;
 	int i;
 	for (i = 0; i < 16; i++) {
-		unsigned char temp = (char)((w[wIndex] >> (8*(3-i%4))) & 0x0000000F);
-		state[i] ^= temp;
 		wIndex = start + i/4;
+		uchar temp = (uchar)((w[wIndex] >> (8*(3-i%4))) & 0x000000FF);
+		state[i] ^= temp;
 	}
+}
+
+//Rotate Word
+void rotWord(uint* input) {
+    uint temp_1;
+    uint temp_2;
+
+    temp_1 = *input << 8;
+    temp_2 = *input & 0xFF000000;
+    temp_2 = temp_2 >> 24; 
+    *input = temp_1 | temp_2;
+
+}
+
+// SubBytes()
+// Loop through each byte in the state and look up the table using the two hex values of the byte as the row and column indicies 
+// SBox is stored as a 256 Byte array instead of a 16x16 matrix
+void subBytes(unsigned char* state) {
+    int i;  
+    for(i=0; i<16; i++){
+        state[i] = aes_sbox[state[i]];
+    }
+}
+
+void subWord(uint* word) {
+
+	/*INSERT TYPE FOR ALL TEMP VARIABLES*/
+	uchar temp_0 = (uchar)(*word);
+	uchar temp_1 = (uchar)((*word >> 8));
+	uchar temp_2 = (uchar)((*word >> 16));
+	uchar temp_3 = (uchar)((*word >> 24));
+
+	/*INDIVIDUAL BYTES SUBSTITUTED USING S-BOX LOOKUP TABLE*/
+	temp_0 = aes_sbox[temp_0];
+	temp_1 = aes_sbox[temp_1];
+	temp_2 = aes_sbox[temp_2]; 
+	temp_3 = aes_sbox[temp_3];
+	*word = (temp_3 << 24)|(temp_2 << 16)|(temp_1 << 8)|(temp_0);
+}
+
+/**
+ * shiftRows
+ * The rows in the updating state is cyclically shifted by a certain offset.
+ * Row n is left-circulated by n-1 bytes
+ * @param state the state that will be changed.
+ */
+void shiftRows(uchar* state) {
+	uchar temp[4][4];
+
+	// Populate the temporary 2-D array
+	int i;
+	for (i = 0; i < 16; i++) {
+		temp[i % 4][i / 4] = state[i];
+	}
+
+	// Shift the 2D array
+	int n;
+	for (n = 0; n < 4; n++) {
+		for (i = 0; i < n; i++) {
+			uchar tempChar = temp[n][0];
+			temp[n][0] = temp[n][1];
+			temp[n][1] = temp[n][2];
+			temp[n][2] = temp[n][3];
+			temp[n][3] = tempChar;
+		}
+	}
+
+	// Reload the 2D array into the 1D array
+	for (i = 0; i < 16; i++) {
+		state[i] = temp[i % 4][i / 4];
+	}
+}
+
+void mixColumns(uchar* state) {
+	uchar a[4];
+
+	int i;
+	for (i = 0; i < 4; i++) {
+		// Get the words of the state
+		a[0] = state[(4*i)];
+		a[1] = state[(4*i) + 1];
+		a[2] = state[(4*i) + 2];
+		a[3] = state[(4*i) + 3];
+
+		// perform operations, store in result
+		state[(4*i)] = xtime(a[0]) ^ xtime(a[1]) ^ a[1] ^ a[2] ^ a[3];
+		state[(4*i) + 1] = a[0] ^ xtime(a[1]) ^ xtime(a[2]) ^ a[2] ^ a[3];
+		state[(4*i) + 2] = a[0] ^ a[1] ^ xtime(a[2]) ^ xtime(a[3]) ^ a[3];
+		state[(4*i) + 3] = xtime(a[0]) ^ a[0] ^ a[1] ^ a[2] ^ xtime(a[3]);
+	}
+}
+
+uchar xtime(uchar a) {
+	if ((a & 0x80) == 0x80) {
+		a <<= 1;
+		a ^= 0x1B;
+	} else {
+		a <<= 1;
+	}
+
+	return a;
 }
 
 /**
@@ -151,8 +393,8 @@ void decrypt(unsigned int * msg_enc, unsigned int * msg_dec, unsigned int * key)
 int main()
 {
 	// Input Message and Key as 32x 8-bit ASCII Characters ([33] is for NULL terminator)
-	unsigned char msg_ascii[33];
-	unsigned char key_ascii[33];
+	unsigned char msg_ascii[33] = "ece298dcece298dcece298dcece298dc";
+	unsigned char key_ascii[33] = "000102030405060708090a0b0c0d0e0f";
 	// Key, Encrypted Message, and Decrypted Message in 4x 32-bit Format to facilitate Read/Write to Hardware
 	unsigned int key[4];
 	unsigned int msg_enc[4];
@@ -161,7 +403,20 @@ int main()
 	printf("Select execution mode: 0 for testing, 1 for benchmarking: ");
 	scanf("%d", &run_mode);
 
-	if (run_mode == 0) {
+	// Added by me to assist in debugging
+	if (run_mode == 2) {
+		//msg_ascii = "ece298dcece298dcece298dcece298dc";
+		//key_ascii = "000102030405060708090a0b0c0d0e0f";
+		encrypt(msg_ascii, key_ascii, msg_enc, key);
+		printf("\nEncrypted message is: \n");
+		int i = 0;
+		for(i = 0; i < 4; i++){
+			printf("%08x", msg_enc[i]);
+		}
+		printf("\n");
+	}
+
+	else if (run_mode == 0) {
 		// Continuously Perform Encryption and Decryption
 		while (1) {
 			int i = 0;
@@ -172,7 +427,7 @@ int main()
 			scanf("%s", key_ascii);
 			printf("\n");
 			encrypt(msg_ascii, key_ascii, msg_enc, key);
-			printf("\nEncrpted message is: \n");
+			printf("\nEncrypted message is: \n");
 			for(i = 0; i < 4; i++){
 				printf("%08x", msg_enc[i]);
 			}
