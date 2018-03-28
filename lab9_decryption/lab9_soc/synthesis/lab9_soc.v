@@ -4,27 +4,19 @@
 
 `timescale 1 ps / 1 ps
 module lab9_soc (
-		output wire [31:0] aes_export_EXPORT_DATA, //      aes_export.EXPORT_DATA
-		input  wire        clk_clk,                //             clk.clk
-		output wire [7:0]  keycode_export,         //         keycode.export
-		output wire [1:0]  otg_hpi_address_export, // otg_hpi_address.export
-		output wire        otg_hpi_cs_export,      //      otg_hpi_cs.export
-		input  wire [15:0] otg_hpi_data_in_port,   //    otg_hpi_data.in_port
-		output wire [15:0] otg_hpi_data_out_port,  //                .out_port
-		output wire        otg_hpi_r_export,       //       otg_hpi_r.export
-		output wire        otg_hpi_reset_export,   //   otg_hpi_reset.export
-		output wire        otg_hpi_w_export,       //       otg_hpi_w.export
-		input  wire        reset_reset_n,          //           reset.reset_n
-		output wire        sdram_clk_clk,          //       sdram_clk.clk
-		output wire [12:0] sdram_wire_addr,        //      sdram_wire.addr
-		output wire [1:0]  sdram_wire_ba,          //                .ba
-		output wire        sdram_wire_cas_n,       //                .cas_n
-		output wire        sdram_wire_cke,         //                .cke
-		output wire        sdram_wire_cs_n,        //                .cs_n
-		inout  wire [15:0] sdram_wire_dq,          //                .dq
-		output wire [1:0]  sdram_wire_dqm,         //                .dqm
-		output wire        sdram_wire_ras_n,       //                .ras_n
-		output wire        sdram_wire_we_n         //                .we_n
+		output wire [31:0] aes_export_EXPORT_DATA, // aes_export.EXPORT_DATA
+		input  wire        clk_clk,                //        clk.clk
+		input  wire        reset_reset_n,          //      reset.reset_n
+		output wire        sdram_clk_clk,          //  sdram_clk.clk
+		output wire [12:0] sdram_wire_addr,        // sdram_wire.addr
+		output wire [1:0]  sdram_wire_ba,          //           .ba
+		output wire        sdram_wire_cas_n,       //           .cas_n
+		output wire        sdram_wire_cke,         //           .cke
+		output wire        sdram_wire_cs_n,        //           .cs_n
+		inout  wire [15:0] sdram_wire_dq,          //           .dq
+		output wire [1:0]  sdram_wire_dqm,         //           .dqm
+		output wire        sdram_wire_ras_n,       //           .ras_n
+		output wire        sdram_wire_we_n         //           .we_n
 	);
 
 	wire         sdram_pll_c0_clk;                                             // sdram_pll:c0 -> [mm_interconnect_0:sdram_pll_c0_clk, rst_controller_001:clk, sdram:clk]
@@ -85,44 +77,9 @@ module lab9_soc (
 	wire         mm_interconnect_0_sdram_s1_readdatavalid;                     // sdram:za_valid -> mm_interconnect_0:sdram_s1_readdatavalid
 	wire         mm_interconnect_0_sdram_s1_write;                             // mm_interconnect_0:sdram_s1_write -> sdram:az_wr_n
 	wire  [15:0] mm_interconnect_0_sdram_s1_writedata;                         // mm_interconnect_0:sdram_s1_writedata -> sdram:az_data
-	wire         mm_interconnect_0_otg_hpi_reset_s1_chipselect;                // mm_interconnect_0:otg_hpi_reset_s1_chipselect -> otg_hpi_reset:chipselect
-	wire  [31:0] mm_interconnect_0_otg_hpi_reset_s1_readdata;                  // otg_hpi_reset:readdata -> mm_interconnect_0:otg_hpi_reset_s1_readdata
-	wire   [1:0] mm_interconnect_0_otg_hpi_reset_s1_address;                   // mm_interconnect_0:otg_hpi_reset_s1_address -> otg_hpi_reset:address
-	wire         mm_interconnect_0_otg_hpi_reset_s1_write;                     // mm_interconnect_0:otg_hpi_reset_s1_write -> otg_hpi_reset:write_n
-	wire  [31:0] mm_interconnect_0_otg_hpi_reset_s1_writedata;                 // mm_interconnect_0:otg_hpi_reset_s1_writedata -> otg_hpi_reset:writedata
-	wire         mm_interconnect_0_otg_hpi_w_s1_chipselect;                    // mm_interconnect_0:otg_hpi_w_s1_chipselect -> otg_hpi_w:chipselect
-	wire  [31:0] mm_interconnect_0_otg_hpi_w_s1_readdata;                      // otg_hpi_w:readdata -> mm_interconnect_0:otg_hpi_w_s1_readdata
-	wire   [1:0] mm_interconnect_0_otg_hpi_w_s1_address;                       // mm_interconnect_0:otg_hpi_w_s1_address -> otg_hpi_w:address
-	wire         mm_interconnect_0_otg_hpi_w_s1_write;                         // mm_interconnect_0:otg_hpi_w_s1_write -> otg_hpi_w:write_n
-	wire  [31:0] mm_interconnect_0_otg_hpi_w_s1_writedata;                     // mm_interconnect_0:otg_hpi_w_s1_writedata -> otg_hpi_w:writedata
-	wire         mm_interconnect_0_otg_hpi_cs_s1_chipselect;                   // mm_interconnect_0:otg_hpi_cs_s1_chipselect -> otg_hpi_cs:chipselect
-	wire  [31:0] mm_interconnect_0_otg_hpi_cs_s1_readdata;                     // otg_hpi_cs:readdata -> mm_interconnect_0:otg_hpi_cs_s1_readdata
-	wire   [1:0] mm_interconnect_0_otg_hpi_cs_s1_address;                      // mm_interconnect_0:otg_hpi_cs_s1_address -> otg_hpi_cs:address
-	wire         mm_interconnect_0_otg_hpi_cs_s1_write;                        // mm_interconnect_0:otg_hpi_cs_s1_write -> otg_hpi_cs:write_n
-	wire  [31:0] mm_interconnect_0_otg_hpi_cs_s1_writedata;                    // mm_interconnect_0:otg_hpi_cs_s1_writedata -> otg_hpi_cs:writedata
-	wire         mm_interconnect_0_otg_hpi_r_s1_chipselect;                    // mm_interconnect_0:otg_hpi_r_s1_chipselect -> otg_hpi_r:chipselect
-	wire  [31:0] mm_interconnect_0_otg_hpi_r_s1_readdata;                      // otg_hpi_r:readdata -> mm_interconnect_0:otg_hpi_r_s1_readdata
-	wire   [1:0] mm_interconnect_0_otg_hpi_r_s1_address;                       // mm_interconnect_0:otg_hpi_r_s1_address -> otg_hpi_r:address
-	wire         mm_interconnect_0_otg_hpi_r_s1_write;                         // mm_interconnect_0:otg_hpi_r_s1_write -> otg_hpi_r:write_n
-	wire  [31:0] mm_interconnect_0_otg_hpi_r_s1_writedata;                     // mm_interconnect_0:otg_hpi_r_s1_writedata -> otg_hpi_r:writedata
-	wire         mm_interconnect_0_otg_hpi_data_s1_chipselect;                 // mm_interconnect_0:otg_hpi_data_s1_chipselect -> otg_hpi_data:chipselect
-	wire  [31:0] mm_interconnect_0_otg_hpi_data_s1_readdata;                   // otg_hpi_data:readdata -> mm_interconnect_0:otg_hpi_data_s1_readdata
-	wire   [1:0] mm_interconnect_0_otg_hpi_data_s1_address;                    // mm_interconnect_0:otg_hpi_data_s1_address -> otg_hpi_data:address
-	wire         mm_interconnect_0_otg_hpi_data_s1_write;                      // mm_interconnect_0:otg_hpi_data_s1_write -> otg_hpi_data:write_n
-	wire  [31:0] mm_interconnect_0_otg_hpi_data_s1_writedata;                  // mm_interconnect_0:otg_hpi_data_s1_writedata -> otg_hpi_data:writedata
-	wire         mm_interconnect_0_otg_hpi_address_s1_chipselect;              // mm_interconnect_0:otg_hpi_address_s1_chipselect -> otg_hpi_address:chipselect
-	wire  [31:0] mm_interconnect_0_otg_hpi_address_s1_readdata;                // otg_hpi_address:readdata -> mm_interconnect_0:otg_hpi_address_s1_readdata
-	wire   [1:0] mm_interconnect_0_otg_hpi_address_s1_address;                 // mm_interconnect_0:otg_hpi_address_s1_address -> otg_hpi_address:address
-	wire         mm_interconnect_0_otg_hpi_address_s1_write;                   // mm_interconnect_0:otg_hpi_address_s1_write -> otg_hpi_address:write_n
-	wire  [31:0] mm_interconnect_0_otg_hpi_address_s1_writedata;               // mm_interconnect_0:otg_hpi_address_s1_writedata -> otg_hpi_address:writedata
-	wire         mm_interconnect_0_keycode_s1_chipselect;                      // mm_interconnect_0:keycode_s1_chipselect -> keycode:chipselect
-	wire  [31:0] mm_interconnect_0_keycode_s1_readdata;                        // keycode:readdata -> mm_interconnect_0:keycode_s1_readdata
-	wire   [1:0] mm_interconnect_0_keycode_s1_address;                         // mm_interconnect_0:keycode_s1_address -> keycode:address
-	wire         mm_interconnect_0_keycode_s1_write;                           // mm_interconnect_0:keycode_s1_write -> keycode:write_n
-	wire  [31:0] mm_interconnect_0_keycode_s1_writedata;                       // mm_interconnect_0:keycode_s1_writedata -> keycode:writedata
 	wire         irq_mapper_receiver0_irq;                                     // jtag_uart_0:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] nios2_qsys_0_d_irq_irq;                                       // irq_mapper:sender_irq -> nios2_qsys_0:d_irq
-	wire         rst_controller_reset_out_reset;                               // rst_controller:reset_out -> [AES_Decryption_Core_0:RESET, irq_mapper:reset, jtag_uart_0:rst_n, keycode:reset_n, mm_interconnect_0:nios2_qsys_0_reset_n_reset_bridge_in_reset_reset, nios2_qsys_0:reset_n, onchip_memory2_0:reset, otg_hpi_address:reset_n, otg_hpi_cs:reset_n, otg_hpi_data:reset_n, otg_hpi_r:reset_n, otg_hpi_reset:reset_n, otg_hpi_w:reset_n, rst_translator:in_reset, sdram_pll:reset, sysid_qsys_0:reset_n]
+	wire         rst_controller_reset_out_reset;                               // rst_controller:reset_out -> [AES_Decryption_Core_0:RESET, irq_mapper:reset, jtag_uart_0:rst_n, mm_interconnect_0:nios2_qsys_0_reset_n_reset_bridge_in_reset_reset, nios2_qsys_0:reset_n, onchip_memory2_0:reset, rst_translator:in_reset, sdram_pll:reset, sysid_qsys_0:reset_n]
 	wire         rst_controller_reset_out_reset_req;                           // rst_controller:reset_req -> [nios2_qsys_0:reset_req, onchip_memory2_0:reset_req, rst_translator:reset_req_in]
 	wire         rst_controller_001_reset_out_reset;                           // rst_controller_001:reset_out -> [mm_interconnect_0:sdram_reset_reset_bridge_in_reset_reset, sdram:reset_n]
 
@@ -150,17 +107,6 @@ module lab9_soc (
 		.av_writedata   (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_writedata),   //                  .writedata
 		.av_waitrequest (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_waitrequest), //                  .waitrequest
 		.av_irq         (irq_mapper_receiver0_irq)                                     //               irq.irq
-	);
-
-	lab9_soc_keycode keycode (
-		.clk        (clk_clk),                                 //                 clk.clk
-		.reset_n    (~rst_controller_reset_out_reset),         //               reset.reset_n
-		.address    (mm_interconnect_0_keycode_s1_address),    //                  s1.address
-		.write_n    (~mm_interconnect_0_keycode_s1_write),     //                    .write_n
-		.writedata  (mm_interconnect_0_keycode_s1_writedata),  //                    .writedata
-		.chipselect (mm_interconnect_0_keycode_s1_chipselect), //                    .chipselect
-		.readdata   (mm_interconnect_0_keycode_s1_readdata),   //                    .readdata
-		.out_port   (keycode_export)                           // external_connection.export
 	);
 
 	lab9_soc_nios2_qsys_0 nios2_qsys_0 (
@@ -203,73 +149,6 @@ module lab9_soc (
 		.byteenable (mm_interconnect_0_onchip_memory2_0_s1_byteenable), //       .byteenable
 		.reset      (rst_controller_reset_out_reset),                   // reset1.reset
 		.reset_req  (rst_controller_reset_out_reset_req)                //       .reset_req
-	);
-
-	lab9_soc_otg_hpi_address otg_hpi_address (
-		.clk        (clk_clk),                                         //                 clk.clk
-		.reset_n    (~rst_controller_reset_out_reset),                 //               reset.reset_n
-		.address    (mm_interconnect_0_otg_hpi_address_s1_address),    //                  s1.address
-		.write_n    (~mm_interconnect_0_otg_hpi_address_s1_write),     //                    .write_n
-		.writedata  (mm_interconnect_0_otg_hpi_address_s1_writedata),  //                    .writedata
-		.chipselect (mm_interconnect_0_otg_hpi_address_s1_chipselect), //                    .chipselect
-		.readdata   (mm_interconnect_0_otg_hpi_address_s1_readdata),   //                    .readdata
-		.out_port   (otg_hpi_address_export)                           // external_connection.export
-	);
-
-	lab9_soc_otg_hpi_cs otg_hpi_cs (
-		.clk        (clk_clk),                                    //                 clk.clk
-		.reset_n    (~rst_controller_reset_out_reset),            //               reset.reset_n
-		.address    (mm_interconnect_0_otg_hpi_cs_s1_address),    //                  s1.address
-		.write_n    (~mm_interconnect_0_otg_hpi_cs_s1_write),     //                    .write_n
-		.writedata  (mm_interconnect_0_otg_hpi_cs_s1_writedata),  //                    .writedata
-		.chipselect (mm_interconnect_0_otg_hpi_cs_s1_chipselect), //                    .chipselect
-		.readdata   (mm_interconnect_0_otg_hpi_cs_s1_readdata),   //                    .readdata
-		.out_port   (otg_hpi_cs_export)                           // external_connection.export
-	);
-
-	lab9_soc_otg_hpi_data otg_hpi_data (
-		.clk        (clk_clk),                                      //                 clk.clk
-		.reset_n    (~rst_controller_reset_out_reset),              //               reset.reset_n
-		.address    (mm_interconnect_0_otg_hpi_data_s1_address),    //                  s1.address
-		.write_n    (~mm_interconnect_0_otg_hpi_data_s1_write),     //                    .write_n
-		.writedata  (mm_interconnect_0_otg_hpi_data_s1_writedata),  //                    .writedata
-		.chipselect (mm_interconnect_0_otg_hpi_data_s1_chipselect), //                    .chipselect
-		.readdata   (mm_interconnect_0_otg_hpi_data_s1_readdata),   //                    .readdata
-		.in_port    (otg_hpi_data_in_port),                         // external_connection.export
-		.out_port   (otg_hpi_data_out_port)                         //                    .export
-	);
-
-	lab9_soc_otg_hpi_cs otg_hpi_r (
-		.clk        (clk_clk),                                   //                 clk.clk
-		.reset_n    (~rst_controller_reset_out_reset),           //               reset.reset_n
-		.address    (mm_interconnect_0_otg_hpi_r_s1_address),    //                  s1.address
-		.write_n    (~mm_interconnect_0_otg_hpi_r_s1_write),     //                    .write_n
-		.writedata  (mm_interconnect_0_otg_hpi_r_s1_writedata),  //                    .writedata
-		.chipselect (mm_interconnect_0_otg_hpi_r_s1_chipselect), //                    .chipselect
-		.readdata   (mm_interconnect_0_otg_hpi_r_s1_readdata),   //                    .readdata
-		.out_port   (otg_hpi_r_export)                           // external_connection.export
-	);
-
-	lab9_soc_otg_hpi_cs otg_hpi_reset (
-		.clk        (clk_clk),                                       //                 clk.clk
-		.reset_n    (~rst_controller_reset_out_reset),               //               reset.reset_n
-		.address    (mm_interconnect_0_otg_hpi_reset_s1_address),    //                  s1.address
-		.write_n    (~mm_interconnect_0_otg_hpi_reset_s1_write),     //                    .write_n
-		.writedata  (mm_interconnect_0_otg_hpi_reset_s1_writedata),  //                    .writedata
-		.chipselect (mm_interconnect_0_otg_hpi_reset_s1_chipselect), //                    .chipselect
-		.readdata   (mm_interconnect_0_otg_hpi_reset_s1_readdata),   //                    .readdata
-		.out_port   (otg_hpi_reset_export)                           // external_connection.export
-	);
-
-	lab9_soc_otg_hpi_cs otg_hpi_w (
-		.clk        (clk_clk),                                   //                 clk.clk
-		.reset_n    (~rst_controller_reset_out_reset),           //               reset.reset_n
-		.address    (mm_interconnect_0_otg_hpi_w_s1_address),    //                  s1.address
-		.write_n    (~mm_interconnect_0_otg_hpi_w_s1_write),     //                    .write_n
-		.writedata  (mm_interconnect_0_otg_hpi_w_s1_writedata),  //                    .writedata
-		.chipselect (mm_interconnect_0_otg_hpi_w_s1_chipselect), //                    .chipselect
-		.readdata   (mm_interconnect_0_otg_hpi_w_s1_readdata),   //                    .readdata
-		.out_port   (otg_hpi_w_export)                           // external_connection.export
 	);
 
 	lab9_soc_sdram sdram (
@@ -348,11 +227,6 @@ module lab9_soc (
 		.jtag_uart_0_avalon_jtag_slave_writedata          (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_writedata),    //                                           .writedata
 		.jtag_uart_0_avalon_jtag_slave_waitrequest        (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_waitrequest),  //                                           .waitrequest
 		.jtag_uart_0_avalon_jtag_slave_chipselect         (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_chipselect),   //                                           .chipselect
-		.keycode_s1_address                               (mm_interconnect_0_keycode_s1_address),                         //                                 keycode_s1.address
-		.keycode_s1_write                                 (mm_interconnect_0_keycode_s1_write),                           //                                           .write
-		.keycode_s1_readdata                              (mm_interconnect_0_keycode_s1_readdata),                        //                                           .readdata
-		.keycode_s1_writedata                             (mm_interconnect_0_keycode_s1_writedata),                       //                                           .writedata
-		.keycode_s1_chipselect                            (mm_interconnect_0_keycode_s1_chipselect),                      //                                           .chipselect
 		.nios2_qsys_0_jtag_debug_module_address           (mm_interconnect_0_nios2_qsys_0_jtag_debug_module_address),     //             nios2_qsys_0_jtag_debug_module.address
 		.nios2_qsys_0_jtag_debug_module_write             (mm_interconnect_0_nios2_qsys_0_jtag_debug_module_write),       //                                           .write
 		.nios2_qsys_0_jtag_debug_module_read              (mm_interconnect_0_nios2_qsys_0_jtag_debug_module_read),        //                                           .read
@@ -368,36 +242,6 @@ module lab9_soc (
 		.onchip_memory2_0_s1_byteenable                   (mm_interconnect_0_onchip_memory2_0_s1_byteenable),             //                                           .byteenable
 		.onchip_memory2_0_s1_chipselect                   (mm_interconnect_0_onchip_memory2_0_s1_chipselect),             //                                           .chipselect
 		.onchip_memory2_0_s1_clken                        (mm_interconnect_0_onchip_memory2_0_s1_clken),                  //                                           .clken
-		.otg_hpi_address_s1_address                       (mm_interconnect_0_otg_hpi_address_s1_address),                 //                         otg_hpi_address_s1.address
-		.otg_hpi_address_s1_write                         (mm_interconnect_0_otg_hpi_address_s1_write),                   //                                           .write
-		.otg_hpi_address_s1_readdata                      (mm_interconnect_0_otg_hpi_address_s1_readdata),                //                                           .readdata
-		.otg_hpi_address_s1_writedata                     (mm_interconnect_0_otg_hpi_address_s1_writedata),               //                                           .writedata
-		.otg_hpi_address_s1_chipselect                    (mm_interconnect_0_otg_hpi_address_s1_chipselect),              //                                           .chipselect
-		.otg_hpi_cs_s1_address                            (mm_interconnect_0_otg_hpi_cs_s1_address),                      //                              otg_hpi_cs_s1.address
-		.otg_hpi_cs_s1_write                              (mm_interconnect_0_otg_hpi_cs_s1_write),                        //                                           .write
-		.otg_hpi_cs_s1_readdata                           (mm_interconnect_0_otg_hpi_cs_s1_readdata),                     //                                           .readdata
-		.otg_hpi_cs_s1_writedata                          (mm_interconnect_0_otg_hpi_cs_s1_writedata),                    //                                           .writedata
-		.otg_hpi_cs_s1_chipselect                         (mm_interconnect_0_otg_hpi_cs_s1_chipselect),                   //                                           .chipselect
-		.otg_hpi_data_s1_address                          (mm_interconnect_0_otg_hpi_data_s1_address),                    //                            otg_hpi_data_s1.address
-		.otg_hpi_data_s1_write                            (mm_interconnect_0_otg_hpi_data_s1_write),                      //                                           .write
-		.otg_hpi_data_s1_readdata                         (mm_interconnect_0_otg_hpi_data_s1_readdata),                   //                                           .readdata
-		.otg_hpi_data_s1_writedata                        (mm_interconnect_0_otg_hpi_data_s1_writedata),                  //                                           .writedata
-		.otg_hpi_data_s1_chipselect                       (mm_interconnect_0_otg_hpi_data_s1_chipselect),                 //                                           .chipselect
-		.otg_hpi_r_s1_address                             (mm_interconnect_0_otg_hpi_r_s1_address),                       //                               otg_hpi_r_s1.address
-		.otg_hpi_r_s1_write                               (mm_interconnect_0_otg_hpi_r_s1_write),                         //                                           .write
-		.otg_hpi_r_s1_readdata                            (mm_interconnect_0_otg_hpi_r_s1_readdata),                      //                                           .readdata
-		.otg_hpi_r_s1_writedata                           (mm_interconnect_0_otg_hpi_r_s1_writedata),                     //                                           .writedata
-		.otg_hpi_r_s1_chipselect                          (mm_interconnect_0_otg_hpi_r_s1_chipselect),                    //                                           .chipselect
-		.otg_hpi_reset_s1_address                         (mm_interconnect_0_otg_hpi_reset_s1_address),                   //                           otg_hpi_reset_s1.address
-		.otg_hpi_reset_s1_write                           (mm_interconnect_0_otg_hpi_reset_s1_write),                     //                                           .write
-		.otg_hpi_reset_s1_readdata                        (mm_interconnect_0_otg_hpi_reset_s1_readdata),                  //                                           .readdata
-		.otg_hpi_reset_s1_writedata                       (mm_interconnect_0_otg_hpi_reset_s1_writedata),                 //                                           .writedata
-		.otg_hpi_reset_s1_chipselect                      (mm_interconnect_0_otg_hpi_reset_s1_chipselect),                //                                           .chipselect
-		.otg_hpi_w_s1_address                             (mm_interconnect_0_otg_hpi_w_s1_address),                       //                               otg_hpi_w_s1.address
-		.otg_hpi_w_s1_write                               (mm_interconnect_0_otg_hpi_w_s1_write),                         //                                           .write
-		.otg_hpi_w_s1_readdata                            (mm_interconnect_0_otg_hpi_w_s1_readdata),                      //                                           .readdata
-		.otg_hpi_w_s1_writedata                           (mm_interconnect_0_otg_hpi_w_s1_writedata),                     //                                           .writedata
-		.otg_hpi_w_s1_chipselect                          (mm_interconnect_0_otg_hpi_w_s1_chipselect),                    //                                           .chipselect
 		.sdram_s1_address                                 (mm_interconnect_0_sdram_s1_address),                           //                                   sdram_s1.address
 		.sdram_s1_write                                   (mm_interconnect_0_sdram_s1_write),                             //                                           .write
 		.sdram_s1_read                                    (mm_interconnect_0_sdram_s1_read),                              //                                           .read
