@@ -42,3 +42,22 @@ DRsize.010 0 0 0 1 0 1
 DRsize.011 0 0 1 0 0 1 
 DRsize.100 0 1 0 0 0 1 
 DRsize.101 1 0 0 0 0 1 
+
+State Machine - |lab9_top|lab9_soc:lab9_qsystem|avalon_aes_interface:aes_decryption_core_0|AES:aes|State
+Name State.toRoundNine State.dumb6 State.dumb5 State.dumb4 State.dumb3 State.dumb2 State.dumb1 State.Round_Ten State.AddRoundKey_b State.InverseSubBytes_b State.InverseShiftRows_b State.InverseMixColumns State.AddRoundKey State.InverseSubBytes State.InverseShiftRows State.HALT 
+State.HALT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+State.InverseShiftRows 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+State.InverseSubBytes 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+State.AddRoundKey 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+State.InverseMixColumns 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+State.InverseShiftRows_b 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+State.InverseSubBytes_b 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+State.AddRoundKey_b 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+State.Round_Ten 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+State.dumb1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+State.dumb2 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+State.dumb3 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+State.dumb4 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+State.dumb5 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+State.dumb6 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+State.toRoundNine 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

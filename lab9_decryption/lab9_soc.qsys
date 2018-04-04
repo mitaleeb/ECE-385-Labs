@@ -33,6 +33,22 @@
          type = "String";
       }
    }
+   element TIMER
+   {
+      datum _sortIndex
+      {
+         value = "8";
+         type = "int";
+      }
+   }
+   element TIMER.s1
+   {
+      datum baseAddress
+      {
+         value = "32";
+         type = "String";
+      }
+   }
    element clk_0
    {
       datum _sortIndex
@@ -53,7 +69,7 @@
    {
       datum baseAddress
       {
-         value = "128";
+         value = "160";
          type = "String";
       }
    }
@@ -125,7 +141,7 @@
    {
       datum baseAddress
       {
-         value = "32";
+         value = "128";
          type = "String";
       }
    }
@@ -141,7 +157,7 @@
    {
       datum baseAddress
       {
-         value = "56";
+         value = "152";
          type = "String";
       }
    }
@@ -180,6 +196,18 @@
    kind="AES_Decryption_Core"
    version="1.1"
    enabled="1" />
+ <module name="TIMER" kind="altera_avalon_timer" version="15.0" enabled="1">
+  <parameter name="alwaysRun" value="false" />
+  <parameter name="counterSize" value="32" />
+  <parameter name="fixedPeriod" value="false" />
+  <parameter name="period" value="1" />
+  <parameter name="periodUnits" value="MSEC" />
+  <parameter name="resetOutput" value="false" />
+  <parameter name="snapshot" value="true" />
+  <parameter name="systemFrequency" value="50000000" />
+  <parameter name="timeoutPulseOutput" value="false" />
+  <parameter name="watchdogPulse" value="2" />
+ </module>
  <module name="clk_0" kind="clock_source" version="15.0" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -219,7 +247,7 @@
   <parameter name="cpuReset" value="false" />
   <parameter name="customInstSlavesSystemInfo" value="&lt;info/&gt;" />
   <parameter name="dataAddrWidth" value="28" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x10' /><slave name='sdram_pll.pll_slave' start='0x20' end='0x30' /><slave name='sysid_qsys_0.control_slave' start='0x38' end='0x40' /><slave name='AES_Decryption_Core_0.AES_Slave' start='0x40' end='0x80' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x80' end='0x88' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x1000' end='0x1800' /><slave name='sdram.s1' start='0x8000000' end='0xC000000' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x10' /><slave name='TIMER.s1' start='0x20' end='0x40' /><slave name='AES_Decryption_Core_0.AES_Slave' start='0x40' end='0x80' /><slave name='sdram_pll.pll_slave' start='0x80' end='0x90' /><slave name='sysid_qsys_0.control_slave' start='0x98' end='0xA0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0xA0' end='0xA8' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x1000' end='0x1800' /><slave name='sdram.s1' start='0x8000000' end='0xC000000' /></address-map>]]></parameter>
   <parameter name="dcache_bursts" value="false" />
   <parameter name="dcache_lineSize" value="32" />
   <parameter name="dcache_numTCDM" value="0" />
@@ -246,8 +274,8 @@
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="impl" value="Tiny" />
   <parameter name="instAddrWidth" value="28" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x10' /><slave name='sdram_pll.pll_slave' start='0x20' end='0x30' /><slave name='sysid_qsys_0.control_slave' start='0x38' end='0x40' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x1000' end='0x1800' /><slave name='sdram.s1' start='0x8000000' end='0xC000000' /></address-map>]]></parameter>
-  <parameter name="internalIrqMaskSystemInfo" value="32" />
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x10' /><slave name='sdram_pll.pll_slave' start='0x80' end='0x90' /><slave name='sysid_qsys_0.control_slave' start='0x98' end='0xA0' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x1000' end='0x1800' /><slave name='sdram.s1' start='0x8000000' end='0xC000000' /></address-map>]]></parameter>
+  <parameter name="internalIrqMaskSystemInfo" value="33" />
   <parameter name="manuallyAssignCpuID" value="true" />
   <parameter name="mmu_TLBMissExcOffset" value="0" />
   <parameter name="mmu_TLBMissExcSlave" value="None" />
@@ -584,7 +612,7 @@
    start="nios2_qsys_0.data_master"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0080" />
+  <parameter name="baseAddress" value="0x00a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -593,7 +621,7 @@
    start="nios2_qsys_0.data_master"
    end="sysid_qsys_0.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0038" />
+  <parameter name="baseAddress" value="0x0098" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -611,7 +639,7 @@
    start="nios2_qsys_0.data_master"
    end="sdram_pll.pll_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0020" />
+  <parameter name="baseAddress" value="0x0080" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -635,10 +663,19 @@
  <connection
    kind="avalon"
    version="15.0"
+   start="nios2_qsys_0.data_master"
+   end="TIMER.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0020" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="15.0"
    start="nios2_qsys_0.instruction_master"
    end="sysid_qsys_0.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0038" />
+  <parameter name="baseAddress" value="0x0098" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -656,7 +693,7 @@
    start="nios2_qsys_0.instruction_master"
    end="sdram_pll.pll_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0020" />
+  <parameter name="baseAddress" value="0x0080" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -686,6 +723,7 @@
  <connection kind="clock" version="15.0" start="clk_0.clk" end="nios2_qsys_0.clk" />
  <connection kind="clock" version="15.0" start="clk_0.clk" end="sysid_qsys_0.clk" />
  <connection kind="clock" version="15.0" start="clk_0.clk" end="jtag_uart_0.clk" />
+ <connection kind="clock" version="15.0" start="clk_0.clk" end="TIMER.clk" />
  <connection
    kind="clock"
    version="15.0"
@@ -702,6 +740,13 @@
    start="nios2_qsys_0.d_irq"
    end="jtag_uart_0.irq">
   <parameter name="irqNumber" value="5" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="15.0"
+   start="nios2_qsys_0.d_irq"
+   end="TIMER.irq">
+  <parameter name="irqNumber" value="0" />
  </connection>
  <connection
    kind="reset"
@@ -724,6 +769,7 @@
    version="15.0"
    start="clk_0.clk_reset"
    end="jtag_uart_0.reset" />
+ <connection kind="reset" version="15.0" start="clk_0.clk_reset" end="TIMER.reset" />
  <connection
    kind="reset"
    version="15.0"

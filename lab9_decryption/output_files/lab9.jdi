@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="5c7880ba4218b58e6fbb"/>
+    <hash md5_digest_80b="eaeead8a70894e62d1c3"/>
   </project>
   <file_info>
     <file device="EP4CE115F29C7" path="lab9.sof" usercode="0xFFFFFFFF"/>
@@ -99,7 +99,7 @@
     </sld_info>
     <sld_info hpath="lab9_soc:lab9_qsystem" name="lab9_qsystem">
       <assignment_values>
-        <assignment_value text="QSYS_NAME lab9_soc HAS_SOPCINFO 1 GENERATION_ID 1522211463"/>
+        <assignment_value text="QSYS_NAME lab9_soc HAS_SOPCINFO 1 GENERATION_ID 1522822340"/>
       </assignment_values>
       <parameters/>
     </sld_info>

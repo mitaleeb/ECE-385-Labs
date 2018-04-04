@@ -145,37 +145,37 @@ void encrypt(unsigned char * msg_ascii, unsigned char * key_ascii, unsigned int 
 
 	for (i = 1; i < 10; i++) {
 		// Print current state for debugging
-		printf("\nState at start of round %d\n", i);
+		/*printf("\nState at start of round %d\n", i);
 		int j;
 		for (j = 0; j < 16; j++) {
 			printf("%02x ", state[j]);
 			if ((j+1) % 4 == 0)
 				printf("\n");
-		}
+		}*/
 
 		subBytes(state);
-		printf("\nsubBytes: \n");
+		/*printf("\nsubBytes: \n");
 		for (j = 0; j < 16; j++) {
 			printf("%02x ", state[j]);
 			if ((j+1) % 4 == 0)
 				printf("\n");
-		}
+		}*/
 
 		shiftRows(state);
-		printf("\nshiftRows: \n");
+		/*printf("\nshiftRows: \n");
 		for (j = 0; j < 16; j++) {
 			printf("%02x ", state[j]);
 			if ((j+1) % 4 == 0)
 				printf("\n");
-		}
+		}*/
 
 		mixColumns(state);
-		printf("\nmixColumns: \n");
+		/*printf("\nmixColumns: \n");
 		for (j = 0; j < 16; j++) {
 			printf("%02x ", state[j]);
 			if ((j+1) % 4 == 0)
 				printf("\n");
-		}
+		}*/
 
 		addRoundKey(state, w, i);
 	}
@@ -198,6 +198,12 @@ void encrypt(unsigned char * msg_ascii, unsigned char * key_ascii, unsigned int 
 			count++;
 		}
 	}
+
+	// Write to registers
+	AES_PTR[0] = key[0];
+	AES_PTR[1] = key[1];
+	AES_PTR[2] = key[2];
+	AES_PTR[3] = key[3];
 
 
 	// don't forget to free any allocated memory
@@ -384,6 +390,41 @@ uchar xtime(uchar a) {
 void decrypt(unsigned int * msg_enc, unsigned int * msg_dec, unsigned int * key)
 {
 	// Implement this function
+	// write to enc message registers
+	AES_PTR[0] = key[0];
+	AES_PTR[1] = key[1];
+	AES_PTR[2] = key[2];
+	AES_PTR[3] = key[3];
+
+	printf("AES_PTR[0] = %08x, key[0] = %08x \n", AES_PTR[0], key[0]);
+
+	//AES_PTR[4] = msg_enc[0];
+	//AES_PTR[5] = msg_enc[1];
+	//AES_PTR[6] = msg_enc[2];
+	//AES_PTR[7] = msg_enc[3];
+
+	unsigned int i = 0;
+
+	AES_PTR[14] = i + 1;
+	unsigned int counter = 0;
+	printf("\nDONE SIGNAL AES_PTR[15] is %08x before loop\n", AES_PTR[15]);
+	while (AES_PTR[15] == i) {
+		counter++;
+		continue;
+	}
+	/*int j = 0;
+	for (j = 0; j < 10000; j++) {
+		continue;
+	}*/
+
+	printf("\nThe loop ran: %u times\n", counter);
+
+	// read to msg_dec
+	msg_dec[0] = AES_PTR[8];
+	msg_dec[1] = AES_PTR[9];
+	msg_dec[2] = AES_PTR[10];
+	msg_dec[3] = AES_PTR[11];
+	printf("AES_PTR[0] = %08x, key[0] = %08x \n", AES_PTR[0], key[0]);
 }
 
 /** main
@@ -400,7 +441,7 @@ int main()
 	unsigned int msg_enc[4];
 	unsigned int msg_dec[4];
 
-	printf("Select execution mode: 0 for testing, 1 for benchmarking: ");
+	printf("Select execution mode: 0 for testing, 1 for benchmarking, 2 for Dean's special test: ");
 	scanf("%d", &run_mode);
 
 	// Added by me to assist in debugging
@@ -412,6 +453,12 @@ int main()
 		int i = 0;
 		for(i = 0; i < 4; i++){
 			printf("%08x", msg_enc[i]);
+		}
+		printf("\n");
+		decrypt(msg_enc, msg_dec, key);
+		printf("\nDecrypted message is: \n");
+		for(i = 0; i < 4; i++){
+			printf("%08x", msg_dec[i]);
 		}
 		printf("\n");
 	}
