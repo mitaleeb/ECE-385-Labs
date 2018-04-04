@@ -41,7 +41,7 @@ module avalon_aes_interface (
 	logic [31:0] register_file[16];
 	
 	logic AES_DONE, AES_START, hardware_write, running;
-	logic [127:0] AES_MSG_DEC, AES_MSG_ENC;
+	logic [127:0] AES_MSG_DEC, AES_MSG_ENC, AES_KEY;
 	
 	// Assign msg enc to its individual registers
 	assign AES_MSG_ENC[127:96] = register_file[4];
@@ -49,8 +49,13 @@ module avalon_aes_interface (
 	assign AES_MSG_ENC[63:32] = register_file[6];
 	assign AES_MSG_ENC[31:0] = register_file[7];
 	
+	// Combine AES_KEY into a single 128 bit signal
+	assign AES_KEY[127:96] = register_file[0];
+	assign AES_KEY[95:64] = register_file[1];
+	assign AES_KEY[63:32] = register_file[2];
+	assign AES_KEY[31:0] = register_file[3];
 	
-	AES aes(.*, .AES_KEY(), .AES_MSG_ENC(), .AES_MSG_DEC(AES_MSG_DEC));
+	AES aes(.*);
 
 	always_ff @(posedge CLK) begin
 		if(RESET) begin
@@ -58,14 +63,16 @@ module avalon_aes_interface (
 				register_file[i] <= 0;
 			end
 		end else if (AVL_WRITE && AVL_CS) begin
-			if (AVL_BYTE_EN[3])
+			register_file[AVL_ADDR][31:0] <= AVL_WRITEDATA[31:0];
+			
+			/*if (AVL_BYTE_EN[3])
 				register_file[AVL_ADDR][31:24] <= AVL_WRITEDATA[31:24];
 			if (AVL_BYTE_EN[2])
 				register_file[AVL_ADDR][23:16] <= AVL_WRITEDATA[23:16];
 			if (AVL_WRITEDATA[1])
 				register_file[AVL_ADDR][15:8] <= AVL_WRITEDATA[15:8];
 			if (AVL_WRITEDATA[0])
-				register_file[AVL_ADDR][7:0] <= AVL_WRITEDATA[7:0];
+				register_file[AVL_ADDR][7:0] <= AVL_WRITEDATA[7:0]; */
 		end else if (hardware_write) begin
 			register_file[8] <= AES_MSG_DEC[127:96];
 			register_file[9] <= AES_MSG_DEC[95:64];
@@ -74,7 +81,7 @@ module avalon_aes_interface (
 		end
 
 		if (AES_DONE)
-			register_file[15] <= 16'b1;
+			register_file[15] <= 32'b1;
 
 		if (register_file[14][0] == 1'b1)
 			AES_START <= 1;
