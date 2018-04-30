@@ -5,30 +5,29 @@
  * By Dean Biskup and Mitalee Bharadwaj
  */
 module audio_modifier(
-	input CLOCK_50, DSP_enable, 
+  input CLOCK_50, 
   input AUD_DACLRCK, 
-	input logic [15:0] audio_inR, audio_inL, 
-	output logic [15:0] DSP_outR, DSP_outL, 
-	input logic vol_up, vol_down, 
-  input logic [3:0] filter_select // Selects the filters to be active
+  input logic [15:0] audio_inR, audio_inL, 
+  output logic [15:0] DSP_outR, DSP_outL, 
+  input logic vol_up, vol_down, 
+  input logic [3:0] filter_select, // Selects the filters to be active
+  output logic dsp_done
 );
 
 int volume_scale;
 logic [15:0] audio_R, audio_L; 
 
-always_ff @ (posedge AUD_DACLRCK) begin
+// DEBUG
+assign audio_R = audio_inR;
+assign audio_L = audio_inL;
+assign dsp_done = AUD_DACLRCK;
 
-  // Decide what to output based on DSP_enable signal
-	if (DSP_enable) begin
-    DSP_outR <= audio_R * volume_scale;
-    DSP_outL <= audio_L * volume_scale;
-	end else begin 
-    DSP_outR <= audio_inR;
-    DSP_outL <= audio_inL;
-  end
+always_ff @ (posedge CLOCK_50) begin
+  DSP_outR <= audio_R * volume_scale;
+  DSP_outL <= audio_L * volume_scale;
 end
 
-logic [15:0] lpf_outL, lpf_outR;
+/*logic [15:0] lpf_outL, lpf_outR;
 lowpassfilter lpf(.*, .lpf_outputR(lpf_outR), .lpf_outputL(lpf_outL));
 
 logic [15:0] audio_R_n, audio_L_n;
@@ -47,7 +46,7 @@ always_comb begin
     audio_L_n = lpf_outL;
     audio_R_n = lpf_outR;
   end
-end
+end */
 
 ///////////// Volume Control ////////////
 enum logic [4:0] {Increase, Increase_s, Decrease_s, Decrease, Idle} vol_state, vol_state_next;
