@@ -26,11 +26,11 @@ module lowpassfilter(
   
   // Divide the floating point areas by 16384 which is 10000.
   // so the math would be x/10000 = y/16384
-  assign a0 = 18'b000000000000010001;
-  assign a1 = 18'b000000000000100010;
-  assign a2 = 18'b000000000000010001;
-  assign b1 = -2;
-  assign b2 = 18'b000011101001011000;
+  assign a0 = 18'b000000000001000000;
+  assign a1 = 18'b000000000010000000;
+  assign a2 = 18'b000000000001000000;
+  assign b1 = -1024;
+  assign b2 = 18'b000011010100101111;
   
   
 
