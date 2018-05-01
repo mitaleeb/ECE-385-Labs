@@ -55,7 +55,10 @@ module fx_gen(
 
   // Some signals to help debug
   logic[15:0] audio_R, audio_L;
-  audio_controller audiocontrol(.*, .vol_up(~KEY[1]), .vol_down(~KEY[0]));
+  logic [15:0] register_fileL[64];
+  logic [15:0] register_fileR[64];
+  audio_controller audiocontrol(.*, .vol_up(~KEY[1]), .vol_down(~KEY[0]), 
+    .DSP_outR(audio_R), .DSP_outL(audio_L));
 
 
   // Always ff block to make things readable

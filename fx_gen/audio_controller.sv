@@ -9,16 +9,20 @@ module audio_controller(
   output logic I2C_SCLK, I2C_SDAT, 
 
   // Output signals for debugging
-  output logic[15:0] audio_L, audio_R, 
+  output logic [15:0] DSP_outR, DSP_outL, 
   
   // Filter select input, volume buttons inputs
   input logic vol_up, vol_down, 
-  input logic [3:0] filter_select
+  input logic [3:0] filter_select, 
+  
+  // For visualization
+  output logic [15:0] register_fileL[64], 
+  output logic [15:0] register_fileR[64]
   );
 
 // local registers holding the intermediate audio signals
 logic [15:0] audio_outL, audio_outR, audio_outL_next, audio_outR_next;
-logic [15:0] DSP_outR, DSP_outL;
+logic [15:0] audio_R, audio_L;
 logic [15:0] audio_L_next, audio_R_next;
 
 // DSP signals
@@ -41,7 +45,7 @@ audio_interface audiointerface(.clk(clk), .INIT(INIT),
   .Reset(reset_h), .data_over(DATA_OVER), .adc_full(ADC_FULL), .ADCDATA(ADCDATA));
   
 // audio_modifier instance
-audio_modifier amod(.CLOCK_50(clk), .AUD_DACLRCK(AUD_DACLRCK), 
+audio_modifier amod(.*, .CLOCK_50(clk), .AUD_DACLRCK(AUD_DACLRCK), 
   .audio_inR(audio_R), .audio_inL(audio_L), .DSP_outR(DSP_outR), .DSP_outL(DSP_outL), 
   .vol_up(vol_up), .vol_down(vol_down), .filter_select(filter_select), 
   .dsp_done(dsp_done));

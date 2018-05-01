@@ -11,11 +11,11 @@ module pastsignals(
   input AUD_DACLRCK, 
   input [15:0] sample_in, 
   input read, 
-  output [15:0] READ_DATA
+  output logic [15:0] register_file[64]
   );
 
 // index 0 will be the most recent one
-logic [15:0] register_file[64];
+//logic [15:0] register_file[64];
 logic [15:0] register_file_next[64];
 
 logic shift, new_sample;
@@ -25,8 +25,6 @@ always_ff @ (posedge clk) begin
     for (int i = 0; i < 64; i++) begin
       register_file[i] <= 0;
     end // for (int i = 0; i < 50; i++)
-    shift <= 0;
-    new_sample <= 0;
   end else if (shift) begin
     for (int i = 0; i < 64; i++) begin
       register_file[i] <= register_file_next[i];
@@ -39,7 +37,7 @@ always_ff @ (posedge clk) begin
   end 
 end // always_ff @ (posedge clk)
 
-assign READ_DATA = (read) ? register_file[index] : 16'b0;
+//assign READ_DATA = (read) ? register_file[index] : 16'b0;
 
 // State machine to control the operation of this when a new signal comes into play
 

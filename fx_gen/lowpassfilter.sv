@@ -6,22 +6,33 @@
 
 module lowpassfilter(
   input CLOCK_50, AUD_DACLRCK, 
-  input [15:0] audio_inR,
-  input [15:0] audio_inL, // 16-bit audio input
-  output [15:0] lpf_outputR, lpf_outputL
+  input logic [15:0] audio_inR,
+  input logic [15:0] audio_inL, // 16-bit audio input
+  output logic [15:0] lpf_outputR, lpf_outputL
 );
 
   // Control signals for the biquad filters
   logic new_sample, new_coefficients;
   logic signed [17:0] a0, a1, a2, b1, b2;
 
+  // DEBUG
+  // We'll try using fixed point representation, fp: 4.4 for now
+//  logic signed [7:0] a_test0;
+//  assign a_test0 = ~(8'b10000011)+1;
+
+//  fp_mult fpL(.sample(audio_inL), .coefficient(a_test0), .fp_out(lpf_outputL));
+//  fp_mult fpR(.sample(audio_inR), .coefficient(a_test0), .fp_out(lpf_outputR));
+  
+  
   // Divide the floating point areas by 16384 which is 10000.
   // so the math would be x/10000 = y/16384
-  assign a0 = 18'd33;
-  assign a1 = 18'd66;
-  assign a2 = 18'd33;
-  assign b1 = 18'b111000011001110111;
-  assign b2 = 18'd14862;
+  assign a0 = 18'b000000000000010001;
+  assign a1 = 18'b000000000000100010;
+  assign a2 = 18'b000000000000010001;
+  assign b1 = -2;
+  assign b2 = 18'b000011101001011000;
+  
+  
 
   // Instantiate biquads for both the left and the right sides
   biquad left(.CLOCK_50(CLOCK_50), .Reset(0), .new_sample(new_sample), 
