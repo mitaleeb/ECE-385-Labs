@@ -1,5 +1,5 @@
 module reverberator(
-  input clk, reset_h, new_sample
+  input clk, reset_h, new_sample, 
   input [15:0] sample_in, 
   output [15:0] delayed_sample, 
 
@@ -7,17 +7,22 @@ module reverberator(
   output [19:0] SRAM_ADDR, 
   inout wire [15:0] SRAM_DQ, 
   output SRAM_CE_N, SRAM_OE_N, SRAM_WE_N, 
-  output SRAM_UB_N, SRAM_LB_N);
+  output SRAM_UB_N, SRAM_LB_N
+  );
 
-logic [15:0] data_to_sram, data_from_sram;
+logic [15:0] data_to_sram; 
+logic [15:0] data_from_sram;
 
-tristate #(.N(16)) tri0(.Clk(clk), .tristate_output_enable(~SRAM_WE_N), 
-  .Data_write(data_to_sram), .Data_read(data_from_sram), .Data(SRAM_DQ));
+tristate #(.N(16)) tr0(
+    .Clk(clk), .tristate_output_enable(~SRAM_WE_N), .Data_write(data_to_sram), .Data_read(data_from_sram), .Data(SRAM_DQ)
+);
 
 assign data_to_sram = sample_in;
 
 logic [19:0] address_input, address_output;
 logic [19:0] address_input_n;
+
+logic [15:0] delayed_sample_n;
 
 assign address_output = (address_input == 6000) ? 20'b0 : address_input + 1;
 
@@ -69,6 +74,7 @@ always_comb begin
 
   SRAM_WE_N = 1'b1;
   SRAM_OE_N = 1'b1;
+  SRAM_ADDR = 0;
 
   case (state)
     IDLE: begin

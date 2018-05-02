@@ -39,7 +39,13 @@ module fx_gen(
   
   // VGA Signals
   output logic [7:0] VGA_R, VGA_G, VGA_B, 
-  output logic VGA_CLK, VGA_SYNC_N, VGA_BLANK_N, VGA_VS, VGA_HS 
+  output logic VGA_CLK, VGA_SYNC_N, VGA_BLANK_N, VGA_VS, VGA_HS, 
+  
+  // SRAM Signals
+  output logic [19:0] SRAM_ADDR, 
+  inout wire [15:0] SRAM_DQ, 
+  output SRAM_CE_N, SRAM_OE_N, SRAM_WE_N, 
+  output SRAM_UB_N, SRAM_LB_N
   );
 
   // Do some connections for debugging
@@ -59,11 +65,14 @@ module fx_gen(
 
   // Some signals to help debug
   logic[15:0] audio_R, audio_L;
+  logic [15:0] audinR, audinL;
   logic [15:0] register_fileL[128];
   logic [15:0] register_fileR[128];
   audio_controller audiocontrol(.*, .vol_up(~KEY[1]), .vol_down(~KEY[0]), 
     .DSP_outR(audio_R), .DSP_outL(audio_L));
 
+  logic [15:0] reverb_in;
+  reverberator reverb(.*, .new_sample(AUD_DACLRCK), .sample_in(audinL), .delayed_sample(reverb_in));
 	 
   ////// VGA LOCAL CONNECTIONS AND OTHER SHIT //////
   
@@ -74,12 +83,12 @@ module fx_gen(
   assign object[2:1] = 2'b0;
   
   // Use PLL to generate the 25MHz VGA_CLK
-  vga_clk vga_clk_instance(.inclk0(clk), .c0(VGA_CLK));
+  /*vga_clk vga_clk_instance(.inclk0(clk), .c0(VGA_CLK));
   VGA_controller vga_controller_instance(.*, .Clk(clk), .Reset(reset_h));
   
   // Instance of the bars
   bars bars_instance(.*, .frame_clk(VGA_VS));
-  color_mapper color_instance(.*);
+  color_mapper color_instance(.*);*/
   
   ////// END OF VGA LOCAL CONNECTIONS ND SHIT //////
 

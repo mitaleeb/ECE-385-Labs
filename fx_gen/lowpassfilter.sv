@@ -31,10 +31,11 @@ module lowpassfilter(
   assign a2 = 18'b000000000001000000;
   assign b1 = -1024;
   assign b2 = 18'b000011010100101111;
-  
+
   
 
   // Instantiate biquads for both the left and the right sides
+ // Instantiate biquads for both the left and the right sides
   biquad left(.CLOCK_50(CLOCK_50), .Reset(0), .new_sample(new_sample), 
     .new_coefficients(new_coefficients), .sample_in(audio_inL), .a0_load(a0), 
     .a1_load(a1), .a2_load(a2), .b1_load(b1), .b2_load(b2), .sample_out(lpf_outputL));

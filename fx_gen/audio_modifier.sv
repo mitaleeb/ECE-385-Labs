@@ -15,7 +15,9 @@ module audio_modifier(
   
   // For reverb and visualization
   output logic [15:0] register_fileL[128], 
-  output logic [15:0] register_fileR[128]
+  output logic [15:0] register_fileR[128], 
+  
+  input logic [15:0] reverb_in
 );
 
 int volume_scale;
@@ -27,10 +29,10 @@ logic [15:0] audio_R, audio_L;
 assign dsp_done = AUD_DACLRCK;
 
 // Register file to hold the past 64 samples
-pastsignals audioROMR(.AUD_DACLRCK(AUD_DACLRCK), .clk(CLOCK_50), .reset_h(reset_h), 
+/*pastsignals audioROMR(.AUD_DACLRCK(AUD_DACLRCK), .clk(CLOCK_50), .reset_h(reset_h), 
   .register_file(register_fileR), .sample_in(DSP_outR));
 pastsignals audioROML(.AUD_DACLRCK(AUD_DACLRCK), .clk(CLOCK_50), .reset_h(reset_h), 
-  .register_file(register_fileL), .sample_in(DSP_outL));
+  .register_file(register_fileL), .sample_in(DSP_outL));*/
 
 always_ff @ (posedge CLOCK_50) begin
   DSP_outR <= audio_R * volume_scale;
@@ -67,14 +69,14 @@ always_comb begin
     audio_R_n = lpf_outR * 16;
   end
   if(filter_select[2]) begin 
-	 audio_L_n = hpf_outL; 
-	 audio_R_n = hpf_outR; 
+	 audio_L_n = hpf_outL * 8; 
+	 audio_R_n = hpf_outR * 8; 
   
  end 
   if(filter_select[3]) begin
     // Reverb
-	 audio_L_n = audio_L_n; //+ register_fileL[999] / 2;
-	 audio_R_n = audio_R_n; //+ register_fileR[999] / 2;
+	 audio_L_n = audio_L_n + reverb_in;
+	 audio_R_n = audio_R_n + reverb_in;
 	end
 end 
 

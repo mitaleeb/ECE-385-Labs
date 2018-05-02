@@ -8,8 +8,9 @@ logic signed [17:0] fp_a;
 
 always_comb
 begin
-	fp_a = {sample_in, 2'd0}; // fp: 16.2
+	fp_a = {sample_in, 2'b0}; // fp: 16.2
 	mult_out = fp_a * fp_coefficient;
+
 end
 
 endmodule

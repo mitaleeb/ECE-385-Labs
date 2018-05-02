@@ -10,6 +10,7 @@ module audio_controller(
 
   // Output signals for debugging
   output logic [15:0] DSP_outR, DSP_outL, 
+  output logic [15:0] audinR, audinL, 
   
   // Filter select input, volume buttons inputs
   input logic vol_up, vol_down, 
@@ -17,7 +18,9 @@ module audio_controller(
   
   // For visualization
   output logic [15:0] register_fileL[128], 
-  output logic [15:0] register_fileR[128]
+  output logic [15:0] register_fileR[128], 
+  
+  input logic [15:0] reverb_in
   );
 
 // local registers holding the intermediate audio signals
@@ -50,6 +53,8 @@ audio_modifier amod(.*, .CLOCK_50(clk), .AUD_DACLRCK(AUD_DACLRCK),
   .vol_up(vol_up), .vol_down(vol_down), .filter_select(filter_select), 
   .dsp_done(dsp_done));
 
+assign audinR = audio_R;
+assign audinL = audio_L;
 
 // State machine for audio control
 always_ff @ (posedge clk) begin
