@@ -14,8 +14,8 @@ module audio_modifier(
   output logic dsp_done, 
   
   // For reverb and visualization
-  output logic [15:0] register_fileL[1000], 
-  output logic [15:0] register_fileR[1000]
+  output logic [15:0] register_fileL[32], 
+  output logic [15:0] register_fileR[32]
 );
 
 int volume_scale;
@@ -28,17 +28,27 @@ assign dsp_done = AUD_DACLRCK;
 
 // Register file to hold the past 64 samples
 pastsignals audioROMR(.AUD_DACLRCK(AUD_DACLRCK), .clk(CLOCK_50), .reset_h(reset_h), 
-  .register_file(register_fileR), .index(), .read(0), .sample_in(audio_inR));
+  .register_file(register_fileR), .sample_in(DSP_outR));
 pastsignals audioROML(.AUD_DACLRCK(AUD_DACLRCK), .clk(CLOCK_50), .reset_h(reset_h), 
-  .register_file(register_fileL), .index(), .read(0), .sample_in(audio_inL));
+  .register_file(register_fileL), .sample_in(DSP_outL));
 
 always_ff @ (posedge CLOCK_50) begin
   DSP_outR <= audio_R * volume_scale;
   DSP_outL <= audio_L * volume_scale;
 end
 
+//LOW PASS FILTER
 logic [15:0] lpf_outL, lpf_outR;
 lowpassfilter lpf(.*, .lpf_outputR(lpf_outR), .lpf_outputL(lpf_outL));
+
+
+// HIGH PASS FILTER
+logic [15:0] hpf_outL, hpf_outR; 
+highpassfilter hpf(.*, .hpf_outputR(hpf_outR), .hpf_outputL(hpf_outL));
+
+
+//BAND PASS FILTER
+
 
 logic [15:0] audio_R_n, audio_L_n;
 always_ff @ (posedge CLOCK_50) begin
@@ -56,10 +66,15 @@ always_comb begin
     audio_L_n = lpf_outL * 16;
     audio_R_n = lpf_outR * 16;
   end
+  if(filter_select[2]) begin 
+	 audio_L_n = hpf_outL; 
+	 audio_R_n = hpf_outR; 
+  
+ end 
   if(filter_select[3]) begin
     // Reverb
-	 audio_L_n = audio_L_n + register_fileL[999] / 2;
-	 audio_R_n = audio_R_n + register_fileR[999] / 2;
+	 audio_L_n = audio_L_n; //+ register_fileL[999] / 2;
+	 audio_R_n = audio_R_n; //+ register_fileR[999] / 2;
 	end
 end 
 

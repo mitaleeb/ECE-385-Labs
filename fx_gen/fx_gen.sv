@@ -35,7 +35,11 @@ module fx_gen(
   inout AUD_DACLRCK, // DAC LR Clock
   output AUD_DACDAT, // DAC DATA
   inout AUD_BCLK, // Bit-Stream Clock
-  output AUD_XCK // Chip Clock
+  output AUD_XCK, // Chip Clock
+  
+  // VGA Signals
+  output logic [7:0] VGA_R, VGA_G, VGA_B, 
+  output logic VGA_CLK, VGA_SYNC_N, VGA_BLANK_N, VGA_VS, VGA_HS 
   );
 
   // Do some connections for debugging
@@ -55,11 +59,29 @@ module fx_gen(
 
   // Some signals to help debug
   logic[15:0] audio_R, audio_L;
-  logic [15:0] register_fileL[1000];
-  logic [15:0] register_fileR[1000];
+  logic [15:0] register_fileL[32];
+  logic [15:0] register_fileR[32];
   audio_controller audiocontrol(.*, .vol_up(~KEY[1]), .vol_down(~KEY[0]), 
     .DSP_outR(audio_R), .DSP_outL(audio_L));
 
+	 
+  ////// VGA LOCAL CONNECTIONS AND OTHER SHIT //////
+  
+  logic [2:0] object; // 0 = bg, 1 = bar, 2 = hat
+  logic [9:0] DrawX, DrawY;
+  logic isBar;
+  assign object[0] = isBar;
+  assign object[2:1] = 2'b0;
+  
+  // Use PLL to generate the 25MHz VGA_CLK
+  vga_clk vga_clk_instance(.inclk0(clk), .c0(VGA_CLK));
+  VGA_controller vga_controller_instance(.*, .Clk(clk), .Reset(reset_h));
+  
+  // Instance of the bars
+  bars bars_instance(.*, .frame_clk(VGA_VS));
+  color_mapper color_instance(.*);
+  
+  ////// END OF VGA LOCAL CONNECTIONS ND SHIT //////
 
   // Always ff block to make things readable
   int counterxd;
