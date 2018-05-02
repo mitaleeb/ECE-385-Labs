@@ -16,8 +16,8 @@ module audio_controller(
   input logic [3:0] filter_select, 
   
   // For visualization
-  output logic [15:0] register_fileL[32], 
-  output logic [15:0] register_fileR[32]
+  output logic [15:0] register_fileL[128], 
+  output logic [15:0] register_fileR[128]
   );
 
 // local registers holding the intermediate audio signals

@@ -59,8 +59,8 @@ module fx_gen(
 
   // Some signals to help debug
   logic[15:0] audio_R, audio_L;
-  logic [15:0] register_fileL[32];
-  logic [15:0] register_fileR[32];
+  logic [15:0] register_fileL[128];
+  logic [15:0] register_fileR[128];
   audio_controller audiocontrol(.*, .vol_up(~KEY[1]), .vol_down(~KEY[0]), 
     .DSP_outR(audio_R), .DSP_outL(audio_L));
 

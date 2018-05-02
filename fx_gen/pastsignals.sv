@@ -11,26 +11,26 @@ module pastsignals(
   input AUD_DACLRCK, 
   input [15:0] sample_in, 
   // input read, 
-  output logic [15:0] register_file[32]
+  output logic [15:0] register_file[128]
   );
 
 // index 0 will be the most recent one
 //logic [15:0] register_file[64];
-logic [15:0] register_file_next[32];
+logic [15:0] register_file_next[128];
 
 logic shift, new_sample;
 
 always_ff @ (posedge clk) begin
   if (reset_h) begin
-    for (int i = 0; i < 32; i++) begin
+    for (int i = 0; i < 128; i++) begin
       register_file[i] <= 0;
     end // for (int i = 0; i < 50; i++)
   end else if (shift) begin
-    for (int i = 0; i < 32; i++) begin
+    for (int i = 0; i < 128; i++) begin
       register_file[i] <= register_file_next[i];
     end // for (int i = 0; i < 64; i++)
   end else if (new_sample) begin
-    for (int i = 0; i < 31; i++) begin
+    for (int i = 0; i < 127; i++) begin
       register_file_next[i+1] <= register_file[i];
     end 
     register_file_next[0] <= sample_in;
@@ -59,13 +59,13 @@ always_comb begin
   new_sample = 0;
   shift = 0;
   counterxd_next = counterxd + 1;
-  if (counterxd == 12500000) 
+  if (counterxd == 125000) 
     counterxd_next = 0;
   
   // next_state logic
   case (state)
     IDLE: begin
-      if (counterxd == 1250000)
+      if (counterxd == 125000)
         next_state = NEWSAMPLE;
     end // IDLE:
     NEWSAMPLE: begin
