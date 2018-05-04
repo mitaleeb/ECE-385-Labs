@@ -29,10 +29,10 @@ logic [15:0] audio_R, audio_L;
 assign dsp_done = AUD_DACLRCK;
 
 // Register file to hold the past 64 samples
-/*pastsignals audioROMR(.AUD_DACLRCK(AUD_DACLRCK), .clk(CLOCK_50), .reset_h(reset_h), 
+pastsignals audioROMR(.AUD_DACLRCK(AUD_DACLRCK), .clk(CLOCK_50), .reset_h(reset_h), 
   .register_file(register_fileR), .sample_in(DSP_outR));
 pastsignals audioROML(.AUD_DACLRCK(AUD_DACLRCK), .clk(CLOCK_50), .reset_h(reset_h), 
-  .register_file(register_fileL), .sample_in(DSP_outL));*/
+  .register_file(register_fileL), .sample_in(DSP_outL));
 
 always_ff @ (posedge CLOCK_50) begin
   DSP_outR <= audio_R * volume_scale;
@@ -69,10 +69,9 @@ always_comb begin
     audio_R_n = lpf_outR * 16;
   end
   if(filter_select[2]) begin 
-	 audio_L_n = hpf_outL * 8; 
-	 audio_R_n = hpf_outR * 8; 
-  
- end 
+	 audio_L_n = hpf_outL * 4; 
+	 audio_R_n = hpf_outR * 4; 
+  end 
   if(filter_select[3]) begin
     // Reverb
 	 audio_L_n = audio_L_n + reverb_in;

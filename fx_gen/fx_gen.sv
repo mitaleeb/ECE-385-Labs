@@ -83,12 +83,12 @@ module fx_gen(
   assign object[2:1] = 2'b0;
   
   // Use PLL to generate the 25MHz VGA_CLK
-  /*vga_clk vga_clk_instance(.inclk0(clk), .c0(VGA_CLK));
+  vga_clk vga_clk_instance(.inclk0(clk), .c0(VGA_CLK));
   VGA_controller vga_controller_instance(.*, .Clk(clk), .Reset(reset_h));
   
   // Instance of the bars
   bars bars_instance(.*, .frame_clk(VGA_VS));
-  color_mapper color_instance(.*);*/
+  color_mapper color_instance(.*);
   
   ////// END OF VGA LOCAL CONNECTIONS ND SHIT //////
 
